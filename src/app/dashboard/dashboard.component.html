@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Sehti</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-gray">
+  <!-- navbar -->
+  <app-header-dashboard></app-header-dashboard>
+  <!-- end navbar -->
+
+  <!-- left bar offcanvas -->
+  <app-menu-dashboard></app-menu-dashboard>
+  <!-- end left bar -->
+
+  <!-- main -->
+  <main class="main-content">
+    <div class="py-4 px-4 px-md-5">
+      <!--  -->
+      <div class="row mb-5 px-2-5 gap-4">
+        <div class="col-lg col-md-12 rounded-5 bg-white py-2-5 px-4 d-flex justify-content-between align-items-center">
+          <img src="assets/img/total-patient.svg" alt="" />
+          <span class="text-end">
+            <span class="text-light">Total Patient</span>
+            <h3 class="fw-bold mt-1">2,650</h3>
+          </span>
+        </div>
+        <div class="col-lg col-md-12 rounded-5 bg-white py-2-5 px-4 d-flex justify-content-between align-items-center">
+          <img src="assets/img/avg-cost.svg" alt="" />
+          <span class="text-end">
+            <span class="text-light">Avg. Cost</span>
+            <h3 class="fw-bold mt-1">2,650</h3>
+          </span>
+        </div>
+        <div class="col-lg col-md-12 rounded-5 bg-white py-2-5 px-4 d-flex justify-content-between align-items-center">
+          <img src="assets/img/total-doctors.svg" alt="" />
+          <span class="text-end">
+            <span class="text-light">Total Doctors</span>
+            <h3 class="fw-bold mt-1">2,650</h3>
+          </span>
+        </div>
+        <div class="col-lg col-md-12 rounded-5 bg-white py-2-5 px-4 d-flex justify-content-between align-items-center">
+          <img src="assets/img/chat.svg" alt="" />
+          <span class="text-end">
+            <span class="text-light">Total Chat</span>
+            <h3 class="fw-bold mt-1">2,650</h3>
+          </span>
+        </div>
+        <div class="col-lg col-md-12 rounded-5 bg-white py-2-5 px-4 d-flex justify-content-between align-items-center">
+          <img src="assets/img/notification.svg" alt="" />
+          <span class="text-end">
+            <span class="text-light">Total Notif</span>
+            <h3 class="fw-bold mt-1">2,650</h3>
+          </span>
+        </div>
+      </div>
+
+      <!-- chart -->
+      <div class="row mb-5">
+        <div class="col-lg-7">
+          <div class="card border-0 py-3 px-4 mb-3">
+            <h5 class="mb-3">Patient Visit</h5>
+            <canvas id="myChart" style="height: 275px;"></canvas>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="card border-0 py-3 px-4 mb-3">
+            <h5 class="mb-3">Patients</h5>
+            <canvas id="myChartLine" style="height: 275px;"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- recent -->
+      <div class="row mb-5">
+        <div class="col">
+          <h5>Recent</h5>
+          <div class="wrapper d-flex gap-4 overflow-scroll">
+            <div class="card w-40 border-0 rounded-5">
+              <div class="card-body d-flex">
+                <div class="text text-center px-2 px-md-4 border-end">
+                  <span>AUG</span>
+                  <h2>30</h2>
+                </div>
+                <div class="px-2 px-md-4 w-100">
+                  <span class="d-flex justify-content-between align-items-center">
+                    <span class="fs-7">LRM-IPSM</span>
+                    <span class="badge rounded-pill bg-primary p-2 px-md-3 fw-normal"><svg width="11" height="10"
+                        viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="5.84741" cy="5" r="5" fill="white" />
+                      </svg>
+                      <span class="ms-2 fs-7">Lorem</span></span>
+                  </span>
+                  <span class="mt-4 d-block">
+                    <h5>Lorem ipsum dolor sit, amet.</h5>
+                    <p class="fs-7">
+                      <span class="text-light">Lorem Ipsum</span> has been the
+                      industry's standard dummy
+                    </p>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="card w-40 border-0 rounded-5">
+              <div class="card-body d-flex">
+                <div class="text text-center px-2 px-md-4 border-end">
+                  <span>AUG</span>
+                  <h2>30</h2>
+                </div>
+                <div class="px-2 px-md-4 w-100">
+                  <span class="d-flex justify-content-between align-items-center">
+                    <span class="fs-7">LRM-IPSM</span>
+                    <span class="badge rounded-pill bg-primary p-2 px-md-3 fw-normal"><svg width="11" height="10"
+                        viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="5.84741" cy="5" r="5" fill="white" />
+                      </svg>
+                      <span class="ms-2 fs-7">Lorem</span></span>
+                  </span>
+                  <span class="mt-4 d-block">
+                    <h5>Lorem ipsum dolor sit, amet.</h5>
+                    <p class="fs-7">
+                      <span class="text-light">Lorem Ipsum</span> has been the
+                      industry's standard dummy
+                    </p>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="card w-40 border-0 rounded-5">
+              <div class="card-body d-flex">
+                <div class="text text-center px-2 px-md-4 border-end">
+                  <span>AUG</span>
+                  <h2>30</h2>
+                </div>
+                <div class="px-2 px-md-4 w-100">
+                  <span class="d-flex justify-content-between align-items-center">
+                    <span class="fs-7">LRM-IPSM</span>
+                    <span class="badge rounded-pill bg-primary p-2 px-md-3 fw-normal"><svg width="11" height="10"
+                        viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="5.84741" cy="5" r="5" fill="white" />
+                      </svg>
+                      <span class="ms-2 fs-7">Lorem</span></span>
+                  </span>
+                  <span class="mt-4 d-block">
+                    <h5>Lorem ipsum dolor sit, amet.</h5>
+                    <p class="fs-7">
+                      <span class="text-light">Lorem Ipsum</span> has been the
+                      industry's standard dummy
+                    </p>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="card w-40 border-0 rounded-5">
+              <div class="card-body d-flex">
+                <div class="text text-center px-2 px-md-4 border-end">
+                  <span>AUG</span>
+                  <h2>30</h2>
+                </div>
+                <div class="px-2 px-md-4 w-100">
+                  <span class="d-flex justify-content-between align-items-center">
+                    <span class="fs-7">LRM-IPSM</span>
+                    <span class="badge rounded-pill bg-primary p-2 px-md-3 fw-normal"><svg width="11" height="10"
+                        viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="5.84741" cy="5" r="5" fill="white" />
+                      </svg>
+                      <span class="ms-2 fs-7">Lorem</span></span>
+                  </span>
+                  <span class="mt-4 d-block">
+                    <h5>Lorem ipsum dolor sit, amet.</h5>
+                    <p class="fs-7">
+                      <span class="text-light">Lorem Ipsum</span> has been the
+                      industry's standard dummy
+                    </p>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- last notification & profile -->
+      <div class="row mb-5">
+        <div class="col-lg-7 px-3">
+          <h5>Last Notifications</h5>
+          <div>
+            <div class="card mb-4 rounded-5 border-0 py-3 px-4 cursor-pointer">
+              <div class="row">
+                <div class="col-lg-2 col-3">
+                  <div class="rounded-circle border-1 border-primary overflow-hidden"
+                    style="width: 50px; height: 50px; border: 2px solid #0000">
+                    <img src="assets/img/profile-notif-jeriko.png" class="img-fluid" alt="" />
+                  </div>
+                </div>
+                <div class="col-7">
+                  <h6>Jeriko Watuseke</h6>
+                  <span class="text-light fs-7">Mode an appointment</span>
+                </div>
+                <div class="col-3 text-end d-none d-lg-inline-block">
+                  <small class="text-light fs-7">15.06.22 at 10:50</small>
+                </div>
+              </div>
+            </div>
+            <div class="card mb-4 rounded-5 border-0 py-3 px-4 cursor-pointer">
+              <div class="row">
+                <div class="col-lg-2 col-3">
+                  <div class="rounded-circle border-1 border-primary overflow-hidden"
+                    style="width: 50px; height: 50px; border: 2px solid #0000">
+                    <img src="assets/img/profile-notif-jeriko.png" class="img-fluid" alt="" />
+                  </div>
+                </div>
+                <div class="col-7">
+                  <h6>Jeriko Watuseke</h6>
+                  <span class="text-light fs-7">Mode an appointment</span>
+                </div>
+                <div class="col-3 text-end d-none d-lg-inline-block">
+                  <small class="text-light fs-7">15.06.22 at 10:50</small>
+                </div>
+              </div>
+            </div>
+            <div class="card mb-4 rounded-5 border-0 py-3 px-4 cursor-pointer">
+              <div class="row">
+                <div class="col-lg-2 col-3">
+                  <div class="rounded-circle border-1 border-primary overflow-hidden"
+                    style="width: 50px; height: 50px; border: 2px solid #0000">
+                    <img src="assets/img/profile-notif-jeriko.png" class="img-fluid" alt="" />
+                  </div>
+                </div>
+                <div class="col-7">
+                  <h6>Jeriko Watuseke</h6>
+                  <span class="text-light fs-7">Mode an appointment</span>
+                </div>
+                <div class="col-3 text-end d-none d-lg-inline-block">
+                  <small class="text-light fs-7">15.06.22 at 10:50</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-end">
+              <a href="">View All</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 px-3">
+          <div class="card rounded-5 border-0 py-3 px-4 mt-4 mt-lg-0">
+            <div class="card-head mb-3 d-flex justify-content-between align-items-center">
+              <h6>Patient Info</h6>
+              <img src="assets/img/btn-close.svg" alt="" class="cursor-pointer" />
+            </div>
+            <div class="card-body p-0 m-0">
+              <div class="row">
+                <div class="col-4">
+                  <div class="rounded-circle w-10 h-10 overflow-hidden online">
+                    <img src="assets/img/profile-patient.png" class="img-fluid" alt="" />
+                  </div>
+                </div>
+                <div class="col-8">
+                  <div class="mb-3">
+                    <h6>Rifa Amelia</h6>
+                    <span class="text-light fs-7 d-inline-block">R00001</span>
+                  </div>
+                  <div class="mb-3">
+                    <span class="text-light fs-7 mb-2 d-inline-block">Age</span>
+                    <h6>51 years old</h6>
+                  </div>
+                  <div class="mb-3">
+                    <span class="text-light fs-7 mb-2 d-inline-block">Date of birth</span>
+                    <h6>13 Januari 1969</h6>
+                  </div>
+                  <div class="mb-3">
+                    <span class="text-light fs-7 mb-2 d-inline-block">Diagnosis</span>
+                    <h6>Diabetes</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- patient visit & patient review -->
+      <div class="row mb-5">
+        <div class="col-lg-7 px-3">
+          <div class="card border-0 py-3 px-4">
+            <h5>Patient Visit</h5>
+            <div class="overflow-auto">
+              <table class="table table-borderless">
+                <thead class="border-bottom">
+                  <tr class="mb-5">
+                    <th scope="col ">Name</th>
+                    <th scope="col ">Age</th>
+                    <th scope="col ">Nick Name</th>
+                    <th scope="col ">Employee</th>
+                  </tr>
+                </thead>
+                <tbody class="text-gray">
+                  <tr>
+                    <td class="d-flex align-items-center gap-3">
+                      <div class="w-28 h-28 rounded-circle overflow-hidden d-none d-md-inline-block">
+                        <img src="assets/img/profile-notif-alexandra.png" class="img-fluid" alt="" />
+                      </div>
+                      <span>Alexandra Gacoan</span>
+                    </td>
+                    <td>54</td>
+                    <td>Alex</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex align-items-center gap-3">
+                      <div class="w-28 h-28 rounded-circle overflow-hidden d-none d-md-inline-block">
+                        <img src="assets/img/profile-notif-alexandra.png" class="img-fluid" alt="" />
+                      </div>
+                      <span>Alexandra Gacoan</span>
+                    </td>
+                    <td>54</td>
+                    <td>Alex</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex align-items-center gap-3">
+                      <div class="w-28 h-28 rounded-circle overflow-hidden d-none d-md-inline-block">
+                        <img src="assets/img/profile-notif-alexandra.png" class="img-fluid" alt="" />
+                      </div>
+                      <span>Alexandra Gacoan</span>
+                    </td>
+                    <td>54</td>
+                    <td>Alex</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex align-items-center gap-3">
+                      <div class="w-28 h-28 rounded-circle overflow-hidden d-none d-md-inline-block">
+                        <img src="assets/img/profile-notif-alexandra.png" class="img-fluid" alt="" />
+                      </div>
+                      <span>Alexandra Gacoan</span>
+                    </td>
+                    <td>54</td>
+                    <td>Alex</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 px-3">
+          <div class="card border-0 py-3 px-4 mt-5 mt-lg-0">
+            <div class="d-flex justify-content-between align-items-center">
+              <h5>Review Patient</h5>
+              <a href="">View All</a>
+            </div>
+
+            <!-- review profile 1 -->
+            <div class="d-lg-flex justify-content-lg-between mt-4">
+              <div class="d-flex justify-content-between gap-4">
+                <div class="w-55 h-55 rounded-circle border-circle">
+                  <img src="assets/img/review-profile-1.svg" class="img-fluid" alt="" />
+                </div>
+                <div>
+                  <h6>Dr. Nadya Putri Suwandi</h6>
+                  <div>
+                    <span>
+                      <img src="assets/img/star-icon.svg" alt="" />
+                      <img src="assets/img/star-icon.svg" alt="" />
+                      <img src="assets/img/star-icon.svg" alt="" />
+                      <img src="assets/img/star-icon.svg" alt="" />
+                      <img src="assets/img/star-icon.svg" alt="" />
+                    </span>
+                    <span class="fs-7 text-light">140 Patients</span>
+                  </div>
+                </div>
+              </div>
+              <span class="text-light fs-7 d-none d-lg-inline-block">Gynecology</span>
+            </div>
+
+            <!-- review profile 2 -->
+            <div class="d-lg-flex justify-content-lg-between mt-4">
+              <div class="d-flex justify-content-between gap-4">
+                <div class="w-55 h-55 rounded-circle border-circle">
+                  <img src="assets/img/review-profile-2.svg" class="img-fluid" alt="" />
+                </div>
+                <div>
+                  <h6>Dr. Nadya Putri Suwandi</h6>
+                  <div>
+                    <span>
+                      <img src="assets/img/star-icon.svg" alt="" />
+                      <img src="assets/img/star-icon.svg" alt="" />
+                      <img src="assets/img/star-icon.svg" alt="" />
+                      <img src="assets/img/star-icon.svg" alt="" />
+                      <img src="assets/img/star-icon.svg" alt="" />
+                    </span>
+                    <span class="fs-7 text-light">140 Patients</span>
+                  </div>
+                </div>
+              </div>
+              <span class="text-light fs-7 d-none d-lg-inline-block">Gynecology</span>
+            </div>
+
+            <!-- review profile 3 -->
+            <div class="d-lg-flex justify-content-lg-between mt-4">
+              <div class="d-flex justify-content-between gap-4">
+                <div class="w-55 h-55 rounded-circle border-circle">
+                  <img src="assets/img/review-profile-3.svg" class="img-fluid" alt="" />
+                </div>
+                <div>
+                  <h6>Dr. Nadya Putri Suwandi</h6>
+                  <div>
+                    <span>
+                      <img src="./img/star-icon.svg" alt="" />
+                      <img src="./img/star-icon.svg" alt="" />
+                      <img src="./img/star-icon.svg" alt="" />
+                      <img src="./img/star-icon.svg" alt="" />
+                      <img src="./img/star-icon.svg" alt="" />
+                    </span>
+                    <span class="fs-7 text-light">140 Patients</span>
+                  </div>
+                </div>
+              </div>
+              <span class="text-light fs-7 d-none d-lg-inline-block">Gynecology</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- end main -->
+
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/index.js"></script>
+  <script>
+    // setup
+    const labels = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ];
+
+    const data = {
+      labels: labels,
+      datasets: [
+        {
+          label: "My First dataset",
+          backgroundColor: "rgb(255, 99, 132)",
+          borderColor: "rgb(255, 99, 132)",
+          data: [0, 20, 5, 120, 20],
+          tension: 0.4
+        },
+        {
+          label: "My First dataset",
+          backgroundColor: "rgb(86, 204, 242)",
+          borderColor: "rgb(86, 204, 242)",
+          data: [0, 50, 12, 90, 70, 30],
+          tension: 0.4,
+        },
+      ],
+    };
+
+    // config
+    const config = {
+      type: "line",
+      data: data,
+      options: {
+        plugins: {
+          legend: {
+            display: false,
+          }
+        },
+        scales: {
+          x: {
+            display: true,
+            title: {
+              display: true
+            }
+          },
+          y: {
+            display: true,
+            title: {
+              display: true,
+              text: 'Value'
+            },
+            suggestedMin: -10,
+            suggestedMax: 200
+          }
+        }
+      },
+    };
+
+    // render init block
+    const myChart = new Chart(document.getElementById("myChart"), config);
+
+    // setup
+    const labelsLine = ["M", "T", "W", "T", "F", "S"];
+
+    const dataLine = {
+      labels: labelsLine,
+      datasets: [
+        {
+          label: "My First dataset",
+          backgroundColor: "rgb(255, 98, 119)",
+          borderColor: "rgb(255, 99, 132)",
+          maxBarThickness: 15,
+          data: [60, 20, 10, 30, 40, 70],
+        },
+      ],
+    };
+
+    // config
+    const configLine = {
+      type: "bar",
+      data: dataLine,
+      options: {
+        scales: {
+          y: {
+            beginAtaZero: true,
+          }
+        },
+        plugins: {
+          legend: {
+            display: false,
+          }
+        }
+      },
+    };
+
+    // render init block
+    const myChartLine = new Chart(
+      document.getElementById("myChartLine"),
+      configLine
+    );
+  </script>
+  <app-footer></app-footer>
+  
+</body>
+
+
+</html>

@@ -1,0 +1,227 @@
+<app-header-dashboard></app-header-dashboard>
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="offcanvas-header">
+        <a class="navbar-brand" routerLink="/about">
+            <img src="assets/img/102-1026499_consultation-free-doctor-consultation-icon-clipart.svg" width="180"
+                alt="" />
+            <pre> Espace praticien</pre>
+        </a>
+        <button type="button" class="btn-close btn-close-custom text-reset" data-bs-dismiss="offcanvas"
+            aria-label="Close">
+
+        </button>
+    </div>
+    <div class="offcanvas-body">
+        <ul>
+
+            <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <img src="assets/img/my-profile.svg" alt="" class="" />
+                <span class="ms-2 fs-6 d-inline-block text-inf mt-1">My Profile</span>
+            </li>
+            <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <img src="assets/img/appointment.svg" alt="" class="" />
+                <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Appointment</span>
+            </li>
+
+
+            <li class="bg-danger px-4 py-2-5 rounded-3 cursor-pointer">
+                <a routerLink="/acueilDossier">
+                    <img src="assets/img/dos.svg" alt="" class="" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Anciens_Patients</span>
+                </a>
+
+            </li>
+            <li class="bg-danger px-4 py-2-5 rounded-3 cursor-pointer">
+                <a routerLink="/dossierNouveaux">
+                    <img src="assets/img/dos.svg" alt="" class="" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Nouveaux_Patients</span>
+                </a>
+
+            </li>
+            <a routerLink="/patient">
+                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <img src="assets/img/pattients.svg" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Patients</span>
+                </li>
+            </a>
+
+
+        </ul>
+
+    </div>
+</div>
+<main class="main-content">
+    <div class="py-4 px-4 px-md-5">
+        <!--  -->
+        <div class="row mb-5 px-2-5 gap-4">
+            <div
+                class="col-lg col-md-12 rounded-5 bg-danger py-2-5 px-4 d-flex justify-content-between align-items-center">
+                <img src="assets/img/total-patient.svg" alt="" />
+                <span class="text-end">
+                    <span class="text-inf">Total Patient</span>
+                    <h3 class="fw-bold mt-1">2,650</h3>
+                </span>
+            </div>
+
+            <div
+                class="col-lg col-md-12 rounded-5 bg-green py-2-5 px-4 d-flex justify-content-between align-items-center">
+                <img src="assets/img/total-doctors.svg" alt="" />
+                <span class="text-end">
+                    <span class="text-inf">Total Doctors</span>
+                    <h3 class="fw-bold mt-1">2,650</h3>
+                </span>
+            </div>
+
+            <div
+                class="col-lg col-md-12 rounded-5 bg-gray py-2-5 px-4 d-flex justify-content-between align-items-center">
+                <img src="assets/img/notification.svg" alt="" />
+                <span class="text-end">
+                    <span class="text-inf">Total Notif</span>
+                    <h3 class="fw-bold mt-1">2,650</h3>
+                </span>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</main>
+<div class="container">
+    <div class="card" style=" width: 1500px;left: 30px;  ">
+        <br />
+        <br />
+        <br />
+        <pre class="text-center" class="font">Liste des dossiers médicaux de nouveaux patients</pre>
+
+        <!-- Content here -->
+
+
+        <br />
+        <hr />
+       
+          
+                        
+                      
+        <p-table #dossierTable [value]="listDossier"  dataKey="numDossier" [rows]="5"
+            [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,25,50]" [paginator]="true"
+            currentPageReportTemplate="Affichage de {first} à {last} sur {totalRecords} éléments"
+            [globalFilterFields]="['numDossier','dateCreation','patient.cnss','patient.assurance']">
+            <ng-template pTemplate="caption">
+
+                <div class="flex">
+
+                    <button pButton label="Effacer" class="p-button-outlined" icon="pi pi-filter-slash"
+                        (click)="clear(dossierTable)"></button>
+
+
+
+                   
+
+                        
+
+                        <input pInputText type="text" (input)="dossierTable.filterGlobal(getEventValue($event), 'contains')" placeholder="Search keyword" class="p-input-icon-left p-ml-auto" />
+
+                    
+
+                </div>
+
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="numDossier">Num_Dossier <p-sortIcon field="numDossier"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="dateCreation">Date_Creation <p-sortIcon field="dateCreation"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="patient.cnss">Nom_Patient <p-sortIcon field="patient.cnss"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="patient.assurance">Prenom_Patient <p-sortIcon field="patient.assurance">
+                        </p-sortIcon>
+                    </th>
+                    
+                    <th>
+                         Envoyer_Demande
+                    </th>
+                    
+                    
+                </tr>
+                <tr>
+                    <th>
+                        <p-columnFilter  type="text" field="numDossier" matchMode="contains"  [matchModeOptions]="matchModeOptions" ></p-columnFilter>
+                    </th>
+                    <th>
+                        <p-columnFilter type="text" field="dateCreation" matchMode="contains"  [matchModeOptions]="matchModeOptions" ></p-columnFilter>
+                    </th>
+                    <th>
+                      <p-columnFilter type="text" field="patient.cnss" matchMode="contains"  [matchModeOptions]="matchModeOptions" ></p-columnFilter>
+                  </th>
+                  <th>
+                    <p-columnFilter type="text" field="patient.assurance"  matchMode="contains" [matchModeOptions]="matchModeOptions" ></p-columnFilter>
+                </th>
+              
+                <th>
+              </th>
+    
+    
+                </tr>
+             
+            </ng-template>
+
+            <ng-template pTemplate="body" let-dossier let-rowIndex="rowIndex">
+
+                <tr [pSelectableRow]="dossier" [pSelectableRowIndex]="rowIndex">
+                    <td>{{dossier.numDossier}}</td>
+                    <td>{{dossier.dateCreation | date: "longDate"}}</td>
+                    <td>{{dossier.patient.cnss}}</td>
+                    <td>{{dossier.patient.assurance}}</td>
+                    <td><button pButton type="button" class="p-button-raised p-button-outlined p-button-rounded p-button-warning" icon="fa fa-share-square-o"    label="Envoyer"></button></td>
+
+                    
+
+                    
+
+                
+
+                </tr>
+
+
+            </ng-template>
+
+        </p-table>
+    </div>
+
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<app-footer></app-footer>

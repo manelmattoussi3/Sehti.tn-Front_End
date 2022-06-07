@@ -1,0 +1,65 @@
+<body>
+    <br/>
+  <div class="container">
+    <div class="card">
+      <app-header-dashboard></app-header-dashboard>
+      <app-menu-dashboard></app-menu-dashboard>
+      <br/>
+      <h2 class="text-center" >Liste des patients</h2>
+      <div class="card-body">
+        <!-- Content here -->
+        
+        <br />
+        <table class="table table-striped">
+          <thead>
+            <th >Id_Patient</th>
+            <th >CNSS</th>
+            <th >Asurance</th>
+            <th >Details</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let p of listPatient">
+              <td>{{p.idPatient}}</td>
+              <td>{{p.cnss}}</td>
+              <td>{{p.assurance}}</td>
+              <td><a [routerLink]="['detail',p.idPatient]">Details</a></td>
+              
+              
+            </tr>
+          </tbody>
+  
+  
+        </table>
+      </div>
+    </div>
+   
+  </div>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  
+  
+  <footer>
+  <app-footer></app-footer>
+  </footer>

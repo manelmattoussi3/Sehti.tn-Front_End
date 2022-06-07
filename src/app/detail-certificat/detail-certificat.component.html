@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register | Sehti</title>
+    <!-- <link rel="stylesheet" href="assets/css/index.css"/> -->
+  </head>
+  <body>
+  
+
+    <!-- main -->
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 d-flex align-items-center h-full mt-5 mt-lg-0">
+            <div class="text-center mx-lg-0 mx-lg-5">
+              <img class="mb-5 img-fluid" src="assets/img/illus-home4.svg" alt="" height="600" width="600"/>
+            
+            </div>
+          </div>
+          <div class="col-lg-6 d-flex align-items-center p-0 mt-5 mt-lg-0">
+            <div class="border-lg-start border-1 mb-4 mb-lg-0 p-lg-5 text-center">
+                <a class="navbar-brand" routerLink="/consultation">
+                    <img src="assets/img/logo.png" width="160" alt="" />
+                  </a>
+                <hr/>
+              
+                <h2>
+                    Détails de
+                    <span class="text-primary my-2 d-inline-block">Certificat</span>
+                  </h2>
+                <div *ngIf="certificat">
+                
+                  <div class="card border-primary mb-3" style="max-width: 100rem;">
+                    
+                    
+                    <div class="card-body text-light">
+                      <h5 class="card-title">Id_Certificat: {{certificat.idCertificat}}</h5>
+                      
+                      <h5 class="card-title">Date_Certificat: {{certificat.dateCertificat}}</h5>
+                     
+                      <h5 class="card-title">Contenu: {{certificat.contenu}}</h5>
+                      
+                      
+                      
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- end main -->
+
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
+

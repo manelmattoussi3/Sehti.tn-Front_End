@@ -1,0 +1,252 @@
+<body>
+    <br />
+
+
+
+    <nav class="navbar navbar-expand-lg bg-white border-bottom border-1 navbar-light px-4 nav-dashboard">
+        <div class="container">
+            <button class="btn btn-close-custom btn-primary" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                btn
+            </button>
+
+            <!-- search input -->
+            <div>
+                <div class="d-none d-lg-block form-control rounded-pill">
+
+                    <a class="navbar-brand" routerLink="/about">
+                        <img src="assets/img/logo.png" width="160" alt="" />
+                    </a>
+                    <button type="button" class="btn-close btn-close-custom text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+
+                </div>
+            </div>
+            <!-- end search input -->
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navbarNav">
+                <ul class="navbar-nav gap-lg-4 text-center py-4 py-lg-0 d-flex align-items-center">
+                    <li class="nav-item notification-bell-active">
+                        <img src="assets/img/notification-icon.svg" alt="" />
+                    </li>
+                    <li class="nav-item d-flex align-items-center cursor-pointe">
+                        <div class="btn-group d-flex flex-column">
+                            <button type="button" class="btn d-flex align-items-center dropdown-toggle"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="profile-img overflow-hidden">
+                                    <img src="assets/img/profile-avatar.png" class="img-fluid" alt="" />
+                                </div>
+                                <span class="fw-medium ms-3">Natasya</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <button class="dropdown-item" type="button">Action</button>
+                                </li>
+                                <li>
+                                    <button class="dropdown-item" type="button">
+                                        Another action
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="dropdown-item" type="button">
+                                        Something else here
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="offcanvas-header">
+        <a class="navbar-brand" routerLink="/professional">
+            <img src="assets/img/téléchargement.png" width="200" alt="" />
+        </a>
+        <button type="button" class="btn-close btn-close-custom text-reset" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul>
+            <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <a routerLink="/dossier">
+                    <img src="assets/img/png-clipart-computer-icons-medicine-medical-record-health-health-text-medical.svg"
+                        alt="" class="" />
+                    <span class="ms-2 fs-6 d-inline-block mt-1">Resumé_Dossier</span>
+                </a>
+            </li>
+            <a routerLink="/ficheConsultation">
+                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <img src="assets/img/medical_sheet_icon_142608.svg" alt="" class="" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Fiche_Consultation</span>
+                </li>
+            </a>
+            <a routerLink="/analyse">
+                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <img src="assets/img/212842.svg" alt="" class="" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Analyses</span>
+                </li>
+            </a>
+            <a routerLink="/radio">
+                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <img src="assets/img/2258505-icone-de-ligne-pour-radiologie-vectoriel.svg" alt="" class="" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Examens radiologiques</span>
+                </li>
+            </a>
+            <a routerLink="/ordonance">
+                <li class="bg-danger px-4 py-2-5 rounded-3 cursor-pointer">
+
+                    <img src="assets/img/3410626.svg" alt="" class="" width="40" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Ordonance</span>
+           </li>
+                </a>
+
+            
+            <a routerLink="/medicament">
+                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <img src="assets/img/images.svg" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Medicaments</span>
+                </li>
+            </a>
+            <a routerLink="/prescription">
+                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <img src="assets/img/prescription-icon-18.svg" alt="" class="" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Prescriptions</span>
+                </li>
+            </a>
+            <a routerLink="/consultation">
+                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <img src="assets/img/102-1026499_consultation-free-doctor-consultation-icon-clipart.svg" alt=""
+                        class="" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Consultation</span>
+                </li>
+            </a>
+            <a routerLink="/lettre">
+                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <img src="assets/img/images (1).png" alt="" class="" width="42" height="42" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Lettre Confidentielle</span>
+                </li>
+            </a>
+        </ul>
+
+    </div>
+</div>
+
+
+    <br />
+    <div class="container">
+        <div class="card" style=" top: 10px; left: 200px ">
+            <br />
+            <h2 class="text-center">✵ Liste des ordonances ✵</h2>
+            <div class="card-body">
+                <!-- Content here -->
+
+
+                <br />
+                <!-- <table  class="table table-striped" style=" top: 280px; left: 100px" >
+          <thead>
+            <th >idFiche</th>
+            <th >observation</th>
+            <th >Date_Creation</th>
+            
+            
+          </thead>
+          <tbody>
+            <tr *ngFor="let f of listFiches">
+              <td>{{f.idFiche}}</td>
+              <td>{{f.observation}}</td>
+              <td>{{f.dateCreation}}</td>
+            
+              
+              
+            </tr>
+          </tbody>
+  
+  
+        </table> -->
+
+                <div class="menu-container" class="center">
+                    <div class="card-body" *ngFor="let o of ListOrdonances">
+                        <div class="menu-toggler" (click)="toggleMenu()">
+                            <pre>✵ Ordonance N°:{{o.numOrdonance}}                                                                                                                          {{o.dateOrdonance}}</pre>
+
+                        </div>
+
+                        <div class="menu" *ngIf="isMenuOpened">
+                            <!-- <div class="menu-item">Id idFiche </div>
+                        <div class="menu-item">Observation </div>
+                        <div class="menu-item">Date_Creation </div> -->
+                            <div class="card-body">
+                                <hr />
+                                <pre>&#9788; Etat : {{o.etat}} </pre>
+                                <hr />
+                                <pre>&#9788; Nouveaute: {{o.nouveaute}} </pre>
+                                <hr />
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <footer>
+
+            <app-footer></app-footer>
+        </footer>
