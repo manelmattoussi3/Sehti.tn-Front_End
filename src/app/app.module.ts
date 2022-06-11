@@ -47,6 +47,10 @@ import { TagModule } from 'primeng/tag';
 import { DossierLettreComponent } from './dossier-lettre/dossier-lettre.component';
 import { MedecinFamilleComponent } from './medecin-famille/medecin-famille.component';
 import { PatientDossierComponent } from './patient-dossier/patient-dossier.component';
+import { PatientOperationComponent } from './patient-operation/patient-operation.component';
+import { AnalysePatientComponent } from './analyse-patient/analyse-patient.component';
+import { PatientRadioComponent } from './patient-radio/patient-radio.component';
+import { HistoriqueRadioComponent } from './historique-radio/historique-radio.component';
 
 
 @NgModule({
@@ -82,6 +86,10 @@ import { PatientDossierComponent } from './patient-dossier/patient-dossier.compo
     DossierLettreComponent,
     MedecinFamilleComponent,
     PatientDossierComponent,
+    PatientOperationComponent,
+    AnalysePatientComponent,
+    PatientRadioComponent,
+    HistoriqueRadioComponent,
     
   ],
   imports: [

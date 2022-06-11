@@ -11,19 +11,19 @@ import { AnayseService } from '../service/analyse.service';
   styleUrls: ['./analyse.component.css']
 })
 export class AnalyseComponent implements OnInit {
-analyse: OperationAnalyse;
-ListAnalyses :OperationAnalyse[];
-isMenuOpened: boolean=false;
-matchModeOptions: SelectItem[];
+  analyse: OperationAnalyse;
+  ListAnalyses: OperationAnalyse[];
+  
+  matchModeOptions: SelectItem[];
   loading: boolean = true;
-  selectedAnalyse:OperationAnalyse;
-  listdemandes: DemandeAcce[];
+
+ 
   display: boolean = false;
-  constructor(private service:AnayseService) { }
+  constructor(private service: AnayseService) { }
 
   ngOnInit(): void {
     this.getAllAnalyses();
-    this.toggleMenu();
+ this.analyse=new OperationAnalyse();
     this.matchModeOptions = [
       { label: 'Commence avec', value: FilterMatchMode.STARTS_WITH },
       { label: 'Contient', value: FilterMatchMode.CONTAINS },
@@ -34,24 +34,17 @@ matchModeOptions: SelectItem[];
 
     ];
   }
-getAllAnalyses(){
-   this.service.getAnalyse().subscribe((data :OperationAnalyse[])=>this.ListAnalyses=data);
-}
-toggleMenu(){
-  this.isMenuOpened=!this.isMenuOpened;
-}
-onRowSelect(event :any) {
-  this.listdemandes=event.data.demandesacces;
-      this.display = true;
-      console.log(event);
-  
-    }
-    getEventValue($event:any) :string {
-      return $event.target.value;
-    } 
-    clear(table: Table) {
-  
-      table.clear();
-  
-    }
+  getAllAnalyses() {
+    this.service.getAnalyse().subscribe((data: OperationAnalyse[]) => {console.log(data),this.ListAnalyses=data},error => console.log(error));
+    
+  }
+
+  getEventValue($event: any): string {
+    return $event.target.value;
+  }
+  clear(table: Table) {
+
+    table.clear();
+
+  }
 }

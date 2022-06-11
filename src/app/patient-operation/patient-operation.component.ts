@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { FilterMatchMode, SelectItem } from 'primeng/api';
 import { Table } from 'primeng/table';
-import { OperationRadio } from '../model/OperationRadio';
-import { RadioService } from '../service/radio.service';
+import { patient } from '../model/patient';
+import { PatientService } from '../service/patient.service';
 
 @Component({
-  selector: 'app-radio',
-  templateUrl: './radio.component.html',
-  styleUrls: ['./radio.component.css']
+  selector: 'app-patient-operation',
+  templateUrl: './patient-operation.component.html',
+  styleUrls: ['./patient-operation.component.css']
 })
-export class RadioComponent implements OnInit {
-radio:OperationRadio;
-ListRadios :OperationRadio[];
+export class PatientOperationComponent implements OnInit {
+patient:patient;
+ListPatients:patient[];
 matchModeOptions: SelectItem[];
-  constructor(private service:RadioService) { }
+  constructor(private service:PatientService) { }
 
   ngOnInit(): void {
-    this.getAllOperationRadio();
+    this.getAllPatients();
     this.matchModeOptions = [
       { label: 'Commence avec', value: FilterMatchMode.STARTS_WITH },
       { label: 'Contient', value: FilterMatchMode.CONTAINS },
@@ -27,8 +27,8 @@ matchModeOptions: SelectItem[];
 
     ];
   }
-  getAllOperationRadio(){
-    this.service.getAllRadio().subscribe((data:OperationRadio[])=>{console.log(data),this.ListRadios =data},error => console.log(error));
+getAllPatients(){
+  this.service.getAllPatient().subscribe((data:patient[])=>{console.log(data),this.ListPatients=data},error=>console.log(error));
 }
 getEventValue($event: any): string {
   return $event.target.value;

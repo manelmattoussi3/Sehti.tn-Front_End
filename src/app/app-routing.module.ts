@@ -27,6 +27,10 @@ import { DossierNouveauPatientComponent } from './dossier-nouveau-patient/dossie
 import { DossierLettreComponent } from './dossier-lettre/dossier-lettre.component';
 import { MedecinFamilleComponent } from './medecin-famille/medecin-famille.component';
 import { PatientDossierComponent } from './patient-dossier/patient-dossier.component';
+import { PatientOperationComponent } from './patient-operation/patient-operation.component';
+import { AnalysePatientComponent } from './analyse-patient/analyse-patient.component';
+import { PatientRadioComponent } from './patient-radio/patient-radio.component';
+import { HistoriqueRadioComponent } from './historique-radio/historique-radio.component';
 
 const ROUTES: Routes = [
   { path: '', redirectTo: '/about', pathMatch: 'full' },
@@ -59,8 +63,12 @@ const ROUTES: Routes = [
   { path: 'acueilDossier/detaild/:idDemande/detailPatient/:idPatient', component: PatientDossierComponent},
   { path: 'dossierNouveaux', component:DossierNouveauPatientComponent},
   { path: 'medecinFamille', component:MedecinFamilleComponent},
+  { path: 'patientOperation', component:PatientOperationComponent},
+  { path: 'patientRadio', component:PatientRadioComponent},
+  { path: 'patientOperation/detail/:idPatient', component:AnalysePatientComponent},
+  { path: 'patientRadio/detailRadio/:idPatient', component:HistoriqueRadioComponent},
   { path: '**', component: PageNotFoundComponent }
-  
+
 ]
 @NgModule({
   declarations: [],

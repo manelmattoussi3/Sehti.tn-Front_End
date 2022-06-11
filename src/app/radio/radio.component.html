@@ -1,202 +1,242 @@
-<body>
-    <br />
-
-
-
-  <app-header-dashboard></app-header-dashboard>
-
-    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+<app-header-dashboard></app-header-dashboard>
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
     id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
     <div class="offcanvas-header">
-        <a class="navbar-brand" routerLink="/professional">
-            <img src="assets/img/téléchargement.png" width="200" alt="" />
+        <a class="navbar-brand" routerLink="/about">
+            <img src="assets/img/2258505-icone-de-ligne-pour-radiologie-vectoriel.svg" width="180" alt="" />
+            <br />
+            <br />
+            <pre> Espace radiologue</pre>
         </a>
         <button type="button" class="btn-close btn-close-custom text-reset" data-bs-dismiss="offcanvas"
-            aria-label="Close"></button>
+            aria-label="Close">
+
+        </button>
     </div>
     <div class="offcanvas-body">
         <ul>
+
             <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
-                <a routerLink="/dossier">
-                    <img src="assets/img/png-clipart-computer-icons-medicine-medical-record-health-health-text-medical.svg"
-                        alt="" class="" />
-                    <span class="ms-2 fs-6 d-inline-block mt-1">Resumé_Dossier</span>
-                </a>
+                <img src="assets/img/my-profile.svg" alt="" class="" />
+                <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Mon Profile</span>
             </li>
-            <a routerLink="/ficheConsultation">
-                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
-                    <img src="assets/img/medical_sheet_icon_142608.svg" alt="" class="" />
-                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Fiche_Consultation</span>
-                </li>
-            </a>
-            <a routerLink="/analyse">
-                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
-                    <img src="assets/img/212842.svg" alt="" class="" />
-                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Analyses</span>
-                </li>
-            </a>
+            <!-- <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <img src="assets/img/appointment.svg" alt="" class="" />
+                <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Appointment</span>
+            </li> -->
+
+
+
+            <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <a routerLink="/patientRadio">
+                    <img src="assets/img/icone_historique.svg" alt="" class="" width="25" height="25"/>
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Historiques_Radios</span>
+                </a>
+
+            </li>
             <a routerLink="/radio">
                 <li class="bg-danger px-4 py-2-5 rounded-3 cursor-pointer">
-                    <img src="assets/img/2258505-icone-de-ligne-pour-radiologie-vectoriel.svg" alt="" class="" />
-                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Examens radiologiques</span>
+                    <img src="assets/img/2258505-icone-de-ligne-pour-radiologie-vectoriel.svg" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Toutes_Radios</span>
                 </li>
             </a>
-            <a routerLink="/ordonance">
-                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
 
-                    <img src="assets/img/3410626.svg" alt="" class="" width="40" />
-                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Ordonance</span>
-           </li>
-                </a>
 
-            
-            <a routerLink="/medicament">
-                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
-                    <img src="assets/img/images.svg" />
-                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Medicaments</span>
-                </li>
-            </a>
-            <a routerLink="/prescription">
-                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
-                    <img src="assets/img/prescription-icon-18.svg" alt="" class="" />
-                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Prescriptions</span>
-                </li>
-            </a>
-            <a routerLink="/consultation">
-                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
-                    <img src="assets/img/102-1026499_consultation-free-doctor-consultation-icon-clipart.svg" alt=""
-                        class="" />
-                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Consultation</span>
-                </li>
-            </a>
-            <a routerLink="/lettre">
-                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
-                    <img src="assets/img/images (1).png" alt="" class="" width="42" height="42" />
-                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Lettre Confidentielle</span>
-                </li>
-            </a>
         </ul>
 
     </div>
 </div>
+<br />
+<br />
+<div class="container">
+    <div class="card" style="left: 90px;width: 1450px; ">
+        <br />
+        <br />
+        <br />
+        <p class="text-center" class="font">Liste des radios</p>
+
+        <!-- Content here -->
 
 
-    <br />
-    <div class="container">
-        <div class="card" style=" top: 10px; left: 200px ">
-            <br />
-            <h2 class="text-center">✵ Liste des examens radiologiques ✵</h2>
-            <div class="card-body">
-                <!-- Content here -->
+        <br />
+        <hr />
+
+        <p-table #radioTable [scrollable]="true" [value]="ListRadios" dataKey="id" [rows]="5"
+            [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,25,50]" [paginator]="true"
+            currentPageReportTemplate="Affichage de {first} à {last} sur {totalRecords} éléments"
+            [globalFilterFields]="['id','codeRadio','observation','dateOperation','motif','resultat','etablissement','type','etat']">
+            <ng-template pTemplate="caption">
+
+                <div class="flex">
+
+                    <button pButton label="Effacer" class="p-button-outlined" icon="pi pi-filter-slash"
+                        (click)="clear(radioTable)"></button>
 
 
-                <br />
-                <!-- <table  class="table table-striped" style=" top: 280px; left: 100px" >
-          <thead>
-            <th >idFiche</th>
-            <th >observation</th>
-            <th >Date_Creation</th>
-            
-            
-          </thead>
-          <tbody>
-            <tr *ngFor="let f of listFiches">
-              <td>{{f.idFiche}}</td>
-              <td>{{f.observation}}</td>
-              <td>{{f.dateCreation}}</td>
-            
-              
-              
-            </tr>
-          </tbody>
-  
-  
-        </table> -->
 
-                <div class="menu-container" class="center">
-                    <div class="card-body" *ngFor="let r of ListRadio">
-                        <div class="menu-toggler" (click)="toggleMenu()">
-                            <pre>✵ Examen_Radio N°:{{r.idOperation}}</pre>
 
-                        </div>
 
-                        <div class="menu" *ngIf="isMenuOpened">
-                            <!-- <div class="menu-item">Id idFiche </div>
-                        <div class="menu-item">Observation </div>
-                        <div class="menu-item">Date_Creation </div> -->
-                            <div class="card-body">
-                                <hr />
-                                <pre>&#9788; Observation : {{r.observation}} </pre>
-                                <hr />
-                                <pre>&#9788; Date_Operation : {{r.dateOperation}} </pre>
-                                <hr />
-                                <pre>&#9788; Motif : {{r.motif}} </pre>
-                                <hr />
-                                <pre>&#9788; Resultat : {{r.resultat}} </pre>
-                                <hr />
-                                <pre>&#9788; Etablissement : {{r.etablissement}} </pre>
-                                <hr />
-                                <pre>&#9788; Type d'examen radio : {{r.type}} </pre>
-                                <hr />
-                                
-                                
-                                
-                            </div>
-                        </div>
-                    </div>
+
+
+                    <input pInputText type="text" class="pi pi-search"
+                        (input)="radioTable.filterGlobal(getEventValue($event), 'contains')" placeholder="Rechercher"
+                        class="p-input-icon-left p-ml-auto" />
+
+
+
                 </div>
-            </div>
-        </div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
 
-        <footer>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th class="td" style="min-width:200px" pSortableColumn="codeRadio">Code_Radio <p-sortIcon field="codeRadio"></p-sortIcon>
+                    </th>
+                    <th class="td" style="min-width:200px" pSortableColumn="observation">Observation <p-sortIcon field="observation"></p-sortIcon>
+                    </th>
+                    <th class="td" style="min-width:200px" pSortableColumn="dateOperation">Date_Operation <p-sortIcon field="dateOperation"></p-sortIcon>
+                    </th>
+                   
+                    <th class="td" style="min-width:200px" pSortableColumn="type">Type <p-sortIcon field="type"> </p-sortIcon></th>
+                    <th class="td" style="min-width:200px" pSortableColumn="motif">Motif <p-sortIcon field="motif"> </p-sortIcon> </th>
+                    <th class="td" style="min-width:200px" pSortableColumn="resultat">Resultat<p-sortIcon field="resultat"> </p-sortIcon> </th>
+                    <th class="td" style="min-width:200px" pSortableColumn="etablissement">Etablissement <p-sortIcon field="etablissement"> </p-sortIcon></th>
+                    <th class="td" style="min-width:200px" pSortableColumn="etat">Etat_Radio <p-sortIcon field="etat"> </p-sortIcon></th>
 
-            <app-footer></app-footer>
-        </footer>
+                </tr>
+                <tr>
+                    <th>
+                        <p-columnFilter style="min-width:200px" type="text" field="codeRadio" matchMode="contains" [matchModeOptions]="matchModeOptions"></p-columnFilter> </th>
+                    <th>
+                        <p-columnFilter style="min-width:200px" type="text" field="observation" matchMode="contains"
+                            [matchModeOptions]="matchModeOptions"></p-columnFilter>
+                    </th>
+                    <th>
+                        <p-columnFilter style="min-width:200px" type="text" field="dateOperation" matchMode="contains"
+                            [matchModeOptions]="matchModeOptions"></p-columnFilter>
+                    </th>
+               
+                    <th>
+                        <p-columnFilter style="min-width:200px" type="text" field="type" matchMode="contains"
+                            [matchModeOptions]="matchModeOptions"></p-columnFilter>
+                    </th>
+                    <th>
+                        <p-columnFilter style="min-width:200px" type="text" field="motif" matchMode="contains"
+                            [matchModeOptions]="matchModeOptions"></p-columnFilter>
+                    </th>
+                    <th>
+                        <p-columnFilter style="min-width:200px" type="text" field="resultat" matchMode="contains"
+                            [matchModeOptions]="matchModeOptions"></p-columnFilter>
+                    </th>
+                    <th>
+                        <p-columnFilter style="min-width:200px" type="text" field="etablissement" matchMode="contains"
+                            [matchModeOptions]="matchModeOptions"></p-columnFilter>
+                    </th>
+                    <th>
+                        <p-columnFilter style="min-width:200px" type="text" field="etat" matchMode="contains"
+                            [matchModeOptions]="matchModeOptions"></p-columnFilter>
+                    </th>
+
+
+                </tr>
+
+            </ng-template>
+
+            <ng-template pTemplate="body" let-radio>
+
+                <tr>
+                    <td class="td" style="min-width:200px">{{radio.codeRadio}}</td>
+                    <td class="td" style="min-width:200px"> {{radio.observation }}</td>
+                    <td class="td" style="min-width:200px">{{radio.dateOperation| date: "longDate"}}</td>
+                   
+                    
+                    <div  class="tag">
+                    <p-tag *ngIf="radio.type=='TOMOGRAPHIE' " styleClass="mr-2" severity="warning">
+                                    
+                        <td class="td" style="min-width:200px">{{radio.type}}</td>
+                    </p-tag>
+                </div>
+                <div  class="tag">
+                    <p-tag *ngIf="radio.type=='ECHOGRAPHIE_SCINTIGRAPHIE' " styleClass="mr-2" severity="danger">
+                                    
+                        <td class="td" style="min-width:200px">{{radio.type}}</td>
+                    </p-tag>
+                </div>
+                <div  class="tag">
+                    <p-tag *ngIf="radio.type=='ECHOGRAPHIE_DOPPLER' " styleClass="mr-2" severity="success">
+                                    
+                        <td class="td" style="min-width:200px">{{radio.type}}</td>
+                    </p-tag>
+                </div>
+                <div  class="tag">
+                    <p-tag *ngIf="radio.type=='SCANNERX' " styleClass="mr-2" severity="info">
+                                    
+                        <td class="td" style="min-width:200px">{{radio.type}}</td>
+                    </p-tag>
+                </div>
+                <div  class="tag">
+                    <p-tag *ngIf="radio.type=='TEP' " styleClass="mr-2" severity="warning">
+                                    
+                        <td class="td" style="min-width:200px">{{radio.type}}</td>
+                    </p-tag>
+                </div>
+                <div  class="tag">
+                    <p-tag *ngIf="radio.type=='IRM' " styleClass="mr-2" severity="danger">
+                                    
+                        <td class="td" style="min-width:200px">{{radio.type}}</td>
+                    </p-tag>
+                </div>
+                    <td class="td" style="min-width:200px">{{radio.motif}}</td>
+                    <td class="td" style="min-width:200px">{{radio.resultat}}</td>
+                    <td class="td" style="min-width:200px">{{radio.etablissement}}</td>
+                    <div  class="tag">
+                    <p-tag *ngIf="radio.etat=='Terminé' " styleClass="mr-2" severity="success">
+                                    
+                        <td class="td" style="min-width:200px">{{radio.etat}}</td>
+                    </p-tag>
+                </div>
+                <div  class="tag">
+                    <p-tag *ngIf="radio.etat=='EnCours' " styleClass="mr-2" severity="warning">
+                                    
+                        <td class="td" style="min-width:200px" >{{radio.etat}}</td>
+                    </p-tag>
+                </div>
+
+
+
+
+
+
+                </tr>
+
+
+            </ng-template>
+
+        </p-table>
+    </div>
+
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<app-footer></app-footer>

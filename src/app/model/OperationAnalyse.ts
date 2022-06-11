@@ -1,5 +1,9 @@
 export enum ExamenAnalyse {
-    SANG,URINE,BACTERIOLOGIQUE,SEPARASITOLOGIQUE
+  SANG,URINE,BACTERIOLOGIQUE,SEPARASITOLOGIQUE
+ 
+  }
+  export enum etatAnalyse {
+    Terminé,EnCours 
   }
 export class OperationAnalyse {
     idOperation: string;
@@ -10,4 +14,5 @@ export class OperationAnalyse {
     resultat: string;
     etablissement: string;
     type: ExamenAnalyse;
+    etat: etatAnalyse;
 }

@@ -1,0 +1,38 @@
+pre{
+    color: #1150C6;
+  }
+  .text-inf{
+    
+    color: #1150C6;
+  }
+  .font{
+  font-size: 28px;
+  text-align: center;
+  color: #8304CC;
+  text-decoration: #8304CC underline;
+  }
+  .p-input-icon-left,
+   .p-input-icon-right {
+       float: right;
+   }
+   span.p-input-icon-left input[type="text"]{
+       padding: 0px 25px;
+   }
+   .center {
+    position: relative;
+  
+    left: 6%;
+    top: 1.5em;
+    
+  }
+  .td{
+    text-align: center;
+    top: 1.5em;
+  }
+  .tag {
+    position: relative;
+  
+    right: 3%;
+    top: 1.5em;
+    
+  }

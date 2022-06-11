@@ -25,3 +25,14 @@ text-decoration: #1b74e4 underline;
   top: 1.5em;
   
 }
+.td{
+  text-align: center;
+  top: 1.5em;
+}
+.tag {
+  position: relative;
+
+  right: 3%;
+  top: 1.5em;
+  
+}

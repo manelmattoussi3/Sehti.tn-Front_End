@@ -1,273 +1,11 @@
-<!-- <body>
-    <br />
-
-
-
-    <nav class="navbar navbar-expand-lg bg-white border-bottom border-1 navbar-light px-4 nav-dashboard">
-        <div class="container">
-            <button class="btn btn-close-custom btn-primary" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
-                btn
-            </button>
-
-            <!-- search input -->
-            <!-- <div>
-                <div class="d-none d-lg-block form-control rounded-pill">
-
-                    <a class="navbar-brand" routerLink="/about">
-                        <img src="assets/img/logo.png" width="160" alt="" />
-                    </a>
-                    <button type="button" class="btn-close btn-close-custom text-reset" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-
-                </div>
-            </div> -->
-            <!-- end search input -->
-
-            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navbarNav">
-                <ul class="navbar-nav gap-lg-4 text-center py-4 py-lg-0 d-flex align-items-center">
-                    <li class="nav-item notification-bell-active">
-                        <img src="assets/img/notification-icon.svg" alt="" />
-                    </li>
-                    <li class="nav-item d-flex align-items-center cursor-pointe">
-                        <div class="btn-group d-flex flex-column">
-                            <button type="button" class="btn d-flex align-items-center dropdown-toggle"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <div class="profile-img overflow-hidden">
-                                    <img src="assets/img/profile-avatar.png" class="img-fluid" alt="" />
-                                </div>
-                                <span class="fw-medium ms-3">Natasya</span>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li>
-                                    <button class="dropdown-item" type="button">Action</button>
-                                </li>
-                                <li>
-                                    <button class="dropdown-item" type="button">
-                                        Another action
-                                    </button>
-                                </li>
-                                <li>
-                                    <button class="dropdown-item" type="button">
-                                        Something else here
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
-        id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-        <div class="offcanvas-header">
-            <a class="navbar-brand" routerLink="/professional">
-                <img src="assets/img/téléchargement.png" width="200" alt="" />
-            </a>
-            <button type="button" class="btn-close btn-close-custom text-reset" data-bs-dismiss="offcanvas"
-                aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <ul>
-                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
-                    <a routerLink="/dossier">
-                        <img src="assets/img/png-clipart-computer-icons-medicine-medical-record-health-health-text-medical.svg"
-                            alt="" class="" />
-                        <span class="ms-2 fs-6 d-inline-block mt-1">Resumé_Dossier</span>
-                    </a>
-                </li>
-                <a routerLink="/ficheConsultation">
-                    <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
-                        <img src="assets/img/medical_sheet_icon_142608.svg" alt="" class="" />
-                        <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Fiche_Consultation</span>
-                    </li>
-                </a>
-                <a routerLink="/analyse">
-                    <li class="bg-danger px-4 py-2-5 rounded-3 cursor-pointer">
-                        <img src="assets/img/212842.svg" alt="" class="" />
-                        <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Analyses</span>
-                    </li>
-                </a>
-                <a routerLink="/radio">
-                    <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
-                        <img src="assets/img/2258505-icone-de-ligne-pour-radiologie-vectoriel.svg" alt="" class="" />
-                        <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Examens radiologiques</span>
-                    </li>
-                </a>
-                <a routerLink="/ordonance">
-                    <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
-
-                        <img src="assets/img/3410626.svg" alt="" class="" width="40" />
-                        <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Ordonance</span>
-               </li>
-                    </a>
-
-                
-                <a routerLink="/medicament">
-                    <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
-                        <img src="assets/img/images.svg" />
-                        <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Medicaments</span>
-                    </li>
-                </a>
-                <a routerLink="/prescription">
-                    <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
-                        <img src="assets/img/prescription-icon-18.svg" alt="" class="" />
-                        <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Prescriptions</span>
-                    </li>
-                </a>
-                <a routerLink="/consultation">
-                    <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
-                        <img src="assets/img/102-1026499_consultation-free-doctor-consultation-icon-clipart.svg" alt=""
-                            class="" />
-                        <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Consultation</span>
-                    </li>
-                </a>
-                <a routerLink="/lettre">
-                    <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
-                        <img src="assets/img/images (1).png" alt="" class="" width="42" height="42" />
-                        <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Lettre Confidentielle</span>
-                    </li>
-                </a>
-            </ul>
-
-        </div>
-    </div>
-
-
-    <br />
-    <div class="container">
-        <div class="card" style=" top: 10px; left: 200px ">
-            <br />
-            <h2 class="text-center">✵ Liste des analyses ✵</h2>
-            <div class="card-body"> -->
-                <!-- Content here -->
-
-
-                <br />
-                <!-- <table  class="table table-striped" style=" top: 280px; left: 100px" >
-          <thead>
-            <th >idFiche</th>
-            <th >observation</th>
-            <th >Date_Creation</th>
-            
-            
-          </thead>
-          <tbody>
-            <tr *ngFor="let f of listFiches">
-              <td>{{f.idFiche}}</td>
-              <td>{{f.observation}}</td>
-              <td>{{f.dateCreation}}</td>
-            
-              
-              
-            </tr>
-          </tbody>
-  
-  
-        </table> -->
-
-                <!-- <div class="menu-container" class="center">
-                    <div class="card-body" *ngFor="let a of ListAnalyses">
-                        <div class="menu-toggler" (click)="toggleMenu()">
-                            <pre>✵ Analyse N°:{{a.idOperation}}</pre>
-
-                        </div>
-
-                        <div class="menu" *ngIf="isMenuOpened"> -->
-                            <!-- <div class="menu-item">Id idFiche </div>
-                        <div class="menu-item">Observation </div>
-                        <div class="menu-item">Date_Creation </div> -->
-                            <!-- <div class="card-body">
-                                <hr />
-                                <pre>&#9788; Code_Analyse : {{a.codeAnalyse}} </pre>
-                                <hr />
-                                <pre>&#9788; Observation : {{a.observation}} </pre>
-                                <hr />
-                                <pre>&#9788; Date_Analyse: {{a.dateAnalyse}}</pre>
-                                <hr />
-                                <pre>&#9788; Motif: {{a.motif}} </pre>
-                                <hr />
-                                <pre>&#9788; Resultat: {{a.resultat}} </pre>
-                                <hr />
-                                <pre>&#9788; Etablissement: {{a.etablissement}} </pre>
-                                <hr />
-                                <pre>&#9788; Type d'examen d'analyse: {{a.type}} </pre>
-                                <hr />
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-
-        <footer>
-
-            <app-footer></app-footer>
-        </footer> --> 
-        <app-header-dashboard></app-header-dashboard>
+<app-header-dashboard></app-header-dashboard>
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
     id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
     <div class="offcanvas-header">
         <a class="navbar-brand" routerLink="/about">
             <img src="assets/img/212842.svg" width="180" alt="" />
-            <br/>
-            <br/>
+            <br />
+            <br />
             <pre> Espace analyseur</pre>
         </a>
         <button type="button" class="btn-close btn-close-custom text-reset" data-bs-dismiss="offcanvas"
@@ -280,32 +18,26 @@
 
             <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
                 <img src="assets/img/my-profile.svg" alt="" class="" />
-                <span class="ms-2 fs-6 d-inline-block text-inf mt-1">My Profile</span>
+                <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Mon Profile</span>
             </li>
-            <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+            <!-- <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
                 <img src="assets/img/appointment.svg" alt="" class="" />
                 <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Appointment</span>
-            </li>
+            </li> -->
+
 
 
             <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
-                <a routerLink="/acueilDossier">
-                    <img src="assets/img/212842.svg" alt="" class="" />
-                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Anciens_Patients</span>
+                <a routerLink="/patientOperation">
+                    <img src="assets/img/icone_historique.svg" alt="" class="" width="25" height="25"/>
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Historiques_Analyses</span>
                 </a>
 
             </li>
-            <li class="bg-danger px-4 py-2-5 rounded-3 cursor-pointer">
-                <a routerLink="/dossierNouveaux">
-                    <img src="assets/img/212842.svg" alt="" class="" />
-                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Nouveaux_Patients</span>
-                </a>
-
-            </li>
-            <a routerLink="/patient">
-                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
-                    <img src="assets/img/pattients.svg" />
-                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Patients</span>
+            <a routerLink="/analyse">
+                <li class="bg-danger px-4 py-2-5 rounded-3 cursor-pointer">
+                    <img src="assets/img/212842.svg" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Toutes_Analyses</span>
                 </li>
             </a>
 
@@ -314,8 +46,8 @@
 
     </div>
 </div>
-<br/>
-<br/>
+<br />
+<br />
 <div class="container">
     <div class="card" style="left: 90px;width: 1450px; ">
         <br />
@@ -328,69 +60,11 @@
 
         <br />
         <hr />
-        <p-dialog [(visible)]="display" [modal]="true" [style]="{ width: '55vw' }" [draggable]="false"
-            [baseZIndex]="10000" [resizable]="false">
-            <p-header>
-                Liste des demandes
-            </p-header>
-            <div class="card">
-                <div class="row card-body">
-                    <p-table [value]="listdemandes" [autoLayout]="true">
 
-                        <ng-template pTemplate="header">
-                            <tr>
-                                <th> Etat
-
-                                </th>
-                               
-                                <th> dateCreation</th>
-                                <th>Consulter
-
-                                </th>
-                                <th>Envoyer
-
-                                </th>
-
-                            </tr>
-                        </ng-template>
-                        <ng-template pTemplate="body" let-demande>
-                            <tr>
-                                <p-tag *ngIf="demande.etat=='ACCEPT' || demande.etat== 'PERMANENT'" styleClass="mr-2" severity="success" class="center">
-                                    
-                                <td >{{demande.etat}}</td>
-                            </p-tag>
-                            <p-tag *ngIf="demande.etat=='REFUSE' || demande.etat== 'ANNULE'" styleClass="mr-2" severity="danger" class="center">
-                                    
-                                <td >{{demande.etat}}</td>
-                            </p-tag>
-                            <p-tag *ngIf="demande.etat=='EnAttente'" styleClass="mr-2" severity="warning" class="center">
-                                    
-                                <td >{{demande.etat}}</td>
-                            </p-tag>
-                                <td>{{demande.dateCreation | date: "longDate"}}</td>
-                                
-                                <td> <button pButton type="button" [routerLink]="['detaild',demande.idDemande]" class="p-button-raised p-button-outlined p-button-rounded " icon="fa fa-eye" *ngIf="demande.etat=='ACCEPT' || demande.etat=='PERMANENT'" [disabled]="false" pButton label="Consulter"></button></td>
-                                      
-                                <td> <button pButton type="button" class="p-button-raised p-button-outlined p-button-rounded p-button-warning" icon="fa fa-share-square-o" *ngIf="demande.etat=='REFUSE' || demande.etat=='ANNULE' || demande.etat=='EnAttente'" [disabled]="false"  label="Envoyer"></button></td>
-                                <!-- <td><ul
-                      class="list-group list-group-flush"
-                      *ngFor="let file of fileInfos | async"
-                    >
-                      <li class="list-group-item">
-                        <a href="{{ file.url }}">{{ file.name }}</a>
-                      </li>
-                    </ul></td> -->
-                            </tr>
-                        </ng-template>
-                    </p-table>
-                </div> <!-- card-body.// -->
-            </div>
-        </p-dialog>
-        <p-table #analyseTable [scrollable]="true" [value]="ListAnalyses" dataKey="id" selectionMode="single" [(selection)]="selectedAnalyse"
-            (onRowSelect)="onRowSelect($event)" [metaKeySelection]="false"  [rows]="5"
+        <p-table #analyseTable [scrollable]="true" [value]="ListAnalyses" dataKey="id" [rows]="5"
             [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,25,50]" [paginator]="true"
             currentPageReportTemplate="Affichage de {first} à {last} sur {totalRecords} éléments"
-            [globalFilterFields]="['id','idOperation','dateAnalyse','etablissement','type']">
+            [globalFilterFields]="['id','codeAnalyse','observation','dateAnalyse','motif','resultat','etablissement','type','etat']">
             <ng-template pTemplate="caption">
 
                 <div class="flex">
@@ -400,150 +74,125 @@
 
 
 
-                   
 
-                        
 
-                        <input pInputText type="text" class="pi pi-search" (input)="analyseTable.filterGlobal(getEventValue($event), 'contains')" placeholder="Rechercher" class="p-input-icon-left p-ml-auto" />
 
-                    
+
+                    <input pInputText type="text" class="pi pi-search"
+                        (input)="analyseTable.filterGlobal(getEventValue($event), 'contains')" placeholder="Rechercher"
+                        class="p-input-icon-left p-ml-auto" />
+
+
 
                 </div>
 
             </ng-template>
             <ng-template pTemplate="header">
                 <tr>
-                    <th pSortableColumn="idOperation">idOperation <p-sortIcon field="idOperation"></p-sortIcon>
+                    <th class="td" style="min-width:200px" pSortableColumn="codeAnalyse">Code_Analyse <p-sortIcon field="codeAnalyse"></p-sortIcon>
                     </th>
-                    <th pSortableColumn="dateAnalyse">dateAnalyse <p-sortIcon field="dateAnalyse"></p-sortIcon>
+                    <th class="td" style="min-width:200px" pSortableColumn="observation">Observation <p-sortIcon field="observation"></p-sortIcon>
                     </th>
-                    <th pSortableColumn="etablissement">etablissement <p-sortIcon field="etablissement"></p-sortIcon>
+                    <th class="td" style="min-width:200px" pSortableColumn="dateAnalyse">Date_Analyse <p-sortIcon field="dateAnalyse"></p-sortIcon>
                     </th>
-                    <th pSortableColumn="type">type <p-sortIcon field="type">
-                        </p-sortIcon>
-                    </th>
-                    <th >Etat_Demande  
-                    </th>
-                    <!-- <th>Consulter_Dossier</th>
-                    <th>Envoyer_Demande</th> -->
+                   
+                    <th class="td" style="min-width:200px" pSortableColumn="type">Type <p-sortIcon field="type"> </p-sortIcon></th>
+                    <th class="td" style="min-width:200px" pSortableColumn="motif">Motif <p-sortIcon field="motif"> </p-sortIcon> </th>
+                    <th class="td" style="min-width:200px" pSortableColumn="resultat">Resultat<p-sortIcon field="resultat"> </p-sortIcon> </th>
+                    <th class="td" style="min-width:200px" pSortableColumn="etablissement">Etablissement <p-sortIcon field="etablissement"> </p-sortIcon></th>
+                    <th class="td" style="min-width:200px" pSortableColumn="etat">Etat_Analyse <p-sortIcon field="etat"> </p-sortIcon></th>
+
                 </tr>
                 <tr>
                     <th>
-                        <p-columnFilter  type="text" field="idOperation" matchMode="contains"  [matchModeOptions]="matchModeOptions" ></p-columnFilter>
+                        <p-columnFilter style="min-width:200px" type="text" field="codeAnalyse" matchMode="contains" [matchModeOptions]="matchModeOptions"></p-columnFilter> </th>
+                    <th>
+                        <p-columnFilter style="min-width:200px" type="text" field="observation" matchMode="contains"
+                            [matchModeOptions]="matchModeOptions"></p-columnFilter>
                     </th>
                     <th>
-                        <p-columnFilter type="text" field="dateAnalyse" matchMode="contains"  [matchModeOptions]="matchModeOptions" ></p-columnFilter>
+                        <p-columnFilter style="min-width:200px" type="text" field="dateAnalyse" matchMode="contains"
+                            [matchModeOptions]="matchModeOptions"></p-columnFilter>
+                    </th>
+               
+                    <th>
+                        <p-columnFilter style="min-width:200px" type="text" field="type" matchMode="contains"
+                            [matchModeOptions]="matchModeOptions"></p-columnFilter>
                     </th>
                     <th>
-                      <p-columnFilter type="text" field="etablissement" matchMode="contains"  [matchModeOptions]="matchModeOptions" ></p-columnFilter>
-                  </th>
-                  <th>
-                    <p-columnFilter type="text" field="type"  matchMode="contains" [matchModeOptions]="matchModeOptions" ></p-columnFilter>
-                </th>
-              
-                <th>
-              </th>
-    
-    
+                        <p-columnFilter style="min-width:200px" type="text" field="motif" matchMode="contains"
+                            [matchModeOptions]="matchModeOptions"></p-columnFilter>
+                    </th>
+                    <th>
+                        <p-columnFilter style="min-width:200px" type="text" field="resultat" matchMode="contains"
+                            [matchModeOptions]="matchModeOptions"></p-columnFilter>
+                    </th>
+                    <th>
+                        <p-columnFilter style="min-width:200px" type="text" field="etablissement" matchMode="contains"
+                            [matchModeOptions]="matchModeOptions"></p-columnFilter>
+                    </th>
+                    <th>
+                        <p-columnFilter style="min-width:200px" type="text" field="etat" matchMode="contains"
+                            [matchModeOptions]="matchModeOptions"></p-columnFilter>
+                    </th>
+
+
                 </tr>
-                <!-- <tr>
-                    <th>
 
-                        <input pInputText type="text"
-                            (input)="dossierTable.filter(getEventValue($event), 'numDossier' ,'startsWith')"
-                            placeholder="Search keyword">
-                    </th>
-                    <th>
-                        <input pInputText type="text"
-                            (input)="dossierTable.filter(getEventValue($event), 'dateCreation' ,'startsWith')"
-                            placeholder="Search keyword">
-                    </th>
-                    <th>
-                        <input pInputText type="text"
-                            (input)="dossierTable.filter(getEventValue($event), 'patient.cnss' ,'startsWith')"
-                            placeholder="Search keyword">
-                    </th>
-                    <th>
-                        <input pInputText type="text"
-                            (input)="dossierTable.filter(getEventValue($event), 'patient.assurance' ,'startsWith')"
-                            placeholder="Search keyword">
-                    </th>
-                    <th>
-
-                    </th>
-
-                </tr> -->
-                <!-- <tr>
-                    <th>
-                        <p-columnFilter type="text" field="numDossier" matchMode="contains"
-                            [matchModeOptions]="matchModeOptions"></p-columnFilter>
-                    </th>
-                    <th>
-                        <p-columnFilter type="text" field="dateCreation" matchMode="contains"
-                            [matchModeOptions]="matchModeOptions"></p-columnFilter>
-                    </th>
-
-                    <th>
-                        <p-columnFilter type="text" field="patient.cnss" matchMode="contains"
-                            [matchModeOptions]="matchModeOptions"></p-columnFilter>
-                    </th>
-                    <th>
-                        <p-columnFilter type="text" field="patient.assurance" matchMode="contains"
-                            [matchModeOptions]="matchModeOptions"></p-columnFilter>
-                    </th>
-                    <th>
-                        <p-columnFilter type="text" field="de.etat" matchMode="contains"
-                            [matchModeOptions]="matchModeOptions"></p-columnFilter>
-                    </th>
-                    <th>
-                    </th>
-
-
-                </tr> -->
             </ng-template>
 
-            <ng-template pTemplate="body" let-analyse let-rowIndex="rowIndex">
+            <ng-template pTemplate="body" let-analyse>
 
-                <tr [pSelectableRow]="analyse" [pSelectableRowIndex]="rowIndex">
-                    <td>{{analyse.idOperation}}</td>
-                    <td> {{analyse.dateAnalyse | date: "longDate"}}</td>
-                    <td>{{analyse.etablissement}}</td>
-                    <td>{{analyse.type}}</td>
-                    <!-- <div *ngFor="let de of dossier.demandesacces" class="center">
-                        <p-tag *ngIf="de.etat=='EnAttente'" styleClass="mr-2" severity="warning">
-                            <td  >{{de.etat}}
-                            </td>
-                        </p-tag>
-                    </div>
-                    <div *ngFor="let de of dossier.demandesacces" class="center">
-                        <p-tag *ngIf="de.etat=='REFUSE' || de.etat== 'ANNULE'" styleClass="mr-2" severity="danger">
-                                    
-                            <td >{{de.etat}}</td>
-                        </p-tag>
-                    </div>
-                    <div *ngFor="let de of dossier.demandesacces" class="center">
-                        <p-tag *ngIf="de.etat=='ACCEPT' || de.etat== 'PERMANENT'" styleClass="mr-2" severity="success">
-                                    
-                            <td >{{de.etat}}</td>
-                        </p-tag>
-                    </div> -->
+                <tr>
+                    <td class="td" style="min-width:200px">{{analyse.codeAnalyse}}</td>
+                    <td class="td" style="min-width:200px"> {{analyse.observation }}</td>
+                    <td class="td" style="min-width:200px">{{analyse.dateAnalyse | date: "longDate"}}</td>
                    
+                    
+                    <div  class="tag">
+                    <p-tag *ngIf="analyse.type=='BACTERIOLOGIQUE' " styleClass="mr-2" severity="warning">
                                     
-                       
-                        
-                    
-                         
-                    
+                        <td class="td" style="min-width:200px">{{analyse.type}}</td>
+                    </p-tag>
+                </div>
+                <div  class="tag">
+                    <p-tag *ngIf="analyse.type=='SEPARASITOLOGIQUE' " styleClass="mr-2" severity="danger">
+                                    
+                        <td class="td" style="min-width:200px">{{analyse.type}}</td>
+                    </p-tag>
+                </div>
+                <div  class="tag">
+                    <p-tag *ngIf="analyse.type=='URINE' " styleClass="mr-2" severity="success">
+                                    
+                        <td class="td" style="min-width:200px">{{analyse.type}}</td>
+                    </p-tag>
+                </div>
+                <div  class="tag">
+                    <p-tag *ngIf="analyse.type=='SANG' " styleClass="mr-2" severity="info">
+                                    
+                        <td class="td" style="min-width:200px">{{analyse.type}}</td>
+                    </p-tag>
+                </div>
+                    <td class="td" style="min-width:200px">{{analyse.motif}}</td>
+                    <td class="td" style="min-width:200px">{{analyse.resultat}}</td>
+                    <td class="td" style="min-width:200px">{{analyse.etablissement}}</td>
+                    <div  class="tag">
+                    <p-tag *ngIf="analyse.etat=='Terminé' " styleClass="mr-2" severity="success">
+                                    
+                        <td class="td" style="min-width:200px">{{analyse.etat}}</td>
+                    </p-tag>
+                </div>
+                <div  class="tag">
+                    <p-tag *ngIf="analyse.etat=='EnCours' " styleClass="mr-2" severity="warning">
+                                    
+                        <td class="td" style="min-width:200px" >{{analyse.etat}}</td>
+                    </p-tag>
+                </div>
 
-                    <!-- <td routerLink="/dossier" ><button pButton type="button" class="p-button-raised p-button-outlined p-button-rounded"
-                            label="Consulter" icon="fa fa-eye" ></button>
-                        
 
-                    </td>
-                
-                    <td><button pButton type="button"
-                            class="p-button-raised p-button-outlined p-button-rounded p-button-warning" label="Envoyer"
-                            icon="fa fa-share-square-o"></button></td> -->
+
+
+
 
                 </tr>
 

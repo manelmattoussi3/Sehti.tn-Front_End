@@ -1,0 +1,190 @@
+<app-header-dashboard></app-header-dashboard>
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="offcanvas-header">
+        <a class="navbar-brand" routerLink="/about">
+            <img src="assets/img/212842.svg" width="180" alt="" />
+            <br />
+            <br />
+            <pre> Espace analyseur</pre>
+        </a>
+        <button type="button" class="btn-close btn-close-custom text-reset" data-bs-dismiss="offcanvas"
+            aria-label="Close">
+
+        </button>
+    </div>
+    <div class="offcanvas-body">
+        <ul>
+
+            <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <img src="assets/img/my-profile.svg" alt="" class="" />
+                <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Mon Profile</span>
+            </li>
+            <!-- <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <img src="assets/img/appointment.svg" alt="" class="" />
+                <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Appointment</span>
+            </li> -->
+
+
+
+            <li class="bg-danger px-4 py-2-5 rounded-3 cursor-pointer">
+                <a routerLink="/patientOperation">
+                    <img src="assets/img/icone_historique.svg" alt="" class="" width="25" height="25" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Historiques_Analyses</span>
+                </a>
+
+            </li>
+            <a routerLink="/analyse">
+                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <img src="assets/img/212842.svg" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Toutes_Analyses</span>
+                </li>
+            </a>
+
+
+        </ul>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <div class="card" style=" width: 1500px;left: 30px;  ">
+        <br />
+        <br />
+        <br />
+       
+        <p class="text-center" class="font">Historiques d'analyses</p>
+
+        <!-- Content here -->
+
+
+        <br />
+        <hr />
+
+        <p-table #dossierTable [value]="listDossier" [scrollable]="true" [metaKeySelection]="false" dataKey="id"
+            [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,25,50]" [paginator]="true"
+            currentPageReportTemplate="Affichage de {first} à {last} sur {totalRecords} éléments">
+
+            <ng-template pTemplate="header">
+                <tr>
+                    <th class="colonne" style="min-width:200px" pSortableColumn="codeAnalyse">Code_Analyse <p-sortIcon
+                            field="codeAnalyse"></p-sortIcon>
+                    </th>
+                    <th class="colonne" style="min-width:200px" pSortableColumn="observation">Observation <p-sortIcon
+                            field="observation"></p-sortIcon>
+                    </th>
+                    <th class="colonne" style="min-width:200px" pSortableColumn="dateAnalyse">Date_Analyse <p-sortIcon
+                            field="dateAnalyse"></p-sortIcon>
+                    </th>
+
+                    <th class="colonne" style="min-width:200px" pSortableColumn="type">Type <p-sortIcon field="type">
+                        </p-sortIcon>
+                    </th>
+                    <th class="colonne" style="min-width:200px" pSortableColumn="motif">Motif <p-sortIcon field="motif">
+                        </p-sortIcon>
+                    </th>
+                    <th class="colonne" style="min-width:200px" pSortableColumn="resultat">Resultat<p-sortIcon
+                            field="resultat"> </p-sortIcon>
+                    </th>
+                    <th class="colonne" style="min-width:200px" pSortableColumn="etablissement">Etablissement <p-sortIcon
+                            field="etablissement"> </p-sortIcon>
+                    </th>
+                 
+
+                </tr>
+
+            </ng-template>
+
+            <ng-template pTemplate="body" let-dossier let-rowIndex="rowIndex">
+
+                <tr *ngFor="let f of dossier.fiche">
+
+
+
+
+                    <td class="colonne" style="min-width:200px">{{f.analyse.codeAnalyse}}</td>
+                    <td class="colonne" style="min-width:200px">{{f.analyse.observation}}</td>
+                    <td class="colonne" style="min-width:200px">{{f.analyse.dateAnalyse | date: "longDate"}}</td>
+
+                    <div class="tag">
+                        <p-tag *ngIf="f.analyse.type=='BACTERIOLOGIQUE' " styleClass="mr-2" severity="warning">
+
+                            <td class="td" style="min-width:200px">{{f.analyse.type}}</td>
+                        </p-tag>
+                    </div>
+                    <div class="tag">
+                        <p-tag *ngIf="f.analyse.type=='SEPARASITOLOGIQUE' " styleClass="mr-2" severity="danger">
+
+                            <td class="td" style="min-width:200px">{{f.analyse.type}}</td>
+                        </p-tag>
+                    </div>
+                    <div class="tag">
+                        <p-tag *ngIf="f.analyse.type=='URINE' " styleClass="mr-2" severity="success">
+
+                            <td class="td" style="min-width:200px">{{f.analyse.type}}</td>
+                        </p-tag>
+                    </div>
+                    <div class="tag">
+                        <p-tag *ngIf="f.analyse.type=='SANG' " styleClass="mr-2" severity="info">
+
+                            <td class="td" style="min-width:200px">{{f.analyse.type}}</td>
+                        </p-tag>
+                    </div>
+                    <td class="colonne" style="min-width:200px">{{f.analyse.motif}}</td>
+
+                    <td class="colonne" style="min-width:200px">{{f.analyse.resultat}}</td>
+                    <td class="colonne" style="min-width:200px">{{f.analyse.etablissement}}</td>
+
+
+
+
+
+
+
+
+
+                </tr>
+
+
+            </ng-template>
+
+        </p-table>
+    </div>
+
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<app-footer></app-footer>

@@ -1,0 +1,158 @@
+<app-header-dashboard></app-header-dashboard>
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="offcanvas-header">
+        <a class="navbar-brand" routerLink="/about">
+            <img src="assets/img/2258505-icone-de-ligne-pour-radiologie-vectoriel.svg" alt="" class="" width="180" />
+            <br />
+            <br />
+            <pre> Espace radiologue</pre>
+        </a>
+        <button type="button" class="btn-close btn-close-custom text-reset" data-bs-dismiss="offcanvas"
+            aria-label="Close">
+
+        </button>
+    </div>
+    <div class="offcanvas-body">
+        <ul>
+
+            <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <img src="assets/img/my-profile.svg" alt="" class="" />
+                <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Mon Profile</span>
+            </li>
+            <!-- <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <img src="assets/img/appointment.svg" alt="" class="" />
+                <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Appointment</span>
+            </li> -->
+
+
+
+            <li class="bg-danger px-4 py-2-5 rounded-3 cursor-pointer">
+                <a routerLink="/patientRadio">
+                    <img src="assets/img/icone_historique.svg" alt="" class="" width="25" height="25"/>
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Historiques_Radios</span>
+                </a>
+
+            </li>
+            <a routerLink="/radio">
+                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <img src="assets/img/2258505-icone-de-ligne-pour-radiologie-vectoriel.svg" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Toutes_Radios</span>
+                </li>
+            </a>
+
+
+        </ul>
+
+    </div>
+</div>
+<br />
+<br />
+<div class="container">
+    <div class="card" style="left: 90px;width: 1450px; ">
+        <br />
+        <br />
+        <br />
+        <p class="text-center" class="font">Liste des patients</p>
+
+        <!-- Content here -->
+
+
+        <br />
+        <hr />
+
+        <p-table #patientTable [scrollable]="true" [value]="ListPatients" dataKey="id" [rows]="5"
+            [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,25,50]" [paginator]="true"
+            currentPageReportTemplate="Affichage de {first} à {last} sur {totalRecords} éléments"
+            [globalFilterFields]="['id','cnss','assurance']">
+            <ng-template pTemplate="caption">
+
+                <div class="flex">
+
+                    <button pButton label="Effacer" class="p-button-outlined p-button-raised p-button-rounded p-button-help" icon="pi pi-filter-slash"
+                        (click)="clear(patientTable)"></button>
+
+
+
+
+
+
+
+                    <input pInputText type="text" class="pi pi-search"
+                        (input)="patientTable.filterGlobal(getEventValue($event), 'contains')" placeholder="Rechercher"
+                        class="p-input-icon-left p-ml-auto" />
+
+
+
+                </div>
+
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th class="td" style="min-width:200px" pSortableColumn="cnss">Nom <p-sortIcon field="cnss"></p-sortIcon>
+                    </th>
+                    <th class="td" style="min-width:200px" pSortableColumn="assurance">Prenom <p-sortIcon field="assurance"></p-sortIcon>
+                    </th>
+                   <th>Action</th>
+
+                </tr>
+                <tr>
+                    <th>
+                        <p-columnFilter style="min-width:200px" type="text" field="cnss" matchMode="contains" [matchModeOptions]="matchModeOptions"></p-columnFilter> </th>
+                    <th>
+                        <p-columnFilter style="min-width:200px" type="text" field="assurance" matchMode="contains"
+                            [matchModeOptions]="matchModeOptions"></p-columnFilter>
+                    </th>
+                   
+<th></th>
+
+                </tr>
+
+            </ng-template>
+
+            <ng-template pTemplate="body" let-patient>
+
+                <tr>
+                    <td class="td" style="min-width:200px">{{patient.cnss}}</td>
+                    <td class="td" style="min-width:200px"> {{patient.assurance }}</td>
+                   <td>
+                    <div   id="right">
+                        <button pButton type="button" class="p-button-outlined p-button-raised p-button-rounded p-button-help"  pButton
+                         label=" Consulter" [routerLink]="['detailRadio',patient.idPatient]"><img src="assets/img/2258505-icone-de-ligne-pour-radiologie-vectoriel copy.svg" /></button> </div>
+                   </td>
+
+
+                </tr>
+
+
+            </ng-template>
+
+        </p-table>
+    </div>
+
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<app-footer></app-footer>
