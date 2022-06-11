@@ -144,7 +144,7 @@
   <div class="container">
       <div class="card" style=" top: 10px; left: 200px ">
           <br />
-          <h2 class="text-center">✵ Fiche de consultation ✵</h2>
+          <h2 class="text-center"> Fiche de consultation </h2>
           <div class="card-body">
               <!-- Content here -->
 
@@ -175,12 +175,12 @@
               <div class="menu-container" class="center">
                   <div class="card-body" *ngFor="let f of fiche">
                     <div *ngIf="f">
-                      <div class="menu-toggler" (click)="toggleMenu()">
-                          <pre> Fiche_Consultation N°:{{f.idFiche}}                                                                                                                        {{f.dateCreation}}</pre>
+                      
+                          <pre class="pre"> Fiche_Consultation N°:{{f.idFiche}}                                                                                                                        {{f.dateCreation}}</pre>
 
-                      </div>
+                      
 
-                      <div class="menu" *ngIf="isMenuOpened">
+                      <div class="menu" >
                           <!-- <div class="menu-item">Id idFiche </div>
                       <div class="menu-item">Observation </div>
                       <div class="menu-item">Date_Creation </div> -->
@@ -268,15 +268,16 @@
                               <hr />
                               <br />
                               <pre class="text-center">✵ Consultation ✵</pre>
-
+                              <pre>&#9788; Etat_Consultation: {{f.consultation.etat}} </pre>
+                              
                               <div class="btn_report my-2 my-sm-0" id="right">
 
                                   
-                                      <button pButton type="button" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal'+f.consultation.idConsultation"
-                                      (click)="test(f.consultation.idConsultation)"  class="btn btn-primary py-1 px-2 me-2" icon="fa fa-eye"  pButton label="Consulter"></button>
+                                      <button  type="button" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal'+f.consultation.idConsultation"
+                                      (click)="test(f.consultation.idConsultation)"  class="btn btn-primary py-1 px-2 me-2" >Consulter</button>
 
                                   <!-- Modal -->
-
+                                
                               </div>
 
                               <div class="modal fade" id="exampleModal{{f.consultation.idConsultation}}" tabindex="-1"
@@ -284,13 +285,16 @@
                                   <div class="modal-dialog modal-lg" style="width:1200px ;height: 2200px;">
                                       <div class="modal-content">
                                           <div class="modal-header">
-                                              <h5 class="modal-title" id="exampleModalLabel1"> </h5> <button type="button" class="btn-close"
+                                              <!-- <button type="button" class="btn-close"
                                                   data-bs-dismiss="modal" aria-label="Close"></button>
+                                              <h5 class="modal-title" id="exampleModalLabel1"> </h5>  -->
 
 
+                                                  <img src="assets/img/logo.png" width="200" alt="" data-bs-dismiss="modal" id="exampleModalLabel1"/>
 
-
-
+<br/>
+<br/>
+<br/>
                                               <div class="container">
                                                   <div class="row">
                                                   
@@ -298,16 +302,14 @@
                                                           class="col-lg-6 d-flex align-items-center p-0 mt-5 mt-lg-0">
                                                           <div
                                                               class="border-lg-start border-1 mb-4 mb-lg-0 p-lg-5 text-center">
-                                                              <a class="navbar-brand" routerLink="/ficheConsultation">
-                                                                  <img src="assets/img/logo.png" width="160" alt="" />
+                                                              <a class="navbar-brand" data-bs-dismiss="modal" id="exampleModalLabel1">
+                                                                  <img src="assets/img/102-1026499_consultation-free-doctor-consultation-icon-clipart.svg" width="160" alt="" />
                                                               </a>
-                                                              <hr />
+                                                              
 
-                                                              <h2>
-                                                                  Détails de
-                                                                  <span
-                                                                      class="text-primary my-2 d-inline-block">Consultation</span>
-                                                              </h2>
+                                                              
+                                                                 <span class="text-center">Détails de Consultation </span>
+                                                             
 
                                                               
 
@@ -316,20 +318,31 @@
 
 
                                                                       <div class="card-body text-light">
-                                                                          <h5 class="card-title">idConsultation:
-                                                                              {{f.consultation.idConsultation}}</h5>
+                                                                          <p class="card-title">idConsultation:
+                                                                              {{consultation.idConsultation}}</p>
 
-                                                                          <h5 class="card-title">Lieu_Consultation:
-                                                                              {{f.consultation.lieu}}</h5>
+                                                                          <p class="card-title">Lieu_Consultation:
+                                                                              {{consultation.lieu}}</p>
 
-                                                                          <h5 class="card-title">Etat_Consultation:
-                                                                              {{f.consultation.etat}}</h5>
+                                                                          <p class="card-title">Etat_Consultation:
+                                                                              {{consultation.etat}}</p>
+                                                                              <span class="text-center">Ordonance</span>
+                                                                              <p class="card-title">Num_Ordonance:{{consultation.ordonance.numOrdonance}}</p>
+                                                                              <p class="card-title">Date_Ordonance:{{consultation.ordonance.dateOrdonance}}</p>
+                                                                              <p class="card-title">Etat_Ordonance:{{consultation.ordonance.etat}}</p>
+                                                                              <p class="card-title">Nouveauté:{{consultation.ordonance.nouveaute}}</p>
+                                                                              <p class="card-title">Prescription:</p>
+                                                                              <span class="text-center">Certificat</span>
+                                                                                <p class="card-title">Date_Certificat:
+                                                                                    {{consultation.certificat.dateCertificat}}</p>
+                                                                                    <p class="card-title">Contenu:
+                                                                                        {{consultation.certificat.contenu}}</p>
 
 
                                                                       </div>
                                                                   </div>
                                                               
-                                                          </div>
+                                                          
                                                       </div>
                                                   </div>
                                               </div>
@@ -347,7 +360,7 @@
                               </div>
 
 
-                              <pre>&#9788; Etat_Consultation: {{f.consultation.etat}} </pre>
+                              
                               <hr />
 
 

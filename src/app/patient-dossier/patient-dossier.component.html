@@ -1,0 +1,260 @@
+<app-header-dashboard></app-header-dashboard>
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="offcanvas-header">
+        <a class="navbar-brand" routerLink="/about">
+            <img src="assets/img/102-1026499_consultation-free-doctor-consultation-icon-clipart.svg" width="180"
+                alt="" />
+            <pre> Espace médecin</pre>
+        </a>
+        <button type="button" class="btn-close btn-close-custom text-reset" data-bs-dismiss="offcanvas"
+            aria-label="Close">
+
+        </button>
+    </div>
+    <div class="offcanvas-body">
+        <ul>
+
+            <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <img src="assets/img/my-profile.svg" alt="" class="" />
+                <span class="ms-2 fs-6 d-inline-block text-inf mt-1">My Profile</span>
+            </li>
+            <!-- <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <img src="assets/img/appointment.svg" alt="" class="" />
+                <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Appointment</span>
+            </li> -->
+
+
+            <li class="bg-danger px-4 py-2-5 rounded-3 cursor-pointer">
+                <a routerLink="/acueilDossier">
+                    <img src="assets/img/dos.svg" alt="" class="" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Anciens_Patients</span>
+                </a>
+
+            </li>
+            <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <a routerLink="/dossierNouveaux">
+                    <img src="assets/img/dos.svg" alt="" class="" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Nouveaux_Patients</span>
+                </a>
+
+            </li>
+
+
+
+
+
+            <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <a routerLink="/ordonance">
+                    <img src="assets/img/3410626.svg" alt="" class="" width="40" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Ordonance</span>
+                </a>
+            </li>
+
+
+
+
+            <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <a routerLink="/medicament">
+                    <img src="assets/img/images.svg" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Medicaments</span>
+                </a>
+            </li>
+
+
+            <!-- <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <a routerLink="/prescription">
+                    <img src="assets/img/prescription-icon-18.svg" alt="" class="" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Prescriptions</span>
+                </a>
+                </li> -->
+
+
+            <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <a routerLink="/consultation">
+                    <img src="assets/img/102-1026499_consultation-free-doctor-consultation-icon-clipart.svg" alt=""
+                        class="" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Consultation</span>
+                </a>
+            </li>
+
+
+            <!-- <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <a routerLink="/lettre">
+                    <img src="assets/img/images (1).png" alt="" class="" width="42" height="42" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">L.Confidentielle</span>
+                </a>
+                </li> -->
+
+
+            <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <a routerLink="/patient">
+                    <img src="assets/img/pattients.svg" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Patients</span>
+                </a>
+            </li>
+
+
+
+        </ul>
+
+    </div>
+</div>
+<main class="main-content">
+    <div class="py-4 px-4 px-md-5">
+        <!--  -->
+        <div class="row mb-5 px-2-5 gap-4">
+            <div
+                class="col-lg col-md-12 rounded-5 bg-danger py-2-5 px-4 d-flex justify-content-between align-items-center">
+                <img src="assets/img/total-patient.svg" alt="" />
+                <span class="text-end">
+                    <span class="text-inf">Total Patient</span>
+                    <h3 class="fw-bold mt-1">2,650</h3>
+                </span>
+            </div>
+
+            <div
+                class="col-lg col-md-12 rounded-5 bg-green py-2-5 px-4 d-flex justify-content-between align-items-center">
+                <img src="assets/img/total-doctors.svg" alt="" />
+                <span class="text-end">
+                    <span class="text-inf">Total Doctors</span>
+                    <h3 class="fw-bold mt-1">2,650</h3>
+                </span>
+            </div>
+
+            <div
+                class="col-lg col-md-12 rounded-5 bg-gray py-2-5 px-4 d-flex justify-content-between align-items-center">
+                <a routerLink="/medecinFamille">
+                    <img src="assets/img/imageonline-co-transparentimage.jpg" width="90px" height="90px" />
+                    <span class="text-end">
+                        <h3 class="text-inf">Médecin de famille</h3>
+
+                    </span>
+                </a>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</main>
+<div class="container">
+    <div class="card" style=" width: 1500px;left: 30px;  ">
+        <br />
+        <br />
+        <br />
+        <p class="text-center" class="font">Historique fiches de consultations</p>
+
+        <!-- Content here -->
+
+
+        <br />
+        <hr />
+        
+        <p-table #dossierTable [value]="listDossier" [scrollable]="true" 
+             [metaKeySelection]="false" dataKey="id" [rows]="5"
+            [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,25,50]" [paginator]="true"
+            currentPageReportTemplate="Affichage de {first} à {last} sur {totalRecords} éléments">
+
+            <ng-template pTemplate="header">
+                <tr>
+                    
+                    <th class="colonne" style="min-width:200px">N°_Fiche</th>
+                    <th class="colonne" style="min-width:200px">Observation</th>
+                    <th class="colonne" style="min-width:200px">Date_Creation</th>
+                    <th class="colonne" style="min-width:200px">Resultat_Analyse</th>
+                    <th class="colonne" style="min-width:200px">Observation_Analyse</th>
+                    <th class="colonne" style="min-width:200px">Date_Analyse</th>
+                    <th class="colonne" style="min-width:200px">Laboratoire_Analyse</th>
+                    <th class="colonne" style="min-width:200px">Type_Analyse</th>
+                    <th class="colonne" style="min-width:200px">Resultat_Radio</th>
+                    <th class="colonne" style="min-width:200px">Observation_Radio</th>
+                    <th class="colonne" style="min-width:200px">Date_Radio</th>
+                    <th class="colonne" style="min-width:200px">Laboratoire_Radio</th>
+                    <th class="colonne" style="min-width:200px">Type_Radio</th>
+                    <th class="colonne" style="min-width:200px">Rendu_Consultation</th>
+                    <th class="colonne" style="min-width:200px">Lieu_Consultation</th>
+                    <th class="colonne" style="min-width:200px">Date_Consultation</th>
+                    
+                    
+                    <!-- <th>Consulter_Dossier</th>
+                    <th>Envoyer_Demande</th> -->
+                </tr>
+
+
+            </ng-template>
+
+            <ng-template pTemplate="body" let-dossier let-rowIndex="rowIndex">
+
+                <tr *ngFor="let f of dossier.fiche">
+                    
+
+                    
+
+                        <td class="colonne" style="min-width:200px">{{f.idFiche}}</td>
+                        <td class="colonne" style="min-width:200px">{{f.observation}}</td>
+                        <td class="colonne" style="min-width:200px">{{f.dateCreation | date: "longDate"}}</td>
+                        <td class="colonne" style="min-width:200px">{{f.analyse.resultat}}</td>
+                        <td class="colonne" style="min-width:200px">{{f.analyse.observation}}</td>
+                        <td class="colonne" style="min-width:200px">{{f.analyse.dateAnalyse | date: "longDate"}}</td>
+                        <td class="colonne" style="min-width:200px">{{f.analyse.etablissement}}</td>
+                        <td class="colonne" style="min-width:200px">{{f.analyse.type}}</td>
+                        <td class="colonne" style="min-width:200px">{{f.radio.resultat}}</td>
+                        <td class="colonne" style="min-width:200px">{{f.radio.observation}}</td>
+                        <td class="colonne" style="min-width:200px">{{f.radio.dateOperation | date: "longDate"}}</td>
+                        <td class="colonne" style="min-width:200px">{{f.radio.etablissement}}</td>
+                        <td class="colonne" style="min-width:200px">{{f.radio.type}}</td>
+                        <td class="colonne" style="min-width:200px">{{f.consultation.observation}}</td>
+                        <td class="colonne" style="min-width:200px">{{f.consultation.lieu}}</td>
+                        <td class="colonne" style="min-width:200px">{{f.consultation.dateConsultation | date: "longDate"}}</td>
+                        
+                        
+
+
+                   
+
+
+
+                </tr>
+
+
+            </ng-template>
+
+        </p-table>
+    </div>
+
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<app-footer></app-footer>

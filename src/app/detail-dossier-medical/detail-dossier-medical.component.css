@@ -178,3 +178,19 @@ a:hover {
 
 
   }
+  #leftbtn {
+
+    position: relative;
+  
+    left: 10%;
+    bottom: 1em;
+  
+  
+    }
+    .lefto { float:left; margin:0 30px 15 20px; }
+    .colonne{
+      font-size: 16px;
+      text-align: center;
+      color: #1150C6;
+     
+      }

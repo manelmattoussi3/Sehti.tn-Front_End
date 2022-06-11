@@ -4,8 +4,8 @@
     <div class="offcanvas-header">
         <a class="navbar-brand" routerLink="/about">
             <img src="assets/img/102-1026499_consultation-free-doctor-consultation-icon-clipart.svg" width="180"
-                alt="" />
-            <pre> Espace praticien</pre>
+               width="180" class="left" alt="" />
+            <pre>    Espace médecin</pre>
         </a>
         <button type="button" class="btn-close btn-close-custom text-reset" data-bs-dismiss="offcanvas"
             aria-label="Close">
@@ -19,10 +19,10 @@
                 <img src="assets/img/my-profile.svg" alt="" class="" />
                 <span class="ms-2 fs-6 d-inline-block text-inf mt-1">My Profile</span>
             </li>
-            <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+            <!-- <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
                 <img src="assets/img/appointment.svg" alt="" class="" />
                 <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Appointment</span>
-            </li>
+            </li> -->
 
 
             <li class="bg-danger px-4 py-2-5 rounded-3 cursor-pointer">
@@ -32,19 +32,67 @@
                 </a>
 
             </li>
-            <li class="bg-danger px-4 py-2-5 rounded-3 cursor-pointer">
+            <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
                 <a routerLink="/dossierNouveaux">
                     <img src="assets/img/dos.svg" alt="" class="" />
                     <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Nouveaux_Patients</span>
                 </a>
 
             </li>
-            <a routerLink="/patient">
+            
+             
+            
+           
+<!--             
                 <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <a routerLink="/ordonance">
+                    <img src="assets/img/3410626.svg" alt="" class="" width="40" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Ordonance</span>
+                </a>
+                </li> -->
+            
+
+
+            
+                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <a routerLink="/medicament">
+                    <img src="assets/img/images.svg" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Medicaments</span>
+                </a>
+                </li>
+            
+           
+                <!-- <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <a routerLink="/prescription">
+                    <img src="assets/img/prescription-icon-18.svg" alt="" class="" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Prescriptions</span>
+                </a>
+                </li> -->
+            
+            
+                <!-- <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <a routerLink="/consultation">
+                    <img src="assets/img/102-1026499_consultation-free-doctor-consultation-icon-clipart.svg" alt="" class="" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Consultation</span>
+                </a>
+                </li> -->
+            
+            
+                <!-- <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <a routerLink="/lettre">
+                    <img src="assets/img/images (1).png" alt="" class="" width="42" height="42" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">L.Confidentielle</span>
+                </a>
+                </li> -->
+            
+            
+                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <a routerLink="/patient">
                     <img src="assets/img/pattients.svg" />
                     <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Patients</span>
+                </a>
                 </li>
-            </a>
+            
 
 
         </ul>
@@ -73,13 +121,14 @@
                 </span>
             </div>
 
-            <div
-                class="col-lg col-md-12 rounded-5 bg-gray py-2-5 px-4 d-flex justify-content-between align-items-center">
-                <img src="assets/img/notification.svg" alt="" />
+            <div class="col-lg col-md-12 rounded-5 bg-gray py-2-5 px-4 d-flex justify-content-between align-items-center">
+                <a routerLink="/medecinFamille">
+                <img src="assets/img/imageonline-co-transparentimage.jpg" width="90px" height="90px" />
                 <span class="text-end">
-                    <span class="text-inf">Total Notif</span>
-                    <h3 class="fw-bold mt-1">2,650</h3>
+                    <h3 class="text-inf">Médecin de famille</h3>                                            
+                    
                 </span>
+            </a>
             </div>
         </div>
 
@@ -101,7 +150,7 @@
         <br />
         <br />
         <br />
-        <pre class="text-center" class="font">Liste des dossiers médicaux d'anciens patients</pre>
+        <p class="text-center" class="font">Liste des dossiers médicaux d'anciens patients</p>
 
         <!-- Content here -->
 
@@ -151,7 +200,7 @@
                                 
                                 <td> <button pButton type="button" [routerLink]="['detaild',demande.idDemande]" class="p-button-raised p-button-outlined p-button-rounded " icon="fa fa-eye" *ngIf="demande.etat=='ACCEPT' || demande.etat=='PERMANENT'" [disabled]="false" pButton label="Consulter"></button></td>
                                       
-                                <td> <button pButton type="button" class="p-button-raised p-button-outlined p-button-rounded p-button-warning" icon="fa fa-share-square-o" *ngIf="demande.etat=='REFUSE' || demande.etat=='ANNULE' || demande.etat=='EnAttente'" [disabled]="false"  label="Envoyer"></button></td>
+                                <td> <button pButton type="button" class="p-button-raised p-button-outlined p-button-rounded p-button-warning" icon="fa fa-share-square-o" *ngIf="demande.etat=='REFUSE' || demande.etat=='ANNULE' " [disabled]="false"  label="Envoyer"></button></td>
                                 <!-- <td><ul
                       class="list-group list-group-flush"
                       *ngFor="let file of fileInfos | async"
@@ -170,7 +219,7 @@
             (onRowSelect)="onRowSelect($event)" [metaKeySelection]="false" dataKey="numDossier" [rows]="5"
             [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,25,50]" [paginator]="true"
             currentPageReportTemplate="Affichage de {first} à {last} sur {totalRecords} éléments"
-            [globalFilterFields]="['numDossier','dateCreation','patient.cnss','patient.assurance']">
+            [globalFilterFields]="['numDossier','dateCreation','patient.cnss','patient.assurance','de.etat']">
             <ng-template pTemplate="caption">
 
                 <div class="flex">
@@ -287,8 +336,8 @@
                 <tr [pSelectableRow]="dossier" [pSelectableRowIndex]="rowIndex">
                     <td>{{dossier.numDossier}}</td>
                     <td> {{dossier.dateCreation | date: "longDate"}}</td>
-                    <td>{{dossier.patient.cnss}}</td>
-                    <td>{{dossier.patient.assurance}}</td>
+                    <td>{{dossier?.patient?.cnss}}</td>
+                    <td>{{dossier?.patient?.assurance}}</td>
                     <div *ngFor="let de of dossier.demandesacces" class="center">
                         <p-tag *ngIf="de.etat=='EnAttente'" styleClass="mr-2" severity="warning">
                             <td  >{{de.etat}}

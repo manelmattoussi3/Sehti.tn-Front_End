@@ -94,6 +94,12 @@ a:hover {
   .btn-close-custom {
     display: none;
   }
+  .font{
+    font-size: 28px;
+    text-align: center;
+    color: #1150C6;
+    text-decoration: #1b74e4 underline;
+    }
 }
 
 

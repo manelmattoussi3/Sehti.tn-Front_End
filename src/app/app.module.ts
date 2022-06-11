@@ -45,6 +45,8 @@ import { DatePipe } from '@angular/common';
 import {BadgeModule} from 'primeng/badge';
 import { TagModule } from 'primeng/tag';
 import { DossierLettreComponent } from './dossier-lettre/dossier-lettre.component';
+import { MedecinFamilleComponent } from './medecin-famille/medecin-famille.component';
+import { PatientDossierComponent } from './patient-dossier/patient-dossier.component';
 
 
 @NgModule({
@@ -78,6 +80,8 @@ import { DossierLettreComponent } from './dossier-lettre/dossier-lettre.componen
     AcueilDossierComponent,
     DossierNouveauPatientComponent,
     DossierLettreComponent,
+    MedecinFamilleComponent,
+    PatientDossierComponent,
     
   ],
   imports: [

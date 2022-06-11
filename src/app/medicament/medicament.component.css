@@ -144,6 +144,7 @@ a:hover {
     text-align: center !important;
     color: #1b74e4; 
     font-style: italic;
+    text-decoration: #1b74e4 underline;
   }
   .table {
     --bs-table-bg: transparent;
@@ -163,3 +164,5 @@ a:hover {
  .footer{
     position: absolute; bottom: 0; left: 0; right: 0
  }
+ .left { float:left; margin:0 20px 0 50px; }
+ 

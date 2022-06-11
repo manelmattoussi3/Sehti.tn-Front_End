@@ -21,8 +21,13 @@ pre{
    .center {
     position: relative;
 
-    left: 6%;
+    left: 2%;
     top: 1.5em;
     
   }
-  .left {  margin:0 20px 0 20px; }
+  .colonne{
+    font-size: 16px;
+    text-align: center;
+    color: #1150C6;
+   
+    }

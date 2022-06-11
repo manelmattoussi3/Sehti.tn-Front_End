@@ -24,6 +24,9 @@ import { MedicamentComponent } from './medicament/medicament.component';
 import { DetaiDossierFicheComponent } from './detai-dossier-fiche/detai-dossier-fiche.component';
 import { AcueilDossierComponent } from './acueil-dossier/acueil-dossier.component';
 import { DossierNouveauPatientComponent } from './dossier-nouveau-patient/dossier-nouveau-patient.component';
+import { DossierLettreComponent } from './dossier-lettre/dossier-lettre.component';
+import { MedecinFamilleComponent } from './medecin-famille/medecin-famille.component';
+import { PatientDossierComponent } from './patient-dossier/patient-dossier.component';
 
 const ROUTES: Routes = [
   { path: '', redirectTo: '/about', pathMatch: 'full' },
@@ -44,6 +47,7 @@ const ROUTES: Routes = [
   { path: 'consultation', component:ConsultationComponent},
   { path: 'consultation/detail/:idCertificat', component: DetailCertificatComponent},
   { path: 'acueilDossier/detaild/:idDemande', component: DetailDossierMedicalComponent},
+  { path: 'medecinFamille/detaild/:idDemande', component: DetailDossierMedicalComponent},
   { path: 'consultation/detailor/:idOrdonance', component: DetailOrdonanceComponent},
   { path: 'ordonance', component:OrdonanceComponent},
   { path: 'lettre', component:LettreConfidentielleComponent},
@@ -51,8 +55,10 @@ const ROUTES: Routes = [
   { path: 'dossier/detailPatient/:idPatient', component: DetailPatientComponent},
   { path: 'dossier/detailFiche/:idDossier', component:DetaiDossierFicheComponent},
   { path: 'acueilDossier/detaild/:idDemande/detailFiche/:idDossier', component: DetaiDossierFicheComponent},
+  { path: 'acueilDossier/detaild/:idDemande/detailLettre/:idDossier', component: DossierLettreComponent},
+  { path: 'acueilDossier/detaild/:idDemande/detailPatient/:idPatient', component: PatientDossierComponent},
   { path: 'dossierNouveaux', component:DossierNouveauPatientComponent},
-  
+  { path: 'medecinFamille', component:MedecinFamilleComponent},
   { path: '**', component: PageNotFoundComponent }
   
 ]

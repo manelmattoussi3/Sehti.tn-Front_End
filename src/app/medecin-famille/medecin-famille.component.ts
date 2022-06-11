@@ -1,20 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { FilterMatchMode, SelectItem } from 'primeng/api';
+import { Table } from 'primeng/table';
 import { DemandeAcce, EtatAcce } from '../model/DemandeAcce';
 import { dossierMedical } from '../model/DossierMedical';
 import { patient } from '../model/patient';
 import { DemandeService } from '../service/demande.service';
 import { DossierMedicalService } from '../service/dossier-medical.service';
-import { EventEmitter } from '@angular/core'
-import { Table } from 'primeng/table';
-import { DatePipe } from '@angular/common';
+
 @Component({
-  selector: 'app-acueil-dossier',
-  templateUrl: './acueil-dossier.component.html',
-  styleUrls: ['./acueil-dossier.component.css']
+  selector: 'app-medecin-famille',
+  templateUrl: './medecin-famille.component.html',
+  styleUrls: ['./medecin-famille.component.css']
 })
-export class AcueilDossierComponent implements OnInit {
- 
+export class MedecinFamilleComponent implements OnInit {
   listDossier: dossierMedical[]=[];
   listPatient: patient[];
   dossier: dossierMedical;
@@ -27,11 +25,11 @@ export class AcueilDossierComponent implements OnInit {
   display: boolean = false;
   etata:EtatAcce;
   show:boolean = true;
-  constructor(private service: DossierMedicalService, private serviceDemande: DemandeService ) { }
+  constructor(private service: DossierMedicalService, private serviceDemande: DemandeService) { }
 
   ngOnInit(): void {
     this.demande=new DemandeAcce();
-    this.getAllDossierMedical();
+    this.getAllDossierMedicalPermanant();
     this.dossier = new dossierMedical();
     //this.getAllDemandes();
     this.matchModeOptions = [
@@ -43,18 +41,16 @@ export class AcueilDossierComponent implements OnInit {
 
 
     ];
-
-
   }
-  getAllDossierMedical() {
-    this.service.getDossierMedical().subscribe((data: dossierMedical[]) => { console.log(data), this.listDossier = data }, error => console.log(error));
+  getAllDossierMedicalPermanant() {
+    this.service.getDossierMedicalPermanant().subscribe((data: dossierMedical[]) => { console.log(data), this.listDossier = data }, error => console.log(error));
  
 
   }
-  // getAllDemandes() {
-  //   this.serviceDemande.getAllDemandes().subscribe((data: DemandeAcce[]) => { console.log(data), this.listdemandes = data }, error => console.log(error));
+  getAllDemandes() {
+    this.serviceDemande.getAllDemandes().subscribe((data: DemandeAcce[]) => { console.log(data), this.listdemandes = data }, error => console.log(error));
 
-  // }
+  }
 
   miseajourEtat(etata:EtatAcce) {
    if(etata ==EtatAcce.EnAttente)
@@ -76,5 +72,4 @@ this.listdemandes=event.data.demandesacces;
     table.clear();
 
   }
-
 }

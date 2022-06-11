@@ -23,6 +23,6 @@ export class dossierMedical {
   demandesacces: DemandeAcce[];
   fiche:FicheConsultation[];
   lettres: LettreConfidentielle[];
-  dateCreationVM?: string;
+  
 
 }

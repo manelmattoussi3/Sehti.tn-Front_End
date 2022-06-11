@@ -1,1 +1,214 @@
-<p>dossier-lettre works!</p>
+<app-header-dashboard></app-header-dashboard>
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="offcanvas-header">
+        <a class="navbar-brand" routerLink="/about">
+            <img src="assets/img/images (1).png" width="200"
+               width="200" class="left" alt="" />
+            
+        </a>
+        <button type="button" class="btn-close btn-close-custom text-reset" data-bs-dismiss="offcanvas"
+            aria-label="Close">
+
+        </button>
+    </div>
+    <div class="offcanvas-body">
+        <ul>
+
+            <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <img src="assets/img/my-profile.svg" alt="" class="" />
+                <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Mon Profile</span>
+            </li>
+            <!-- <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <img src="assets/img/appointment.svg" alt="" class="" />
+                <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Appointment</span>
+            </li> -->
+
+
+            <li class="bg-danger px-4 py-2-5 rounded-3 cursor-pointer">
+                <a routerLink="/acueilDossier">
+                    <img src="assets/img/dos.svg" alt="" class="" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Anciens_Patients</span>
+                </a>
+
+            </li>
+            <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <a routerLink="/dossierNouveaux">
+                    <img src="assets/img/dos.svg" alt="" class="" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Nouveaux_Patients</span>
+                </a>
+
+            </li>
+            
+             
+            
+           
+<!--             
+                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <a routerLink="/ordonance">
+                    <img src="assets/img/3410626.svg" alt="" class="" width="40" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Ordonance</span>
+                </a>
+                </li> -->
+            
+
+
+            
+                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <a routerLink="/medicament">
+                    <img src="assets/img/images.svg" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Medicaments</span>
+                </a>
+                </li>
+            
+           
+                <!-- <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <a routerLink="/prescription">
+                    <img src="assets/img/prescription-icon-18.svg" alt="" class="" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Prescriptions</span>
+                </a>
+                </li> -->
+            
+            
+                <!-- <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <a routerLink="/consultation">
+                    <img src="assets/img/102-1026499_consultation-free-doctor-consultation-icon-clipart.svg" alt="" class="" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Consultation</span>
+                </a>
+                </li> -->
+            
+            
+                <!-- <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <a routerLink="/lettre">
+                    <img src="assets/img/images (1).png" alt="" class="" width="42" height="42" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">L.Confidentielle</span>
+                </a>
+                </li> -->
+            
+            
+                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                    <a routerLink="/patient">
+                    <img src="assets/img/pattients.svg" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Patients</span>
+                </a>
+                </li>
+            
+
+
+        </ul>
+
+    </div>
+</div>
+    <div class="container">
+        <div class="card" style=" top: 10px; left: 200px ">
+            <br />
+            <h2  class="font">Lettre_Confidentielle </h2>
+            <div class="card-body">
+                <!-- Content here -->
+  
+  
+                <br />
+                <!-- <table  class="table table-striped" style=" top: 280px; left: 100px" >
+          <thead>
+            <th >idFiche</th>
+            <th >observation</th>
+            <th >Date_Creation</th>
+            
+            
+          </thead>
+          <tbody>
+            <tr *ngFor="let f of listFiches">
+              <td>{{f.idFiche}}</td>
+              <td>{{f.observation}}</td>
+              <td>{{f.dateCreation}}</td>
+            
+              
+              
+            </tr>
+          </tbody>
+  
+  
+        </table> -->
+  
+                <div class="menu-container" class="center">
+                    <div class="card-body" *ngFor="let l of lettres">
+                      <div *ngIf="l">
+                        
+                            <pre class="pre"> Lettre N°:{{l.idLettre}}                                                                                                                        {{l.dateLettre}}</pre>
+  
+                      
+                        <div class="menu" >
+                            <!-- <div class="menu-item">Id idFiche </div>
+                        <div class="menu-item">Observation </div>
+                        <div class="menu-item">Date_Creation </div> -->
+                            <div class="card-body">
+  
+                                <pre>&#9788; Observation : {{l.observation}} </pre>
+                                <hr />
+                                <br />
+                               
+                               
+  
+                    
+                                <hr />
+                                <br />
+                         
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+  
+        <footer>
+  
+            <app-footer></app-footer>
+        </footer>
