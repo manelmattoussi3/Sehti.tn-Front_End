@@ -13,5 +13,12 @@ export class CertificatService {
   getCertificat(idCertificat: number): Observable<any>{
     return this.http.get<certificat[]>(this.url+'getCertifById/'+idCertificat);
   }
- 
+  getAllCertificats(){
+    return this.http.get<certificat[]>(this.url+'getAllCertificat');
+  }
+  addCertificat(c:certificat):any{
+    return this.http.post<certificat>( `${this.url}saveCertificat`,c);
+  
+  
+  }
 }

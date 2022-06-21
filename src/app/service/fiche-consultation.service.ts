@@ -16,4 +16,9 @@ export class FicheConsultationService {
   getFicheConsultationById(idFiche: number): Observable<any> {
     return this.http.get<FicheConsultation[]>(this.url+'findFicheById/'+idFiche);
   }
+  addFicheConsultation(fiche:FicheConsultation ,id:string):any{
+    return this.http.post<FicheConsultation>( `${this.url}PartagerFicheConsultation/Dossier/${id}`,fiche);
+  
+  
+  }
 }

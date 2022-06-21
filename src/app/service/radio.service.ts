@@ -12,4 +12,9 @@ export class RadioService {
   getAllRadio(){
     return this.http.get<OperationRadio[]>(this.url+'findAllRadio')
   }
+  addRadio(r:OperationRadio ,id:string):any{
+    return this.http.post<OperationRadio>( `${this.url}PartagerRadio/${id}`,r);
+  
+  
+  }
 }

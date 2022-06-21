@@ -16,4 +16,10 @@ export class LettreConfidentielleService {
   getLettreById(idLettre: number): Observable<any> {
     return this.http.get<LettreConfidentielle[]>(this.url+'findLettreById/'+idLettre);
   }
+  addLettreConfidentielle(lettre:LettreConfidentielle ,id:string):any{
+    return this.http.post<LettreConfidentielle>( `${this.url}PartagerLettreConfidentielle/Dossier/${id}`,lettre);
+  
+  
+  }
 }
+

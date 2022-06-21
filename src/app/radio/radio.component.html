@@ -53,6 +53,156 @@
         <br />
         <br />
         <br />
+        <p-toast position="top-right" ></p-toast>
+        <p-dialog [(visible)]="showRadio" [modal]="true" [baseZIndex]="10000"
+            [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '40vw'}" [draggable]="false"
+            [resizable]="false">
+            <h1 class="text-center" class="font">
+                Partager_Radio
+            </h1>
+            
+            <form [formGroup]="registerForm">
+                <div class="p-fluid grid">
+
+
+
+
+                    <div class="row g-3">
+                        <div class="col">
+                            <div class="p-field p-col-6 p-md-4">
+
+                                <span class="p-float-label">
+                                    <input type="idOperation" id="idOperation" name="idOperation" pInputText formControlName="idOperation"
+                                        
+                                        [(ngModel)]="radio.idOperation" [ngClass]="!registerForm.controls['idOperation'].valid && registerForm.controls['idOperation']?.touched?'ng-invalid ng-dirty':''"
+                                        required
+                                        >
+                                        <small class="text-red-500" *ngIf="registerForm.controls['idOperation'].hasError('required') && registerForm.controls['idOperation']?.touched" style="color: #f44336;" >N°_Radio est obligatoire </small>
+                                        <small class="text-red-500" *ngIf="registerForm.controls['idOperation'].hasError('pattern') && registerForm.controls['idOperation']?.touched" style="color: #f44336;" > N°_Radio doit étre un nombre </small>
+                                    <label for="idOperation">N°_Radio</label>
+                                </span>
+                                
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-field p-col-6 p-md-4">
+                                <span class="p-float-label">
+                                    <input type="codeRadio" id="codeRadio" name="codeRadio" pInputText formControlName="codeRadio"
+                                        [(ngModel)]="radio.codeRadio" [ngClass]="!registerForm.controls['codeRadio'].valid && registerForm.controls['codeRadio']?.touched?'ng-invalid ng-dirty':''"
+                                        required
+                                       >
+                                       <small class="text-red-500" *ngIf="!registerForm.controls['codeRadio'].valid && registerForm.controls['codeRadio']?.touched" style="color: #f44336;" > code de radio est obligatoire </small>
+                                    <label for="codeRadio">codeRadio</label>
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="p-field p-col-12 p-md-4">
+                        <span class="p-float-label">
+                            <textarea inputId="textarea" rows="3" style="resize: none;" cols="30" style="min-height: 30px;overflow:auto;" id="observation" name="observation" formControlName="observation" type="textarea"
+                                 [(ngModel)]="radio.observation" pInputTextarea [ngClass]="!registerForm.controls['observation'].valid && registerForm.controls['observation']?.touched?'ng-invalid ng-dirty':''"
+                                required
+                                ></textarea>
+                                <small class="text-red-500" *ngIf="registerForm.controls['observation'].hasError('required') && registerForm.controls['observation']?.touched" style="color: #f44336;" >Observation est obligatoire </small>
+                                <small class="text-red-500" *ngIf="registerForm.controls['observation'].hasError('minlength') && registerForm.controls['observation']?.touched" style="color: #f44336;" > min 3 lettres </small>
+                                <small class="text-red-500" *ngIf="registerForm.controls['observation'].hasError('pattern') && registerForm.controls['observation']?.touched" style="color: #f44336;" >L'observation ne doit pas contenir des caractéres spéciaux</small>
+                            <label for="observation">observation</label>
+                        </span>
+                    </div>
+
+
+                    <div class="row g-3">
+                        <div class="col">
+                            <div class="p-field p-col-6 p-md-4">
+                                <span class="p-float-label">
+                                    <input type="text" id="etablissement" name="etablissement" pInputText formControlName="etablissement"
+                                        [(ngModel)]="radio.etablissement" [ngClass]="!registerForm.controls['etablissement'].valid && registerForm.controls['etablissement']?.touched?'ng-invalid ng-dirty':''"
+                                        required
+                                        >
+                                        <small class="text-red-500" *ngIf="registerForm.controls['etablissement'].hasError('required') && registerForm.controls['etablissement']?.touched" style="color: #f44336;" >etablissement est obligatoire </small>
+                                        <small class="text-red-500" *ngIf="registerForm.controls['etablissement'].hasError('minlength') && registerForm.controls['etablissement']?.touched" style="color: #f44336;" > min 3 lettres </small>
+                                        <small class="text-red-500" *ngIf="registerForm.controls['etablissement'].hasError('pattern') && registerForm.controls['etablissement']?.touched" style="color: #f44336;" >L'établissement ne doit contenir que des lettres</small>
+                                        <label for="etablissement">etablissement</label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-field p-col-6 p-md-4">
+                                <span class="p-float-label">
+                                    <input type="text" id="motif" name="motif" pInputText formControlName="motif" [(ngModel)]="radio.motif" [ngClass]="!registerForm.controls['motif'].valid && registerForm.controls['motif']?.touched?'ng-invalid ng-dirty':''"
+                                    required>
+                                    <small class="text-red-500" *ngIf="registerForm.controls['motif'].hasError('required') && registerForm.controls['motif']?.touched" style="color: #f44336;" >motif est obligatoire </small>
+                                    <label for="motif">motif</label>
+                                </span>
+                            </div>
+                        </div>
+                      
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label for="type">Type_Radio</label>
+                            <p-dropdown [options]="optionsExam" [(ngModel)]="radio.type" optionLabel="label" formControlName="type"
+                                optionValue="value" placeholder="Type_Radio" [ngClass]="!registerForm.controls['type'].valid && registerForm.controls['type']?.touched?'ng-invalid ng-dirty':''"
+                                ></p-dropdown>
+                                   
+                                <small class="text-red-500" *ngIf="registerForm.controls['type'].hasError('required') && registerForm.controls['type']?.touched" style="color: #f44336;" >type est obligatoire </small>
+                            
+                     
+                    </div>
+
+
+            
+
+                    <div class="row g-3">
+                        <div class="col">
+                            <div class="p-field p-col-6 p-md-4">
+                        <span class="p-float-label">
+                            <p-dropdown id="idFiche" name="fiche" datakey="idFiche" [options]="ListFiche" formControlName="idFiche"
+                                [(ngModel)]="fiche" optionLabel="idFiche"></p-dropdown>
+                            <label for="idFiche">N°Fiche_Consultation</label>
+                        </span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-field p-col-6 p-md-4">
+                        <span class="p-float-label">
+                            <input type="text" id="resultat" name="resultat" pInputText formControlName="resultat" [(ngModel)]="radio.resultat" [ngClass]="!registerForm.controls['resultat'].valid && registerForm.controls['resultat']?.touched?'ng-invalid ng-dirty':''"
+                            required>
+                            <small class="text-red-500" *ngIf="registerForm.controls['resultat'].hasError('required') && registerForm.controls['resultat']?.touched" style="color: #f44336;" >resultat est obligatoire </small>
+                            <label for="resultat">resultat</label>
+                        </span>
+                    </div>
+                </div>
+              
+            </div>
+
+            <div class="p-field p-col-12 p-md-4">
+                <label for="etat">Etat_Radio</label>
+                    <p-dropdown id="etat" name="etat" dataKey="etat" [options]="options" [(ngModel)]="radio.etat" formControlName="etat" placeholder="Etat_Radio" [ngClass]="!registerForm.controls['etat'].valid && registerForm.controls['etat']?.touched?'ng-invalid ng-dirty':''"
+                    ></p-dropdown>
+                       
+                    <small class="text-red-500" *ngIf="registerForm.controls['etat'].hasError('required') && registerForm.controls['etat']?.touched" style="color: #f44336;" >etat est obligatoire </small>
+             
+            </div>
+
+                   
+                   
+
+                </div>
+               
+                <button pButton type="button" id="center"  icon="pi pi-plus"   pRipple class="purple" label="Partager" (click)="saveRadio(radio)"></button>
+                
+                
+               
+               
+            </form>
+
+
+
+        </p-dialog>
+        <button pButton pRipple class="purple" type="button" icon="pi pi-plus" class="p-button-rounded " id="right"
+            (click)="modelRadio()" ></button>
         <p class="text-center" class="font">Liste des radios</p>
 
         <!-- Content here -->
@@ -60,7 +210,7 @@
 
         <br />
         <hr />
-
+      
         <p-table #radioTable [scrollable]="true" [value]="ListRadios" dataKey="id" [rows]="5"
             [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,25,50]" [paginator]="true"
             currentPageReportTemplate="Affichage de {first} à {last} sur {totalRecords} éléments"
@@ -212,6 +362,7 @@
             </ng-template>
 
         </p-table>
+     
     </div>
 
 </div>

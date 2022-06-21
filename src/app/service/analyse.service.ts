@@ -15,4 +15,9 @@ export class AnayseService {
 getAnalyse(){
   return this.http.get<OperationAnalyse[]>(this.url+'findAnalyses');
 }
+addAnalyse(o:OperationAnalyse ,id:string):any{
+  return this.http.post<OperationAnalyse>( `${this.url}PartagerAnalyse/${id}`,o);
+
+
+}
 }

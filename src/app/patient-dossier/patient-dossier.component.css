@@ -31,3 +31,21 @@ pre{
     color: #1150C6;
    
     }
+      #leftbtn {
+
+    position: relative;
+  
+    left: 60%;
+    bottom: 4em;
+  
+  
+  }
+  
+  .lefto {
+    float: left;
+    margin: 0 30px 15 20px;
+  }
+  .leftt {
+    float: right;
+    float: top;
+  }

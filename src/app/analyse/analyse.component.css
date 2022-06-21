@@ -36,3 +36,40 @@ text-decoration: #1b74e4 underline;
   top: 1.5em;
   
 }
+#right {
+
+  position: relative;
+
+  left: 95%;
+  top: 1em;
+
+
+  }
+  #center {
+
+    position: relative;
+  
+    left: 45%;
+    top: 1em;
+  
+  
+    }
+  .parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .rightt {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    flex-direction: column;
+  }
+  .leftt {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+  }
+  

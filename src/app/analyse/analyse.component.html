@@ -7,6 +7,7 @@
             <br />
             <br />
             <pre> Espace analyseur</pre>
+
         </a>
         <button type="button" class="btn-close btn-close-custom text-reset" data-bs-dismiss="offcanvas"
             aria-label="Close">
@@ -29,8 +30,8 @@
 
             <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
                 <a routerLink="/patientOperation">
-                    <img src="assets/img/icone_historique.svg" alt="" class="" width="25" height="25"/>
-                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Historiques_Analyses</span>
+                    <img src="assets/img/icone_historique.svg" alt="" class="" width="25" height="25" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Historiques</span>
                 </a>
 
             </li>
@@ -53,6 +54,157 @@
         <br />
         <br />
         <br />
+        <p-toast position="top-right" ></p-toast>
+        <p-dialog [(visible)]="showAnalyse" [modal]="true" [baseZIndex]="10000"
+            [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '40vw'}" [draggable]="false"
+            [resizable]="false">
+            <h1 class="text-center" class="font">
+                Partager_Analyse
+            </h1>
+            
+            <form [formGroup]="registerForm">
+                <div class="p-fluid grid">
+
+
+
+
+                    <div class="row g-3">
+                        <div class="col">
+                            <div class="p-field p-col-6 p-md-4">
+
+                                <span class="p-float-label">
+                                    <input type="idOperation" id="idOperation" name="idOperation" pInputText formControlName="idOperation"
+                                        [(ngModel)]="analyse.idOperation"
+                                        [(ngModel)]="analyse.idOperation" [ngClass]="!registerForm.controls['idOperation'].valid && registerForm.controls['idOperation']?.touched?'ng-invalid ng-dirty':''"
+                                        required
+                                        >
+                                        <small class="text-red-500" *ngIf="registerForm.controls['idOperation'].hasError('required') && registerForm.controls['idOperation']?.touched" style="color: #f44336;" >N°_Analyse est obligatoire </small>
+                                        <small class="text-red-500" *ngIf="registerForm.controls['idOperation'].hasError('pattern') && registerForm.controls['idOperation']?.touched" style="color: #f44336;" > N°_Analyse doit étre un nombre </small>
+                                    <label for="idOperation">N°_Analyse</label>
+                                </span>
+                                
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-field p-col-6 p-md-4">
+                                <span class="p-float-label">
+                                    <input type="codeAnalyse" id="codeAnalyse" name="codeAnalyse" pInputText formControlName="codeAnalyse"
+                                        [(ngModel)]="analyse.codeAnalyse" [ngClass]="!registerForm.controls['codeAnalyse'].valid && registerForm.controls['codeAnalyse']?.touched?'ng-invalid ng-dirty':''"
+                                        required
+                                       >
+                                       <small class="text-red-500" *ngIf="!registerForm.controls['codeAnalyse'].valid && registerForm.controls['codeAnalyse']?.touched" style="color: #f44336;" > code d'analyse est obligatoire </small>
+                                    <label for="codeAnalyse">codeAnalyse</label>
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="p-field p-col-12 p-md-4">
+                        <span class="p-float-label">
+                            <textarea inputId="textarea" rows="3" style="resize: none;" cols="30" style="min-height: 30px;overflow:auto;" id="observation" name="observation" formControlName="observation" type="textarea"
+                                 [(ngModel)]="analyse.observation" pInputTextarea [ngClass]="!registerForm.controls['observation'].valid && registerForm.controls['observation']?.touched?'ng-invalid ng-dirty':''"
+                                required
+                                ></textarea>
+                                <small class="text-red-500" *ngIf="registerForm.controls['observation'].hasError('required') && registerForm.controls['observation']?.touched" style="color: #f44336;" >Observation est obligatoire </small>
+                                <small class="text-red-500" *ngIf="registerForm.controls['observation'].hasError('minlength') && registerForm.controls['observation']?.touched" style="color: #f44336;" > min 3 lettres </small>
+                                <small class="text-red-500" *ngIf="registerForm.controls['observation'].hasError('pattern') && registerForm.controls['observation']?.touched" style="color: #f44336;" >L'observation ne doit pas contenir des caractéres spéciaux</small>
+                            <label for="observation">observation</label>
+                        </span>
+                    </div>
+
+
+                    <div class="row g-3">
+                        <div class="col">
+                            <div class="p-field p-col-6 p-md-4">
+                                <span class="p-float-label">
+                                    <input type="text" id="etablissement" name="etablissement" pInputText formControlName="etablissement"
+                                        [(ngModel)]="analyse.etablissement" [ngClass]="!registerForm.controls['etablissement'].valid && registerForm.controls['etablissement']?.touched?'ng-invalid ng-dirty':''"
+                                        required
+                                        >
+                                        <small class="text-red-500" *ngIf="registerForm.controls['etablissement'].hasError('required') && registerForm.controls['etablissement']?.touched" style="color: #f44336;" >etablissement est obligatoire </small>
+                                        <small class="text-red-500" *ngIf="registerForm.controls['etablissement'].hasError('minlength') && registerForm.controls['etablissement']?.touched" style="color: #f44336;" > min 3 lettres </small>
+                                        <small class="text-red-500" *ngIf="registerForm.controls['etablissement'].hasError('pattern') && registerForm.controls['etablissement']?.touched" style="color: #f44336;" >L'établissement ne doit contenir que des lettres</small>
+                                        <label for="etablissement">etablissement</label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-field p-col-6 p-md-4">
+                                <span class="p-float-label">
+                                    <input type="text" id="motif" name="motif" pInputText formControlName="motif" [(ngModel)]="analyse.motif" [ngClass]="!registerForm.controls['motif'].valid && registerForm.controls['motif']?.touched?'ng-invalid ng-dirty':''"
+                                    required>
+                                    <small class="text-red-500" *ngIf="registerForm.controls['motif'].hasError('required') && registerForm.controls['motif']?.touched" style="color: #f44336;" >motif est obligatoire </small>
+                                    <label for="motif">motif</label>
+                                </span>
+                            </div>
+                        </div>
+                      
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label for="type">Type_Analyse</label>
+                            <p-dropdown [options]="optionsExam" [(ngModel)]="analyse.type" optionLabel="label" formControlName="type"
+                                optionValue="value" placeholder="Type_Analyse" [ngClass]="!registerForm.controls['type'].valid && registerForm.controls['type']?.touched?'ng-invalid ng-dirty':''"
+                                ></p-dropdown>
+                                   
+                                <small class="text-red-500" *ngIf="registerForm.controls['type'].hasError('required') && registerForm.controls['type']?.touched" style="color: #f44336;" >type est obligatoire </small>
+                            
+                     
+                    </div>
+
+
+            
+
+                    <div class="row g-3">
+                        <div class="col">
+                            <div class="p-field p-col-6 p-md-4">
+                        <span class="p-float-label">
+                            <p-dropdown id="idFiche" name="fiche" datakey="idFiche" [options]="ListFiche" formControlName="idFiche"
+                                [(ngModel)]="fiche" optionLabel="idFiche"></p-dropdown>
+                            <label for="idFiche">N°Fiche_Consultation</label>
+                        </span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-field p-col-6 p-md-4">
+                        <span class="p-float-label">
+                            <input type="text" id="resultat" name="resultat" pInputText formControlName="resultat" [(ngModel)]="analyse.resultat" [ngClass]="!registerForm.controls['resultat'].valid && registerForm.controls['resultat']?.touched?'ng-invalid ng-dirty':''"
+                            required>
+                            <small class="text-red-500" *ngIf="registerForm.controls['resultat'].hasError('required') && registerForm.controls['resultat']?.touched" style="color: #f44336;" >resultat est obligatoire </small>
+                            <label for="resultat">resultat</label>
+                        </span>
+                    </div>
+                </div>
+              
+            </div>
+
+            <div class="p-field p-col-12 p-md-4">
+                <label for="etat">Etat_Analyse</label>
+                    <p-dropdown id="etat" name="etat" dataKey="etat" [options]="options" [(ngModel)]="analyse.etat" formControlName="etat" placeholder="Etat_Analyse" [ngClass]="!registerForm.controls['etat'].valid && registerForm.controls['etat']?.touched?'ng-invalid ng-dirty':''"
+                    ></p-dropdown>
+                       
+                    <small class="text-red-500" *ngIf="registerForm.controls['etat'].hasError('required') && registerForm.controls['etat']?.touched" style="color: #f44336;" >etat est obligatoire </small>
+             
+            </div>
+
+                   
+                   
+
+                </div>
+               
+                <button pButton type="button" id="center"  icon="pi pi-plus"   pRipple class="purple" label="Partager" (click)="saveAnalyse(analyse)"></button>
+                
+                
+               
+               
+            </form>
+
+
+
+        </p-dialog>
+        <button pButton pRipple class="purple" type="button" icon="pi pi-plus" class="p-button-rounded " id="right"
+            (click)="modelAnalyse()" ></button>
+
         <p class="text-center" class="font">Liste des analyses</p>
 
         <!-- Content here -->
@@ -74,10 +226,6 @@
 
 
 
-
-
-
-
                     <input pInputText type="text" class="pi pi-search"
                         (input)="analyseTable.filterGlobal(getEventValue($event), 'contains')" placeholder="Rechercher"
                         class="p-input-icon-left p-ml-auto" />
@@ -89,23 +237,38 @@
             </ng-template>
             <ng-template pTemplate="header">
                 <tr>
-                    <th class="td" style="min-width:200px" pSortableColumn="codeAnalyse">Code_Analyse <p-sortIcon field="codeAnalyse"></p-sortIcon>
+                    <th class="td" style="min-width:200px" pSortableColumn="codeAnalyse">Code_Analyse <p-sortIcon
+                            field="codeAnalyse"></p-sortIcon>
                     </th>
-                    <th class="td" style="min-width:200px" pSortableColumn="observation">Observation <p-sortIcon field="observation"></p-sortIcon>
+                    <th class="td" style="min-width:200px" pSortableColumn="observation">Observation <p-sortIcon
+                            field="observation"></p-sortIcon>
                     </th>
-                    <th class="td" style="min-width:200px" pSortableColumn="dateAnalyse">Date_Analyse <p-sortIcon field="dateAnalyse"></p-sortIcon>
+                    <th class="td" style="min-width:200px" pSortableColumn="dateAnalyse">Date_Analyse <p-sortIcon
+                            field="dateAnalyse"></p-sortIcon>
                     </th>
-                   
-                    <th class="td" style="min-width:200px" pSortableColumn="type">Type <p-sortIcon field="type"> </p-sortIcon></th>
-                    <th class="td" style="min-width:200px" pSortableColumn="motif">Motif <p-sortIcon field="motif"> </p-sortIcon> </th>
-                    <th class="td" style="min-width:200px" pSortableColumn="resultat">Resultat<p-sortIcon field="resultat"> </p-sortIcon> </th>
-                    <th class="td" style="min-width:200px" pSortableColumn="etablissement">Etablissement <p-sortIcon field="etablissement"> </p-sortIcon></th>
-                    <th class="td" style="min-width:200px" pSortableColumn="etat">Etat_Analyse <p-sortIcon field="etat"> </p-sortIcon></th>
+
+                    <th class="td" style="min-width:200px" pSortableColumn="type">Type <p-sortIcon field="type">
+                        </p-sortIcon>
+                    </th>
+                    <th class="td" style="min-width:200px" pSortableColumn="motif">Motif <p-sortIcon field="motif">
+                        </p-sortIcon>
+                    </th>
+                    <th class="td" style="min-width:200px" pSortableColumn="resultat">Resultat<p-sortIcon
+                            field="resultat"> </p-sortIcon>
+                    </th>
+                    <th class="td" style="min-width:200px" pSortableColumn="etablissement">Etablissement <p-sortIcon
+                            field="etablissement"> </p-sortIcon>
+                    </th>
+                    <th class="td" style="min-width:200px" pSortableColumn="etat">Etat_Analyse <p-sortIcon field="etat">
+                        </p-sortIcon>
+                    </th>
 
                 </tr>
                 <tr>
                     <th>
-                        <p-columnFilter style="min-width:200px" type="text" field="codeAnalyse" matchMode="contains" [matchModeOptions]="matchModeOptions"></p-columnFilter> </th>
+                        <p-columnFilter style="min-width:200px" type="text" field="codeAnalyse" matchMode="contains"
+                            [matchModeOptions]="matchModeOptions"></p-columnFilter>
+                    </th>
                     <th>
                         <p-columnFilter style="min-width:200px" type="text" field="observation" matchMode="contains"
                             [matchModeOptions]="matchModeOptions"></p-columnFilter>
@@ -114,7 +277,7 @@
                         <p-columnFilter style="min-width:200px" type="text" field="dateAnalyse" matchMode="contains"
                             [matchModeOptions]="matchModeOptions"></p-columnFilter>
                     </th>
-               
+
                     <th>
                         <p-columnFilter style="min-width:200px" type="text" field="type" matchMode="contains"
                             [matchModeOptions]="matchModeOptions"></p-columnFilter>
@@ -147,47 +310,47 @@
                     <td class="td" style="min-width:200px">{{analyse.codeAnalyse}}</td>
                     <td class="td" style="min-width:200px"> {{analyse.observation }}</td>
                     <td class="td" style="min-width:200px">{{analyse.dateAnalyse | date: "longDate"}}</td>
-                   
-                    
-                    <div  class="tag">
-                    <p-tag *ngIf="analyse.type=='BACTERIOLOGIQUE' " styleClass="mr-2" severity="warning">
-                                    
-                        <td class="td" style="min-width:200px">{{analyse.type}}</td>
-                    </p-tag>
-                </div>
-                <div  class="tag">
-                    <p-tag *ngIf="analyse.type=='SEPARASITOLOGIQUE' " styleClass="mr-2" severity="danger">
-                                    
-                        <td class="td" style="min-width:200px">{{analyse.type}}</td>
-                    </p-tag>
-                </div>
-                <div  class="tag">
-                    <p-tag *ngIf="analyse.type=='URINE' " styleClass="mr-2" severity="success">
-                                    
-                        <td class="td" style="min-width:200px">{{analyse.type}}</td>
-                    </p-tag>
-                </div>
-                <div  class="tag">
-                    <p-tag *ngIf="analyse.type=='SANG' " styleClass="mr-2" severity="info">
-                                    
-                        <td class="td" style="min-width:200px">{{analyse.type}}</td>
-                    </p-tag>
-                </div>
+
+
+                    <div class="tag">
+                        <p-tag *ngIf="analyse.type=='BACTERIOLOGIQUE' " styleClass="mr-2" severity="warning">
+
+                            <td class="td" style="min-width:200px">{{analyse.type}}</td>
+                        </p-tag>
+                    </div>
+                    <div class="tag">
+                        <p-tag *ngIf="analyse.type=='SEPARASITOLOGIQUE' " styleClass="mr-2" severity="danger">
+
+                            <td class="td" style="min-width:200px">{{analyse.type}}</td>
+                        </p-tag>
+                    </div>
+                    <div class="tag">
+                        <p-tag *ngIf="analyse.type=='URINE' " styleClass="mr-2" severity="success">
+
+                            <td class="td" style="min-width:200px">{{analyse.type}}</td>
+                        </p-tag>
+                    </div>
+                    <div class="tag">
+                        <p-tag *ngIf="analyse.type=='SANG' " styleClass="mr-2" severity="info">
+
+                            <td class="td" style="min-width:200px">{{analyse.type}}</td>
+                        </p-tag>
+                    </div>
                     <td class="td" style="min-width:200px">{{analyse.motif}}</td>
                     <td class="td" style="min-width:200px">{{analyse.resultat}}</td>
                     <td class="td" style="min-width:200px">{{analyse.etablissement}}</td>
-                    <div  class="tag">
-                    <p-tag *ngIf="analyse.etat=='Terminé' " styleClass="mr-2" severity="success">
-                                    
-                        <td class="td" style="min-width:200px">{{analyse.etat}}</td>
-                    </p-tag>
-                </div>
-                <div  class="tag">
-                    <p-tag *ngIf="analyse.etat=='EnCours' " styleClass="mr-2" severity="warning">
-                                    
-                        <td class="td" style="min-width:200px" >{{analyse.etat}}</td>
-                    </p-tag>
-                </div>
+                    <div class="tag">
+                        <p-tag *ngIf="analyse.etat=='Terminé' " styleClass="mr-2" severity="success">
+
+                            <td class="td" style="min-width:200px">{{analyse.etat}}</td>
+                        </p-tag>
+                    </div>
+                    <div class="tag">
+                        <p-tag *ngIf="analyse.etat=='EnCours' " styleClass="mr-2" severity="warning">
+
+                            <td class="td" style="min-width:200px">{{analyse.etat}}</td>
+                        </p-tag>
+                    </div>
 
 
 
@@ -200,9 +363,11 @@
             </ng-template>
 
         </p-table>
+
     </div>
 
 </div>
+
 <br />
 <br />
 <br />
@@ -227,4 +392,5 @@
 <br />
 <br />
 <br />
+
 <app-footer></app-footer>

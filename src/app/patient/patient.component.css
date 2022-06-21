@@ -1,3 +1,137 @@
-h2{
-    color: #961724;
+
+
+.left {
+    float: left;
+    margin: 0 20px 0 -130px;
 }
+
+
+
+.text-inf {
+
+    color: #1150C6;
+}
+
+.font {
+    font-size: 28px;
+    text-align: center;
+    color: #1150C6;
+    text-decoration: #1b74e4 underline;
+}
+
+.p-input-icon-left,
+.p-input-icon-right {
+    float: right;
+}
+
+span.p-input-icon-left input[type="text"] {
+    padding: 0px 25px;
+}
+
+.center {
+    position: relative;
+
+    left: 2%;
+    top: 1.5em;
+
+}
+
+.colonne {
+    position: absolute;
+    font-size: 10px;
+    text-align: center;
+    color: #1150C6;
+    font-style: italic;
+    top: 370px;
+
+}
+
+.tag {
+    position: relative;
+
+    right: 3%;
+    top: 1.5em;
+
+}
+
+.td {
+    text-align: center;
+    top: 1.5em;
+}
+
+.right {
+    position: absolute;
+
+    top: 170px;
+    left: 400px;
+}
+
+.rightparag {
+    position: absolute;
+
+    top: 200px;
+    right: 70px;
+}
+.rightcard {
+    position: absolute;
+
+    top: 520px;
+    left: 400px;
+}
+.rightcard0 {
+    position: absolute;
+    left: 40px;
+    top: 520px;
+    
+}
+.rightcard1 {
+    position: absolute;
+
+    top: 520px;
+    right: 770px;
+}
+.rightcard2 {
+    position: absolute;
+
+    top: 520px;
+    right: 390px;
+}
+.rightcard3 {
+    position: absolute;
+
+    top: 520px;
+    right: 35px;
+}
+#right {
+
+    position: relative;
+  
+    left: 30%;
+    top: 3em;
+  
+  
+    }
+    .text-center {
+        text-align: center !important;
+        font-size: 30px;
+        color: #1150C6;
+        font-style: italic;
+      }
+      #rightimg {
+
+        position: relative;
+      
+        right: -4%;
+        top: 3em;
+      
+      
+        } 
+        .text-nav {
+            text-align: center !important;
+            font-size: 20px;
+            color: slategrey;
+    
+          }
+          .p-ripple.purple .p-ink {
+            background: rgba(256,39,176,.3);
+        }

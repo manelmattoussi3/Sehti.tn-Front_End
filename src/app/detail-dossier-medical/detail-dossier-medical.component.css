@@ -9,6 +9,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
 :root {
   --bs-blue: #1b74e4;
   --bs-indigo: #6610f2;
@@ -83,13 +84,16 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
 a {
   color: #1150C6;
   text-decoration: underline;
 }
+
 a:hover {
   color: #961724;
 }
+
 @media (min-width: 992px) {
   .btn-close-custom {
     display: none;
@@ -106,70 +110,80 @@ a:hover {
   }
 }
 
-.text-inf{
-    
-    color: #1150C6;
-  }
+.text-inf {
+
+  color: #1150C6;
+}
 
 /*# sourceMappingURL=index.css.map */
-.menu-container{
-    width: 800px;
-    background: #e9ecef;
-    font-size: 20px;
-    
-}
-.menu-toggler{
-    padding: 10px;
-    color: #1b74e4;
-    
-}
-.menu{
-    background: #fff;
-    color: #0dcaf0;
-    padding: 50px;
-    
-}
-.menu-item{
-    cursor: pointer;
-    padding: 5px 0;
-}
-.menu-item:hover{
+.menu-container {
+  width: 800px;
+  background: #e9ecef;
+  font-size: 20px;
 
 }
-.h2{
-    color: #1b74e4;  
-    
+
+.menu-toggler {
+  padding: 10px;
+  color: #1b74e4;
+
 }
+
+.menu {
+  background: #fff;
+  color: #0dcaf0;
+  padding: 50px;
+
+}
+
+.menu-item {
+  cursor: pointer;
+  padding: 5px 0;
+}
+
+.menu-item:hover {}
+
+.h2 {
+  color: #1b74e4;
+
+}
+
 .text-center {
-    text-align: center !important;
-    color: #1b74e4; 
-    font-style: italic;
-    text-decoration: #1b74e4 underline;
-  }
-  .left { 
-    float:right;
-     float: top;
-     }
-  .table {
-    --bs-table-bg: transparent;
-    --bs-table-accent-bg: transparent;
-    --bs-table-striped-color: #212529;
-    --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
-    --bs-table-active-color: #212529;
-    --bs-table-active-bg: rgba(0, 0, 0, 0.1);
-    --bs-table-hover-color: #212529;
-    --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
-    width: 100%;
-    margin-bottom: 1rem;
-    color: #1b74e4;
-    vertical-align: top;
-    border-color: #dee2e6;
-  }
- .footer{
-    position: absolute; bottom: 0; left: 0; right: 0
- }
- 
- #right {
+  text-align: center !important;
+  color: #1b74e4;
+  font-style: italic;
+  text-decoration: #1b74e4 underline;
+}
+
+.left {
+  float: right;
+  float: top;
+}
+
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-accent-bg: transparent;
+  --bs-table-striped-color: #212529;
+  --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+  --bs-table-active-color: #212529;
+  --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+  --bs-table-hover-color: #212529;
+  --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #1b74e4;
+  vertical-align: top;
+  border-color: #dee2e6;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0
+}
+
+#right {
 
   position: relative;
 
@@ -177,20 +191,72 @@ a:hover {
   bottom: 1em;
 
 
-  }
-  #leftbtn {
+}
 
-    position: relative;
-  
-    left: 10%;
-    bottom: 1em;
-  
-  
-    }
-    .lefto { float:left; margin:0 30px 15 20px; }
-    .colonne{
-      font-size: 16px;
-      text-align: center;
-      color: #1150C6;
-     
-      }
+#rightFiche {
+
+  position: relative;
+
+  left: 94%;
+  bottom: 0.5em;
+
+
+}
+#rightLettre {
+
+  position: relative;
+
+  right: 2%;
+  bottom: 0.5em;
+
+
+}
+
+#leftbtn {
+
+  position: relative;
+
+  left: 10%;
+  bottom: 1em;
+
+
+}
+
+.lefto {
+  float: left;
+  margin: 0 30px 15 20px;
+}
+
+.colonne {
+  font-size: 16px;
+  text-align: center;
+  color: #1150C6;
+
+}
+
+#rightimg {
+
+  position: relative;
+
+  left: 50%;
+  bottom: 1em;
+
+
+}
+
+.font {
+  font-size: 28px;
+  text-align: center;
+  color: #1150C6;
+  text-decoration: #1b74e4 underline;
+}
+
+#center {
+
+  position: relative;
+
+  left: 45%;
+  top: 1em;
+
+
+}

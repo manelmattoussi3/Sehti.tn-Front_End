@@ -31,6 +31,8 @@ import { PatientOperationComponent } from './patient-operation/patient-operation
 import { AnalysePatientComponent } from './analyse-patient/analyse-patient.component';
 import { PatientRadioComponent } from './patient-radio/patient-radio.component';
 import { HistoriqueRadioComponent } from './historique-radio/historique-radio.component';
+import { FormanalyseComponent } from './formanalyse/formanalyse.component';
+import { ProfilMedecinComponent } from './profil-medecin/profil-medecin.component';
 
 const ROUTES: Routes = [
   { path: '', redirectTo: '/about', pathMatch: 'full' },
@@ -61,12 +63,15 @@ const ROUTES: Routes = [
   { path: 'acueilDossier/detaild/:idDemande/detailFiche/:idDossier', component: DetaiDossierFicheComponent},
   { path: 'acueilDossier/detaild/:idDemande/detailLettre/:idDossier', component: DossierLettreComponent},
   { path: 'acueilDossier/detaild/:idDemande/detailPatient/:idPatient', component: PatientDossierComponent},
+  { path: 'medecinFamille/detaild/:idDemande/detailPatient/:idPatient', component: PatientDossierComponent},
   { path: 'dossierNouveaux', component:DossierNouveauPatientComponent},
   { path: 'medecinFamille', component:MedecinFamilleComponent},
   { path: 'patientOperation', component:PatientOperationComponent},
   { path: 'patientRadio', component:PatientRadioComponent},
+  { path: 'profilMedecin', component:ProfilMedecinComponent},
   { path: 'patientOperation/detail/:idPatient', component:AnalysePatientComponent},
   { path: 'patientRadio/detailRadio/:idPatient', component:HistoriqueRadioComponent},
+  { path: 'form', component:FormanalyseComponent},
   { path: '**', component: PageNotFoundComponent }
 
 ]

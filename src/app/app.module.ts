@@ -10,7 +10,7 @@ import { RegisterComponent } from './register/register.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { DossierMedicalComponent } from './dossier-medical/dossier-medical.component';
 import { MenuDashboardComponent } from './menu-dashboard/menu-dashboard.component';
 import { HeaderDashboardComponent } from './header-dashboard/header-dashboard.component';
@@ -51,8 +51,23 @@ import { PatientOperationComponent } from './patient-operation/patient-operation
 import { AnalysePatientComponent } from './analyse-patient/analyse-patient.component';
 import { PatientRadioComponent } from './patient-radio/patient-radio.component';
 import { HistoriqueRadioComponent } from './historique-radio/historique-radio.component';
+import { CardModule, } from 'primeng/card';
+import { SplitterModule } from "primeng/splitter";
+import { AutoCompleteModule } from "primeng/autocomplete";
+import { CalendarModule } from "primeng/calendar";
+import { ChipsModule } from "primeng/chips";
 
-
+import { InputMaskModule } from "primeng/inputmask";
+import { InputNumberModule } from "primeng/inputnumber";
+import { CascadeSelectModule } from "primeng/cascadeselect";
+import { MultiSelectModule } from "primeng/multiselect";
+import { InputTextareaModule } from "primeng/inputtextarea";
+import { FormanalyseComponent } from './formanalyse/formanalyse.component';
+import {RippleModule} from 'primeng/ripple';
+import {ToastModule} from 'primeng/toast';
+import { MessageService } from 'primeng/api';
+import { SplitButtonModule } from 'primeng/splitbutton';
+import { ProfilMedecinComponent } from './profil-medecin/profil-medecin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,6 +105,9 @@ import { HistoriqueRadioComponent } from './historique-radio/historique-radio.co
     AnalysePatientComponent,
     PatientRadioComponent,
     HistoriqueRadioComponent,
+    FormanalyseComponent,
+    ProfilMedecinComponent,
+   
     
   ],
   imports: [
@@ -107,7 +125,25 @@ import { HistoriqueRadioComponent } from './historique-radio/historique-radio.co
     BrowserModule,
     InputTextModule,
     BadgeModule,
-    TagModule
+    CardModule,
+    TagModule,
+    SplitterModule,
+    AutoCompleteModule,
+    FormsModule,
+    HttpClientModule,
+    CalendarModule,
+    ChipsModule,
+    DropdownModule,
+    InputMaskModule,
+    InputNumberModule,
+    CascadeSelectModule,
+    MultiSelectModule,
+    InputTextareaModule,
+    InputTextModule,
+    ReactiveFormsModule,
+    RippleModule,
+    ToastModule,
+    SplitButtonModule
 
     
     

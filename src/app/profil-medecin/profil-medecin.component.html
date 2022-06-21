@@ -1,0 +1,440 @@
+<app-header-dashboard></app-header-dashboard>
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="offcanvas-header">
+        <a class="navbar-brand" routerLink="/about">
+            <img src="assets/img/102-1026499_consultation-free-doctor-consultation-icon-clipart.svg" width="180"
+               width="180" class="left" alt="" />
+            <pre>    Espace médecin</pre>
+        </a>
+        <button type="button" class="btn-close btn-close-custom text-reset" data-bs-dismiss="offcanvas"
+            aria-label="Close">
+
+        </button>
+    </div>
+    <div class="offcanvas-body">
+        <ul>
+            
+            <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <a routerLink="/profilMedecin">
+                <img src="assets/img/my-profile.svg" alt="" class="" />
+                <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Mon Profile</span>
+                </a>
+            </li>
+            
+            <!-- <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <img src="assets/img/appointment.svg" alt="" class="" />
+                <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Appointment</span>
+            </li> -->
+
+
+            <li class="bg-danger px-4 py-2-5 rounded-3 cursor-pointer">
+                <a routerLink="/acueilDossier">
+                    <img src="assets/img/102-1026499_consultation-free-doctor-consultation-icon-clipart.svg" height="26px" width="26px" alt="" class="" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Mes_Consultations</span>
+                </a>
+
+            </li>
+           
+           
+           
+            
+
+
+        </ul>
+
+    </div>
+</div>
+
+           
+         
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <p-toast position="top-right"></p-toast>
+    <p-dialog [(visible)]="showCertificat" [modal]="true" [baseZIndex]="10000"
+        [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '40vw'}" [draggable]="false"
+        [resizable]="false">
+        <h1 class="text-center" class="font">
+            Partager_Certificat
+        </h1>
+
+        <form [formGroup]="certificatForm">
+            <div class="p-fluid grid">
+
+
+
+
+                <div class="row g-3">
+                    <div class="col">
+                        <div class="p-field p-col-6 p-md-4">
+
+                            <span class="p-float-label">
+                                <input  id="idCertificat" name="idCertificat" pInputText
+                                    formControlName="idCertificat" [(ngModel)]="certificat.idCertificat"
+                                    [ngClass]="!certificatForm.controls['idCertificat'].valid && certificatForm.controls['idCertificat']?.touched?'ng-invalid ng-dirty':''"
+                                    required>
+                                <small class="text-red-500"
+                                    *ngIf="certificatForm.controls['idCertificat'].hasError('required') && certificatForm.controls['idCertificat']?.touched"
+                                    style="color: #f44336;">N°_Certificat est obligatoire </small>
+                                <small class="text-red-500"
+                                    *ngIf="certificatForm.controls['idCertificat'].hasError('pattern') && certificatForm.controls['idCertificat']?.touched"
+                                    style="color: #f44336;"> N°_Certificat doit étre un nombre </small>
+                                <label for="idCertificat">N°_Certificat</label>
+                            </span>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+                <div class="row g-3">
+
+                    <div class="p-field p-col-12 p-md-4">
+                        <span class="p-float-label">
+                            <textarea inputId="textarea" rows="3" style="resize: none;" cols="30"
+                                style="min-height: 30px;overflow:auto;" id="contenu" name="contenu"
+                                formControlName="contenu" type="textarea" [(ngModel)]="certificat.contenu"
+                                pInputTextarea
+                                [ngClass]="!certificatForm.controls['contenu'].valid && certificatForm.controls['contenu']?.touched?'ng-invalid ng-dirty':''"
+                                required></textarea>
+                            <small class="text-red-500"
+                                *ngIf="certificatForm.controls['contenu'].hasError('required') && certificatForm.controls['contenu']?.touched"
+                                style="color: #f44336;">Observation est obligatoire </small>
+                            <small class="text-red-500"
+                                *ngIf="certificatForm.controls['contenu'].hasError('minlength') && certificatForm.controls['contenu']?.touched"
+                                style="color: #f44336;"> min 3 lettres </small>
+                            <small class="text-red-500"
+                                *ngIf="certificatForm.controls['contenu'].hasError('pattern') && certificatForm.controls['contenu']?.touched"
+                                style="color: #f44336;">Le contenu ne doit pas contenir des caractéres
+                                spéciaux</small>
+                            <label for="contenu">Contenu</label>
+                        </span>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+            </div>
+
+            <button pButton type="button" id="center" icon="pi pi-plus" class="p-button-outlined p-button-rounded "
+                label="Partager" (click)="saveCertificat(certificat)"></button>
+
+
+
+
+        </form>
+
+
+
+    </p-dialog>
+    <p-toast position="top-right"></p-toast>
+    <p-dialog [(visible)]="showConsultation" [modal]="true" [baseZIndex]="10000"
+        [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '40vw'}" [draggable]="false"
+        [resizable]="false">
+        <h1 class="text-center" class="font">
+            Partager_Ordonance
+        </h1>
+
+        <form [formGroup]="ordonanceForm">
+            <div class="p-fluid grid">
+
+
+
+
+                <div class="row g-3">
+                    <div class="col">
+                        <div class="p-field p-col-6 p-md-4">
+
+                            <span class="p-float-label">
+                                <input  id="idOrdonance" name="idOrdonance" pInputText
+                                    formControlName="idOrdonance" [(ngModel)]="ordonance.idOrdonance"
+                                    [ngClass]="!ordonanceForm.controls['idOrdonance'].valid && ordonanceForm.controls['idOrdonance']?.touched?'ng-invalid ng-dirty':''"
+                                    required>
+                                <small class="text-red-500"
+                                    *ngIf="ordonanceForm.controls['idOrdonance'].hasError('required') && ordonanceForm.controls['idOrdonance']?.touched"
+                                    style="color: #f44336;">N°_Ordonance est obligatoire </small>
+                                <small class="text-red-500"
+                                    *ngIf="ordonanceForm.controls['idOrdonance'].hasError('pattern') && ordonanceForm.controls['idOrdonance']?.touched"
+                                    style="color: #f44336;"> N°_Ordonance doit étre un nombre </small>
+                                <label for="idOrdonance">N°_Ordonance</label>
+                            </span>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+            
+
+
+                <div class="p-field p-col-12 p-md-4">
+                    <label for="etat">Etat_Ordonance</label>
+                        <p-dropdown [options]="etatOrdonances" [(ngModel)]="ordonance.etat" optionLabel="label" formControlName="etat"
+                            optionValue="value" placeholder="Etat_Ordonance" [ngClass]="!ordonanceForm.controls['etat'].valid && ordonanceForm.controls['etat']?.touched?'ng-invalid ng-dirty':''"
+                            ></p-dropdown>
+                               
+                            <small class="text-red-500" *ngIf="ordonanceForm.controls['etat'].hasError('required') && ordonanceForm.controls['etat']?.touched" style="color: #f44336;" >etat est obligatoire </small>
+                        
+                 
+                </div>
+
+
+                <div class="row g-3">
+                    <div class="col">
+                        <div class="p-field p-col-6 p-md-4">
+
+                            <span class="p-float-label">
+                                <input type="nouveaute" id="nouveaute" name="nouveaute" pInputText
+                                    formControlName="idOrdonance" [(ngModel)]="ordonance.nouveaute"
+                                    [ngClass]="!ordonanceForm.controls['nouveaute'].valid && ordonanceForm.controls['nouveaute']?.touched?'ng-invalid ng-dirty':''"
+                                    required>
+                                <small class="text-red-500"
+                                    *ngIf="ordonanceForm.controls['nouveaute'].hasError('required') && ordonanceForm.controls['nouveaute']?.touched"
+                                    style="color: #f44336;">nouveaute_Ordonance est obligatoire </small>
+                              
+                                <label for="nouveaute">nouveaute</label>
+                            </span>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <button pButton type="button" id="center" icon="pi pi-plus" class="p-button-outlined p-button-rounded " (click)="saveOrdonance(ordonance)"
+                label="Partager" ></button>
+
+
+
+
+        </form>
+
+
+
+    </p-dialog>
+
+    <p-toast position="top-right"></p-toast>
+    <p-dialog [(visible)]="showConsultation" [modal]="true" [baseZIndex]="10000"
+        [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '40vw'}" [draggable]="false"
+        [resizable]="false">
+        <h1 class="text-center" class="font">
+            Partager_Consultation
+        </h1>
+
+        <form [formGroup]="consultationForm">
+            <div class="p-fluid grid">
+
+
+
+
+                <div class="row g-3">
+                    <div class="col">
+                        <div class="p-field p-col-6 p-md-4">
+
+                            <span class="p-float-label">
+                                <input type="idConsultation" id="idConsultation" name="idConsultation" pInputText
+                                    formControlName="idConsultation" [(ngModel)]="consultation.idConsultation"
+                                    [ngClass]="!consultationForm.controls['idConsultation'].valid && consultationForm.controls['idConsultation']?.touched?'ng-invalid ng-dirty':''"
+                                    required>
+                                <small class="text-red-500"
+                                    *ngIf="consultationForm.controls['idConsultation'].hasError('required') && consultationForm.controls['idConsultation']?.touched"
+                                    style="color: #f44336;">N°_Consultation est obligatoire </small>
+                                <small class="text-red-500"
+                                    *ngIf="consultationForm.controls['idConsultation'].hasError('pattern') && consultationForm.controls['idConsultation']?.touched"
+                                    style="color: #f44336;"> N°_Consultation doit étre un nombre </small>
+                                <label for="idConsultation">N°_Consultation</label>
+                            </span>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="row g-3">
+
+                    <div class="p-field p-col-12 p-md-4">
+                        <span class="p-float-label">
+                            <textarea inputId="textarea" rows="3" style="resize: none;" cols="30"
+                                style="min-height: 30px;overflow:auto;" id="observation" name="observation"
+                                formControlName="observation" type="textarea" [(ngModel)]="consultation.observation"
+                                pInputTextarea
+                                [ngClass]="!consultationForm.controls['observation'].valid && consultationForm.controls['observation']?.touched?'ng-invalid ng-dirty':''"
+                                required></textarea>
+                            <small class="text-red-500"
+                                *ngIf="consultationForm.controls['observation'].hasError('required') && consultationForm.controls['observation']?.touched"
+                                style="color: #f44336;">Observation est obligatoire </small>
+                            <small class="text-red-500"
+                                *ngIf="consultationForm.controls['observation'].hasError('minlength') && consultationForm.controls['observation']?.touched"
+                                style="color: #f44336;"> min 3 lettres </small>
+                            <small class="text-red-500"
+                                *ngIf="consultationForm.controls['observation'].hasError('pattern') && consultationForm.controls['observation']?.touched"
+                                style="color: #f44336;">L'observation ne doit pas contenir des caractéres
+                                spéciaux</small>
+                            <label for="observation">observation</label>
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="p-field p-col-12 p-md-4">
+                    <label for="etat">Etat_Consultation</label>
+                        <p-dropdown [options]="options" [(ngModel)]="consultation.etat" optionLabel="label" formControlName="etat"
+                            optionValue="value" placeholder="Etat_Consultation" [ngClass]="!consultationForm.controls['etat'].valid && consultationForm.controls['etat']?.touched?'ng-invalid ng-dirty':''"
+                            ></p-dropdown>
+                               
+                            <small class="text-red-500" *ngIf="consultationForm.controls['etat'].hasError('required') && consultationForm.controls['etat']?.touched" style="color: #f44336;" >etat est obligatoire </small>
+                        
+                 
+                </div>
+
+
+                <div class="row g-3">
+                    <div class="col">
+                        <div class="p-field p-col-6 p-md-4">
+
+                            <span class="p-float-label">
+                                <input type="lieu" id="lieu" name="lieu" pInputText
+                                    formControlName="lieu" [(ngModel)]="consultation.lieu"
+                                    [ngClass]="!consultationForm.controls['lieu'].valid && consultationForm.controls['lieu']?.touched?'ng-invalid ng-dirty':''"
+                                    required>
+                                <small class="text-red-500"
+                                    *ngIf="consultationForm.controls['lieu'].hasError('required') && consultationForm.controls['lieu']?.touched"
+                                    style="color: #f44336;">lieu est obligatoire </small>
+                              
+                                <label for="lieu">Lieu</label>
+                            </span>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                
+                
+                    <div class="col">
+                        <div class="p-field p-col-6 p-md-4">
+                    <span class="p-float-label">
+                        <p-dropdown id="idCertificat" name="certificat" datakey="idCertificat" [options]="ListCertificat" formControlName="idCertificat"
+                            [(ngModel)]="certificat1" optionLabel="idCertificat"></p-dropdown>
+                        <label for="idCertificat">N°Certificat</label>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="row g-3">
+                <div class="col">
+                    <div class="p-field p-col-6 p-md-4">
+                <span class="p-float-label">
+                    <p-dropdown id="idOrdonance" name="ordonance" datakey="idOrdonance"   [options]="ListOrdonances" formControlName="idOrdonance"
+                        [(ngModel)]="ordonance1" optionLabel="idOrdonance" ></p-dropdown>
+                    <label for="idOrdonance">N°_Ordonance</label>
+                </span>
+            </div>
+        </div>
+
+            </div>
+            
+            
+                <div class="col">
+                    <div class="p-field p-col-6 p-md-4">
+                <span class="p-float-label">
+                    <p-dropdown id="idFiche" name="fiche" datakey="idFiche" [options]="ListFiche" formControlName="idFiche"
+                        [(ngModel)]="fiche" optionLabel="idFiche"></p-dropdown>
+                    <label for="idFiche">N°Fiche_Consultation</label>
+                </span>
+            </div>
+        </div>
+
+            <button pButton type="button" id="center" icon="pi pi-plus" class="p-button-outlined p-button-rounded " (click)="saveConsultation(consultation)"
+                label="Partager" ></button>
+
+
+</div>
+
+        </form>
+
+
+
+    </p-dialog>
+    <p-splitButton label="Ajouter" [model]="this.items" styleClass="p-button-raised p-button-rounded p-button-text  p-button-help mr-2 mb-2" id="rightFiche">
+    </p-splitButton>
+
+    <div class="card" style=" width: 1500px;left: 30px;  ">
+        <br />
+        <br />
+        <br />
+        <p class="text-center" class="font">Mes_Consultations</p>
+
+        <!-- Content here -->
+
+
+        <br />
+        <hr />
+      
+    </div>
+
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<app-footer></app-footer>

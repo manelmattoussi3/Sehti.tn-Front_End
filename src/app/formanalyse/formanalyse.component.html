@@ -1,0 +1,76 @@
+<div class="p-fluid p-grid">
+    <div class="p-field p-col-12 p-md-4">
+        <span class="p-float-label">
+          <p-inputNumber inputId="inputnumber" [(ngModel)]="idOperation"></p-inputNumber>
+          <label for="inputnumber">InputNumber</label>
+        </span>
+      </div>
+      <div class="p-field p-col-12">
+        <span class="p-float-label">
+          <textarea
+            inputId="textarea"
+            rows="3"
+            cols="30"
+            [(ngModel)]="observation"
+            pInputTextarea
+          ></textarea>
+          <label for="textarea">observation</label>
+        </span>
+      </div>
+    <div class="p-field p-col-12 p-md-4">
+      <span class="p-float-label">
+        <input type="text" id="inputtext" pInputText [(ngModel)]="codeAnalyse" />
+        <label for="inputtext">codeAnalyse</label>
+      </span>
+    </div>
+    <div class="p-field p-col-12 p-md-4">
+        <span class="p-float-label">
+          <input type="text" id="inputtext" pInputText [(ngModel)]="motif" />
+          <label for="inputtext">motif</label>
+        </span>
+      </div>
+      <div class="p-field p-col-12 p-md-4">
+        <span class="p-float-label">
+          <input type="text" id="inputtext" pInputText [(ngModel)]="resultat" />
+          <label for="inputtext">resultat</label>
+        </span>
+      </div>
+      <div class="p-field p-col-12 p-md-4">
+        <span class="p-float-label">
+          <input type="text" id="inputtext" pInputText [(ngModel)]="etablissement" />
+          <label for="inputtext">etablissement</label>
+        </span>
+      </div>
+      
+ 
+ 
+      <div class="p-field p-col-12 p-md-4">
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="dropdown"
+            [autoDisplayFirst]="false"
+            [options]="type"
+            [(ngModel)]="type"
+            optionLabel="name"
+          ></p-dropdown>
+          <label for="dropdown">Dropdown</label>
+        </span>
+      </div> 
+  
+ 
+    <div class="p-field p-col-12 p-md-4">
+      <span class="p-float-label">
+        <p-dropdown
+          inputId="dropdown"
+          [autoDisplayFirst]="false"
+          [options]="etat"
+          [(ngModel)]="etat"
+          optionLabel="name"
+        ></p-dropdown>
+        <label for="dropdown">etat</label>
+      </span>
+    </div>
+  
+  
+  </div>
+  

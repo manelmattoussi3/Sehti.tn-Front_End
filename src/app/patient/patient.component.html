@@ -1,39 +1,159 @@
-<body>
-    <br/>
-  <div class="container">
-    <div class="card">
-      <app-header-dashboard></app-header-dashboard>
-      <app-menu-dashboard></app-menu-dashboard>
-      <br/>
-      <h2 class="text-center" >Liste des patients</h2>
-      <div class="card-body">
-        <!-- Content here -->
-        
-        <br />
-        <table class="table table-striped">
-          <thead>
-            <th >Id_Patient</th>
-            <th >CNSS</th>
-            <th >Asurance</th>
-            <th >Details</th>
-          </thead>
-          <tbody>
-            <tr *ngFor="let p of listPatient">
-              <td>{{p.idPatient}}</td>
-              <td>{{p.cnss}}</td>
-              <td>{{p.assurance}}</td>
-              <td><a [routerLink]="['detail',p.idPatient]">Details</a></td>
-              
-              
-            </tr>
-          </tbody>
-  
-  
-        </table>
-      </div>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register | Sehti</title>
+    <!-- <link rel="stylesheet" href="assets/css/index.css"/> -->
+  </head>
+  <body>
    
-  </div>
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" routerLink="/about">
+          <img src="assets/img/logo.png" width="160" alt="" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navbarNav">
+          <ul class="navbar-nav gap-lg-4 text-center py-4 py-lg-0">
+            <li >
+              <a class="text-nav" aria-current="page" routerLink="/about">Contact</a>
+            </li>
+           
+            <li >
+              <a class="text-nav" routerLink="/professional">Espace_Praticien</a>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-primary" routerLink="/patient">Espace_Patient</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+ 
+
+
+    <!-- main -->
+    <main>
+      <div class="container">
+       
+        <br/>
+            
+              <div class="card" class="left">
+                
+                <p-splitter [style]="{'height': '400px','width':'1820px'}" class="left" styleClass="p-mb-5">
+                  <ng-template pTemplate >
+                    <div class="p-col p-d-flex p-ai-center p-jc-center"  >
+                      <img id="rightimg" class="mb-5 img-fluid" src="assets/img/symboles-médecine.jpg" alt="" width="280" height="280" />
+                      <pre class="colonne">  <h2>  Sehti.tn,QU’EST-CE QUE C’EST ?</h2></pre>
+                      
+                      <h5 class="right"> 
+                         Est un carnet de santé numérique qui conserve et
+                        <br/>
+                        <br/>
+                         sécurise vos informations de santé : traitements, 
+                         <br/>
+                         <br/>
+                         résultats d’examens, allergies...
+                         
+                         
+                      </h5>
+                      
+                    </div>
+                  </ng-template>
+                  <ng-template pTemplate>
+                    <div class="p-col p-d-flex p-ai-center p-jc-center" >
+                      <img class="mb-5 img-fluid" src="assets/img/gens-posent-questions_102902-2341.jpg" alt="" width="360" height="360" />
+                      <pre class="colonne">  <h2>  Sehti.tn,C'EST POUR QUI ?</h2></pre>
+                      
+                      <h5 class="rightparag"> 
+                         Chaque personne bénéficiant d’un régime de sécurité 
+                        <br/>
+                        <br/>
+                        
+                        sociale  peut disposer d’un Dossier Médical Partagé. 
+                      
+                      </h5>
+                    </div>
+                  </ng-template>
+                </p-splitter>
+              </div>
+              <br/>
+              <br/>
+              <div class="card" class="left">
+                
+                <p-splitter [style]="{'height':'400px','width':'1820px'}" class="left" styleClass="p-mb-5" layout="horizontal">
+                  
+                  <ng-template pTemplate>
+                  
+                    <div  class="p-col p-d-flex p-ai-center p-jc-center" >
+                      <p-card class="rightcard0"  [style]="{'width': '20rem','height': '23rem', 'margin-bottom': '1em'}" styleClass="p-card-shadow">
+                        <h1 class="text-center">Mon dossier médical</h1>
+                        <ng-template pTemplate="header">
+                            <img alt="Card" src="assets/img/dos.svg" width="100" height="100">
+                        </ng-template>
+                        <button pButton type="button" id="right"  icon="pi pi-eye" pRipple class="purple" label="Consulter"></button>
+                       
+                    </p-card>
+                    <p-card  class="rightcard" [style]="{'width': '20rem','height': '23rem', 'margin-bottom': '1em'}" styleClass="p-card-shadow">
+                      <h1 class="text-center">Mes demandes</h1>
+                      <ng-template pTemplate="header">
+                          <img alt="Card" src="assets/img/360_F_248095480_7Xhq9WGhJfg30V447X941nP7vFsMNokK (1).svg" width="100" height="100">
+                      </ng-template>
+                      
+                      <button pButton type="button" id="right"  icon="pi pi-eye" pRipple class="purple" label="Consulter"></button>
+                  
+                  </p-card>
+                  <p-card  class="rightcard1" [style]="{'width': '20rem','height': '23rem', 'margin-bottom': '1em'}" styleClass="p-card-shadow">
+                    <h1 class="text-center">Mes consultations</h1>
+                    <ng-template pTemplate="header">
+                        <img alt="Card" src="assets/img/102-1026499_consultation-free-doctor-consultation-icon-clipart.svg" width="100" height="100">
+                    </ng-template>
+                    <button pButton type="button" id="right"  icon="pi pi-eye" pRipple class="purple" label="Consulter"></button>
+                   
+                </p-card>
+                <p-card  class="rightcard2" [style]="{'width': '20rem','height': '23rem', 'margin-bottom': '1em'}" styleClass="p-card-shadow">
+                  <h1 class="text-center">Mes analyses</h1>
+                  <ng-template pTemplate="header">
+                      <img alt="Card" src="assets/img/212842.svg" width="100" height="100">
+                  </ng-template>
+                  <button pButton type="button" id="right"  icon="pi pi-eye" pRipple class="purple" label="Consulter"></button>
+                 
+              </p-card>
+              <p-card      class="rightcard3" [style]="{'width': '20rem','height': '23rem', 'margin-bottom': '1em'}" styleClass="p-card-shadow">
+                <h1 class="text-center">Mes radios</h1>
+                <ng-template pTemplate="header" >
+                    <img alt="Card" src="assets/img/2258505-icone-de-ligne-pour-radiologie-vectoriel.svg" width="100" height="100">
+                </ng-template>
+                <button pButton type="button" id="right"  icon="pi pi-eye" pRipple class="purple" label=" Consulter"></button>
+               
+            </p-card>
+                    </div>
+                  </ng-template>
+                
+                </p-splitter>
+              </div>
+            
+         
+    
+       
+      </div>
+    </main>
+   
+    <!-- end main -->
+
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
   <br/>
   <br/>
   <br/>
@@ -58,8 +178,22 @@
   <br/>
   <br/>
   <br/>
-  
-  
-  <footer>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+
   <app-footer></app-footer>
-  </footer>
+</html>

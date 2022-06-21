@@ -13,7 +13,7 @@ export class OrdonanceService {
   getOrdonance(idOrdonance: number): Observable<any>{
     return this.http.get<Ordonance[]>(this.url+'findOrdonanceById/'+idOrdonance);
   }
-  getAllOrdonances(){
-    return this.http.get<Ordonance[]>(this.url+'findAllOrdonances');
+  getAllOrdonances():any{
+    return this.http.get<any>(this.url+'findAllOrdonances');
   }
 }

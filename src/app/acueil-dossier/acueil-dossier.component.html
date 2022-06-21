@@ -16,8 +16,10 @@
         <ul>
 
             <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <a routerLink="/profilMedecin">
                 <img src="assets/img/my-profile.svg" alt="" class="" />
                 <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Mon Profile</span>
+            </a>
             </li>
             <!-- <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
                 <img src="assets/img/appointment.svg" alt="" class="" />
@@ -99,38 +101,9 @@
 
     </div>
 </div>
-<main class="main-content">
-    <div class="py-4 px-4 px-md-5">
-        <!--  -->
-        <div class="row mb-5 px-2-5 gap-4">
-            <div
-                class="col-lg col-md-12 rounded-5 bg-danger py-2-5 px-4 d-flex justify-content-between align-items-center">
-                <img src="assets/img/total-patient.svg" alt="" />
-                <span class="text-end">
-                    <span class="text-inf">Total Patient</span>
-                    <h3 class="fw-bold mt-1">2,650</h3>
-                </span>
-            </div>
 
-            <div
-                class="col-lg col-md-12 rounded-5 bg-green py-2-5 px-4 d-flex justify-content-between align-items-center">
-                <img src="assets/img/total-doctors.svg" alt="" />
-                <span class="text-end">
-                    <span class="text-inf">Total Doctors</span>
-                    <h3 class="fw-bold mt-1">2,650</h3>
-                </span>
-            </div>
-
-            <div class="col-lg col-md-12 rounded-5 bg-gray py-2-5 px-4 d-flex justify-content-between align-items-center">
-                <a routerLink="/medecinFamille">
-                <img src="assets/img/imageonline-co-transparentimage.jpg" width="90px" height="90px" />
-                <span class="text-end">
-                    <h3 class="text-inf">Médecin de famille</h3>                                            
-                    
-                </span>
-            </a>
-            </div>
-        </div>
+           
+         
 
 
 
@@ -142,10 +115,17 @@
 
 
 
-
-    </div>
-</main>
 <div class="container">
+    <div class="leftt">
+        <img class="lefto" src="assets/img/imageonline-co-transparentimage.jpg" width="90" height="90"
+            alt="" title="" />
+        <div  id="leftbtn"><button pButton type="button" icon="pi pi-users" class=" p-button-rounded  p-button-outlined p-button-help"
+                label="Médecin de famille" 
+                routerLink="/medecinFamille"></button>
+        </div>
+        
+    </div>
+
     <div class="card" style=" width: 1500px;left: 30px;  ">
         <br />
         <br />
@@ -216,10 +196,10 @@
             </div>
         </p-dialog>
         <p-table #dossierTable [value]="listDossier" selectionMode="single" [(selection)]="selectedDossier"
-            (onRowSelect)="onRowSelect($event)" [metaKeySelection]="false" dataKey="numDossier" [rows]="5"
+            (onRowSelect)="onRowSelect($event)" [metaKeySelection]="false" dataKey="idDossier" [rows]="5"
             [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,25,50]" [paginator]="true"
             currentPageReportTemplate="Affichage de {first} à {last} sur {totalRecords} éléments"
-            [globalFilterFields]="['numDossier','dateCreation','patient.cnss','patient.assurance','de.etat']">
+            [globalFilterFields]="['idDossier','dateCreation','patient.cnss','patient.assurance','de.etat']">
             <ng-template pTemplate="caption">
 
                 <div class="flex">
@@ -242,7 +222,7 @@
             </ng-template>
             <ng-template pTemplate="header">
                 <tr>
-                    <th pSortableColumn="numDossier">Num_Dossier <p-sortIcon field="numDossier"></p-sortIcon>
+                    <th pSortableColumn="idDossier">Num_Dossier <p-sortIcon field="idDossier"></p-sortIcon>
                     </th>
                     <th pSortableColumn="dateCreation">Date_Creation <p-sortIcon field="dateCreation"></p-sortIcon>
                     </th>
@@ -258,7 +238,7 @@
                 </tr>
                 <tr>
                     <th>
-                        <p-columnFilter  type="text" field="numDossier" matchMode="contains"  [matchModeOptions]="matchModeOptions" ></p-columnFilter>
+                        <p-columnFilter  type="text" field="idDossier" matchMode="contains"  [matchModeOptions]="matchModeOptions" ></p-columnFilter>
                     </th>
                     <th>
                         <p-columnFilter type="text" field="dateCreation" matchMode="contains"  [matchModeOptions]="matchModeOptions" ></p-columnFilter>
@@ -279,7 +259,7 @@
                     <th>
 
                         <input pInputText type="text"
-                            (input)="dossierTable.filter(getEventValue($event), 'numDossier' ,'startsWith')"
+                            (input)="dossierTable.filter(getEventValue($event), 'idDossier' ,'startsWith')"
                             placeholder="Search keyword">
                     </th>
                     <th>
@@ -304,7 +284,7 @@
                 </tr> -->
                 <!-- <tr>
                     <th>
-                        <p-columnFilter type="text" field="numDossier" matchMode="contains"
+                        <p-columnFilter type="text" field="idDossier" matchMode="contains"
                             [matchModeOptions]="matchModeOptions"></p-columnFilter>
                     </th>
                     <th>
@@ -334,23 +314,23 @@
             <ng-template pTemplate="body" let-dossier let-rowIndex="rowIndex">
 
                 <tr [pSelectableRow]="dossier" [pSelectableRowIndex]="rowIndex">
-                    <td>{{dossier.numDossier}}</td>
-                    <td> {{dossier.dateCreation | date: "longDate"}}</td>
+                    <td>{{dossier?.idDossier}}</td>
+                    <td> {{dossier?.dateCreation | date: "longDate"}}</td>
                     <td>{{dossier?.patient?.cnss}}</td>
                     <td>{{dossier?.patient?.assurance}}</td>
-                    <div *ngFor="let de of dossier.demandesacces" class="center">
+                    <div *ngFor="let de of dossier?.demandesacces" class="center">
                         <p-tag *ngIf="de.etat=='EnAttente'" styleClass="mr-2" severity="warning">
                             <td  >{{de.etat}}
                             </td>
                         </p-tag>
                     </div>
-                    <div *ngFor="let de of dossier.demandesacces" class="center">
+                    <div *ngFor="let de of dossier?.demandesacces" class="center">
                         <p-tag *ngIf="de.etat=='REFUSE' || de.etat== 'ANNULE'" styleClass="mr-2" severity="danger">
                                     
                             <td >{{de.etat}}</td>
                         </p-tag>
                     </div>
-                    <div *ngFor="let de of dossier.demandesacces" class="center">
+                    <div *ngFor="let de of dossier?.demandesacces" class="center">
                         <p-tag *ngIf="de.etat=='ACCEPT' || de.etat== 'PERMANENT'" styleClass="mr-2" severity="success">
                                     
                             <td >{{de.etat}}</td>
