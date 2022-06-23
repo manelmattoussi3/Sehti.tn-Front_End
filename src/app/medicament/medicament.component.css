@@ -165,4 +165,34 @@ a:hover {
     position: absolute; bottom: 0; left: 0; right: 0
  }
  .left { float:left; margin:0 20px 0 50px; }
+ .font{
+  font-size: 28px;
+  text-align: center;
+  color: #6807A0;
+  text-decoration: #6807A0 underline;
+  }
+  .fontmed{
+    font-size: 24px;
  
+    color: #1150C6;
+    
+    }
+    #center {
+
+      position: relative;
+    
+      left: 45%;
+      top: 1em;
+    
+    
+      }
+ 
+      #rightFiche {
+  
+        position: relative;
+      
+        left: 100%;
+        top: 3em;
+      
+      
+      }

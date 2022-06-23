@@ -2,12 +2,11 @@
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
     id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
     <div class="offcanvas-header">
-        <a class="navbar-brand" routerLink="/about" >
-            <img src="assets/img/images.svg" width="180" class="left"
-                alt="" />
-            
+        <a class="navbar-brand" routerLink="/about">
+            <img src="assets/img/images.svg" width="180" class="left" alt="" />
+
         </a>
-        
+
         <button type="button" class="btn-close btn-close-custom text-reset" data-bs-dismiss="offcanvas"
             aria-label="Close">
 
@@ -20,7 +19,7 @@
                 <img src="assets/img/my-profile.svg" alt="" class="" />
                 <span class="ms-2 fs-6 d-inline-block text-inf mt-1">My Profile</span>
             </li>
-        
+
 
 
             <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
@@ -37,39 +36,39 @@
                 </a>
 
             </li>
-            
-            
-            
-           
-            
-            
 
 
-            
-                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
-                    <a routerLink="/medicament">
+
+
+
+
+
+
+
+            <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <a routerLink="/medicament">
                     <img src="assets/img/images.svg" />
                     <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Medicaments</span>
                 </a>
-                </li>
-            
-           
-            
-            
-            
-             
-            
-            
-              
-            
-            
-                <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
-                    <a routerLink="/patient">
+            </li>
+
+
+
+
+
+
+
+
+
+
+
+            <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <a routerLink="/patient">
                     <img src="assets/img/pattients.svg" />
                     <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Patients</span>
                 </a>
-                </li>
-            
+            </li>
+
 
 
         </ul>
@@ -80,116 +79,370 @@
 
 
 
-   
 
 
 
+
+<br />
+<div class="container">
+    <p-splitButton label="Ajouter" [model]="this.items"
+                    styleClass="p-button-raised p-button-rounded p-button-text  p-button-help mr-2 mb-2"
+                    id="rightFiche">
+                </p-splitButton>
+    <h2 class="font">✵ Liste_Medicamments </h2>
     <br />
-    <div class="container">
-        <div class="card" style=" top: 10px; left: 170px ">
-            <br />
-            <h2 class="text-center"> Liste des medicamments </h2>
-            <div class="card-body">
-                <!-- Content here -->
+    <div class="card" style=" top: 10px; left: 170px ">
+        <br />
+
+        <div class="card-body">
 
 
-                <br />
-                <!-- <table  class="table table-striped" style=" top: 280px; left: 100px" >
-          <thead>
-            <th >idFiche</th>
-            <th >observation</th>
-            <th >Date_Creation</th>
-            
-            
-          </thead>
-          <tbody>
-            <tr *ngFor="let f of listFiches">
-              <td>{{f.idFiche}}</td>
-              <td>{{f.observation}}</td>
-              <td>{{f.dateCreation}}</td>
-            
-              
-              
-            </tr>
-          </tbody>
-  
-  
-        </table> -->
+            <div class="menu-container" class="center">
+                <p-toast position="top-right"></p-toast>
+                <p-dialog [(visible)]="showMedicament" [modal]="true" [baseZIndex]="10000"
+                    [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '40vw'}" [draggable]="false"
+                    [resizable]="false">
+                    <h1 class="text-center" class="font">
+                        Ajouter_Medicament
+                    </h1>
 
-                <div class="menu-container" class="center">
-                    <div class="card-body" *ngFor="let m of Listmedicaments ">
-                        <div class="menu-toggler" (click)="toggleMenu()">
-                            <pre>✵ Medicament N°:{{m.idMedicament}} </pre>
+                    <form [formGroup]="registerForm">
+                        <div class="p-fluid grid">
+
+
+
+
+                           
+                            <div class="col">
+                                <div class="p-field p-col-6 p-md-4">
+
+                                    <span class="p-float-label">
+                                        <label for="idMedicament">N°_Medicament</label>
+                                        <input id="idMedicament" name="idMedicament" pInputText
+                                            formControlName="idMedicament" [(ngModel)]="medicament.idMedicament"
+                                            [ngClass]="!registerForm.controls['idMedicament'].valid && registerForm.controls['idMedicament']?.touched?'ng-invalid ng-dirty':''"
+                                            required>
+                                        <small class="text-red-500"
+                                            *ngIf="registerForm.controls['idMedicament'].hasError('required') && registerForm.controls['idMedicament']?.touched"
+                                            style="color: #f44336;">N°_Medicament est obligatoire </small>
+                                        <small class="text-red-500"
+                                            *ngIf="registerForm.controls['idMedicament'].hasError('pattern') && registerForm.controls['idMedicament']?.touched"
+                                            style="color: #f44336;"> N°_Medicament doit étre un nombre </small>
+                                        
+                                    </span>
+
+                                </div>
+                            </div>
+
+                            <div class="col">
+                            <div class="p-field p-col-12 p-md-4">
+                                <label for="classe">Classe_Medical</label>
+                                <p-dropdown [options]="ClassMedical" [(ngModel)]="medicament.classe" optionLabel="label"
+                                    formControlName="classe" optionValue="value" placeholder="Classe_Médical"
+                                    [ngClass]="!registerForm.controls['classe'].valid && registerForm.controls['classe']?.touched?'ng-invalid ng-dirty':''">
+                                </p-dropdown>
+
+                                <small class="text-red-500"
+                                    *ngIf="registerForm.controls['classe'].hasError('required') && registerForm.controls['classe']?.touched"
+                                    style="color: #f44336;">Classe_Medical est obligatoire </small>
+
+</div>
+                            </div>
+                           
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="p-field p-col-12 p-md-4">
+                                <span class="p-float-label">
+                                    <textarea inputId="textarea" rows="3" style="resize: none;" cols="30"
+                                        style="min-height: 30px;overflow:auto;" id="name" name="name"
+                                        formControlName="name" type="textarea" [(ngModel)]="medicament.name"
+                                        pInputTextarea
+                                        [ngClass]="!registerForm.controls['name'].valid && registerForm.controls['name']?.touched?'ng-invalid ng-dirty':''"
+                                        required></textarea>
+                                    <small class="text-red-500"
+                                        *ngIf="registerForm.controls['name'].hasError('required') && registerForm.controls['name']?.touched"
+                                        style="color: #f44336;">Nom est obligatoire </small>
+                                    <small class="text-red-500"
+                                        *ngIf="registerForm.controls['name'].hasError('minlength') && registerForm.controls['name']?.touched"
+                                        style="color: #f44336;"> min 3 lettres </small>
+                                    <small class="text-red-500"
+                                        *ngIf="registerForm.controls['name'].hasError('pattern') && registerForm.controls['name']?.touched"
+                                        style="color: #f44336;">Le nom ne doit pas contenir des caractéres
+                                        spéciaux</small>
+                                    <label for="name">Contenu</label>
+                                </span>
+                            </div>
+
+
+
+
+
+
+
 
                         </div>
 
-                        <div class="menu" *ngIf="isMenuOpened">
-                            <!-- <div class="menu-item">Id idFiche </div>
-                        <div class="menu-item">Observation </div>
-                        <div class="menu-item">Date_Creation </div> -->
-                            <div class="card-body">
-                                <hr />
-                                <pre>&#9788; Name : {{m.name}} </pre>
-                                <hr />
-                                <pre>&#9788; Classe_Medical : {{m.classe}} </pre>
-                                <hr />
-                                
+                        <button pButton type="button" id="center" icon="pi pi-plus"
+                            class="p-button-outlined p-button-rounded p-button-help " label="Partager"
+                            (click)="saveMedicament(medicament)"></button>
+
+
+
+
+                    </form>
+
+
+
+                </p-dialog>
+                <p-toast position="top-right"></p-toast>
+                <p-dialog [(visible)]="showPrescription" [modal]="true" [baseZIndex]="10000"
+                     [style]="{width: '60vw'}" [draggable]="false"
+                    [resizable]="false">
+                    <h1 class="text-center" class="font">
+                        Ajouter_Prescriptions
+                    </h1>
+
+                    <form [formGroup]="prescriptionForm">
+                        <div class="p-fluid grid">
+
+
+
+
+                            <div class="row g-3">
+                                <div class="col">
+                                    <div class="p-field p-col-6 p-md-4">
+
+                                        <span class="p-float-label">
+                                            <input id="idPre" name="idPre" pInputText formControlName="idPre"
+                                                [(ngModel)]="prescription.idPre"
+                                                [ngClass]="!prescriptionForm.controls['idPre'].valid && prescriptionForm.controls['idPre']?.touched?'ng-invalid ng-dirty':''"
+                                                required>
+                                            <small class="text-red-500"
+                                                *ngIf="prescriptionForm.controls['idPre'].hasError('required') && prescriptionForm.controls['idPre']?.touched"
+                                                style="color: #f44336;">N°_Prescription est obligatoire </small>
+                                            <small class="text-red-500"
+                                                *ngIf="prescriptionForm.controls['idPre'].hasError('pattern') && prescriptionForm.controls['idPre']?.touched"
+                                                style="color: #f44336;"> N°_Prescription doit étre un nombre </small>
+                                            <label for="idPre">N°_Prescription</label>
+                                        </span>
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col">
+                                    <div class="p-field p-col-6 p-md-4">
+
+                                        <span class="p-float-label">
+                                            <input type="dose" id="dose" name="dose" pInputText formControlName="dose"
+                                                [(ngModel)]="prescription.dose"
+                                                [ngClass]="!prescriptionForm.controls['dose'].valid && prescriptionForm.controls['dose']?.touched?'ng-invalid ng-dirty':''"
+                                                required>
+                                            <small class="text-red-500"
+                                                *ngIf="prescriptionForm.controls['dose'].hasError('required') && prescriptionForm.controls['dose']?.touched"
+                                                style="color: #f44336;">dose est obligatoire </small>
+                                                <small class="text-red-500"
+                                                *ngIf="prescriptionForm.controls['dose'].hasError('pattern') && prescriptionForm.controls['dose']?.touched"
+                                                style="color: #f44336;"> dose doit étre un nombre </small>
+                                            <label for="dose">dose</label>
+                                        </span>
+
+                                    </div>
+                                </div>
                             </div>
+                            <div class="p-field p-col-12 p-md-4">
+                                <label for="etat">Etat_Prescription</label>
+                                <p-dropdown [options]="EtatMedicament" [(ngModel)]="prescription.etat"
+                                    optionLabel="label" formControlName="etat" optionValue="value"
+                                    placeholder="Etat_Prescription"
+                                    [ngClass]="!prescriptionForm.controls['etat'].valid && prescriptionForm.controls['etat']?.touched?'ng-invalid ng-dirty':''">
+                                </p-dropdown>
+
+                                <small class="text-red-500"
+                                    *ngIf="prescriptionForm.controls['etat'].hasError('required') && prescriptionForm.controls['etat']?.touched"
+                                    style="color: #f44336;">etat est obligatoire </small>
+
+
+                            </div>
+                            
+                            <div class="row g-3">
+                                <div class="col">
+                                <div class="p-field p-col-12 p-md-4">
+                                    <label for="icon">Date_Debut</label>
+                                    <p-calendar [(ngModel)]="prescription.dateDebut" [showIcon]="true" id="dateDebut" 
+                                        name="dateDebut" formControlName="dateDebut" inputId="icon" (onSelect)="minDatee($event)" ></p-calendar>
+                                </div>
+                                </div>
+                                <div class="col">
+                                <div class="p-field p-col-12 p-md-4">
+                                    <label for="icon">Date_Fin</label>
+                                    <p-calendar [(ngModel)]="prescription.dateFin" [showIcon]="true" id="dateFin" 
+                                        name="dateFin" formControlName="dateFin" inputId="icon" [minDate]="minDate"></p-calendar>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="row g-3">
+                            <div class="col">
+                                <div class="p-field p-col-6 p-md-4">
+                                    <span class="p-float-label">
+                                        <p-dropdown id="idMedicament" name="medicament1" datakey="idMedicament"
+                                            [options]="Listmedicaments" formControlName="idMedicament"
+                                            [(ngModel)]="medicament1" optionLabel="idMedicament"></p-dropdown>
+                                        <label for="idMedicament">N°_Medicament</label>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="p-field p-col-6 p-md-4">
+                                    <span class="p-float-label">
+                                        <p-dropdown id="idOrdonance" name="ordonance" datakey="idOrdonance"
+                                            [options]="ListOrdonances" formControlName="idOrdonance"
+                                            [(ngModel)]="ordonance" optionLabel="idOrdonance"></p-dropdown>
+                                        <label for="idOrdonance">N°_Ordonance</label>
+                                    </span>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="row g-3">
+                            <div class="col">
+                                <div class="p-field p-col-6 p-md-4">
+
+                                    <span class="p-float-label">
+                                        <input type="nbrFois" id="nbrFois" name="nbrFois" pInputText
+                                            formControlName="nbrFois" [(ngModel)]="prescription.nbrFois"
+                                            [ngClass]="!prescriptionForm.controls['nbrFois'].valid && prescriptionForm.controls['nbrFois']?.touched?'ng-invalid ng-dirty':''"
+                                            required>
+                                        <small class="text-red-500"
+                                            *ngIf="prescriptionForm.controls['nbrFois'].hasError('required') && prescriptionForm.controls['nbrFois']?.touched"
+                                            style="color: #f44336;">nbrFois est obligatoire </small>
+                                            <small class="text-red-500"
+                                            *ngIf="prescriptionForm.controls['nbrFois'].hasError('pattern') && prescriptionForm.controls['nbrFois']?.touched"
+                                            style="color: #f44336;"> nbrFois doit étre un nombre </small>
+                                        <label for="nbrFois">nbrFois</label>
+                                    </span>
+
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="p-field p-col-6 p-md-4">
+
+                                    <span class="p-float-label">
+                                        <input type="unite" id="unite" name="unite" pInputText formControlName="unite"
+                                            [(ngModel)]="prescription.unite"
+                                            [ngClass]="!prescriptionForm.controls['unite'].valid && prescriptionForm.controls['unite']?.touched?'ng-invalid ng-dirty':''"
+                                            required>
+                                        <small class="text-red-500"
+                                            *ngIf="prescriptionForm.controls['unite'].hasError('required') && prescriptionForm.controls['unite']?.touched"
+                                            style="color: #f44336;">unite est obligatoire </small>
+                                            <small class="text-red-500"
+                                            *ngIf="prescriptionForm.controls['unite'].hasError('pattern') && prescriptionForm.controls['unite']?.touched"
+                                            style="color: #f44336;">unite  doit  contenir des lettres
+                                            </small>
+                                        <label for="unite">unite</label>
+                                    </span>
+
+                                </div>
+                            </div>
+
+</div>
+
+
+                        </div>
+
+                        <button pButton type="button" id="center" icon="pi pi-plus"
+                        class="p-button-outlined p-button-rounded p-button-help"
+                        (click)="savePrescription(prescription)" label="Partager"></button>
+                    </form>
+
+
+
+                </p-dialog>
+                
+                <div class="card-body" *ngFor="let m of Listmedicaments ">
+                    <div class="menu-toggler">
+                        <pre class="fontmed">✵ Medicament N°:{{m.idMedicament}} </pre>
+
+                    </div>
+
+                    <div class="menu">
+
+                        <div class="card-body">
+                            <hr />
+                            <pre>&#9788; Name : {{m.name}} </pre>
+                            <hr />
+                            <pre>&#9788; Classe_Medical : {{m.classe}} </pre>
+                            <hr />
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+    </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 
-        <footer>
+<footer>
 
-            <app-footer></app-footer>
-        </footer>
+    <app-footer></app-footer>
+</footer>

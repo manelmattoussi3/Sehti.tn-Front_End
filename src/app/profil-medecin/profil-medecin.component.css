@@ -8,8 +8,8 @@ pre{
   .font{
   font-size: 28px;
   text-align: center;
-  color: #1150C6;
-  text-decoration: #1b74e4 underline;
+  color: #6807A0;
+  text-decoration: #6807A0 underline;
   }
   .p-input-icon-left,
    .p-input-icon-right {
@@ -36,6 +36,7 @@ pre{
   
   }
   
+  
   .lefto {
     float: left;
     margin: 0 30px 15 20px;
@@ -43,4 +44,75 @@ pre{
   .leftt {
     float: right;
     float: top;
+  }
+  #right {
+
+    position: relative;
+  
+    left: 90%;
+    bottom: 1em;
+  
+  
+  }
+  
+  #rightFiche {
+  
+    position: relative;
+  
+    left: 100%;
+    top: 6em;
+  
+  
+  }
+  #rightLettre {
+  
+    position: relative;
+  
+    right: 2%;
+    bottom: 0.5em;
+  
+  
+  }
+  
+  #leftbtn {
+  
+    position: relative;
+  
+    left: 10%;
+    bottom: 1em;
+  
+  
+  }
+  
+  .lefto {
+    float: left;
+    margin: 0 30px 15 20px;
+  }
+  
+  .colonne {
+    font-size: 16px;
+    text-align: center;
+    color: #1150C6;
+  
+  }
+  
+  #rightimg {
+  
+    position: relative;
+  
+    left: 50%;
+    bottom: 1em;
+  
+  
+  }
+
+  
+  #center {
+  
+    position: relative;
+  
+    left: 45%;
+    top: 1em;
+  
+  
   }

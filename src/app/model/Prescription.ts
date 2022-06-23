@@ -9,10 +9,9 @@ export class Prescription {
     dateFin: Date;
     dose: number;
     nbrFois: number;
-    punite: string;
+    unite: string;
     etat: EtatMedicament;
 
     medicament: Medicament;
 
-    ordonance: Ordonance;
 }

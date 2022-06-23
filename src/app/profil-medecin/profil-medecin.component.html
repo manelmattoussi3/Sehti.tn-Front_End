@@ -37,6 +37,12 @@
             </li>
            
            
+            <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
+                <a routerLink="/medicament">
+                    <img src="assets/img/images.svg" />
+                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Medicaments</span>
+                </a>
+            </li>
            
             
 
@@ -140,7 +146,7 @@
 
             </div>
 
-            <button pButton type="button" id="center" icon="pi pi-plus" class="p-button-outlined p-button-rounded "
+            <button pButton type="button" id="center" icon="pi pi-plus" class="p-button-outlined p-button-rounded p-button-help "
                 label="Partager" (click)="saveCertificat(certificat)"></button>
 
 
@@ -152,7 +158,7 @@
 
     </p-dialog>
     <p-toast position="top-right"></p-toast>
-    <p-dialog [(visible)]="showConsultation" [modal]="true" [baseZIndex]="10000"
+    <p-dialog [(visible)]="showOrdonance" [modal]="true" [baseZIndex]="10000"
         [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '40vw'}" [draggable]="false"
         [resizable]="false">
         <h1 class="text-center" class="font">
@@ -216,17 +222,15 @@
                 <div class="row g-3">
                     <div class="col">
                         <div class="p-field p-col-6 p-md-4">
-
+                           
                             <span class="p-float-label">
-                                <input type="nouveaute" id="nouveaute" name="nouveaute" pInputText
-                                    formControlName="idOrdonance" [(ngModel)]="ordonance.nouveaute"
-                                    [ngClass]="!ordonanceForm.controls['nouveaute'].valid && ordonanceForm.controls['nouveaute']?.touched?'ng-invalid ng-dirty':''"
-                                    required>
-                                <small class="text-red-500"
-                                    *ngIf="ordonanceForm.controls['nouveaute'].hasError('required') && ordonanceForm.controls['nouveaute']?.touched"
-                                    style="color: #f44336;">nouveaute_Ordonance est obligatoire </small>
+                                <p>Nouveauté</p>
+                                <p-inputSwitch type="nouveaute" id="nouveaute" name="nouveaute" 
+                                    formControlName="nouveaute" [(ngModel)]="ordonance.nouveaute"
+                                    ></p-inputSwitch>
+                                
                               
-                                <label for="nouveaute">nouveaute</label>
+                                
                             </span>
 
                         </div>
@@ -237,7 +241,7 @@
 
             </div>
 
-            <button pButton type="button" id="center" icon="pi pi-plus" class="p-button-outlined p-button-rounded " (click)="saveOrdonance(ordonance)"
+            <button pButton type="button" id="center" icon="pi pi-plus" class="p-button-outlined p-button-rounded p-button-help" (click)="saveOrdonance(ordonance)"
                 label="Partager" ></button>
 
 
@@ -253,9 +257,9 @@
     <p-dialog [(visible)]="showConsultation" [modal]="true" [baseZIndex]="10000"
         [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '40vw'}" [draggable]="false"
         [resizable]="false">
-        <h1 class="text-center" class="font">
+        <p  class="font">
             Partager_Consultation
-        </h1>
+        </p>
 
         <form [formGroup]="consultationForm">
             <div class="p-fluid grid">
@@ -283,12 +287,28 @@
 
                         </div>
                     </div>
+                    <div class="col">
+                        <div class="p-field p-col-6 p-md-4">
 
+                            <span class="p-float-label">
+                                <input type="lieu" id="lieu" name="lieu" pInputText
+                                    formControlName="lieu" [(ngModel)]="consultation.lieu"
+                                    [ngClass]="!consultationForm.controls['lieu'].valid && consultationForm.controls['lieu']?.touched?'ng-invalid ng-dirty':''"
+                                    required>
+                                <small class="text-red-500"
+                                    *ngIf="consultationForm.controls['lieu'].hasError('required') && consultationForm.controls['lieu']?.touched"
+                                    style="color: #f44336;">lieu est obligatoire </small>
+                              
+                                <label for="lieu">Lieu</label>
+                            </span>
+
+                        </div>
+                    </div>
 
                 </div>
 
 
-                <div class="row g-3">
+                
 
                     <div class="p-field p-col-12 p-md-4">
                         <span class="p-float-label">
@@ -312,7 +332,6 @@
                         </span>
                     </div>
 
-                </div>
 
 
                 <div class="p-field p-col-12 p-md-4">
@@ -327,38 +346,13 @@
                 </div>
 
 
-                <div class="row g-3">
-                    <div class="col">
-                        <div class="p-field p-col-6 p-md-4">
-
-                            <span class="p-float-label">
-                                <input type="lieu" id="lieu" name="lieu" pInputText
-                                    formControlName="lieu" [(ngModel)]="consultation.lieu"
-                                    [ngClass]="!consultationForm.controls['lieu'].valid && consultationForm.controls['lieu']?.touched?'ng-invalid ng-dirty':''"
-                                    required>
-                                <small class="text-red-500"
-                                    *ngIf="consultationForm.controls['lieu'].hasError('required') && consultationForm.controls['lieu']?.touched"
-                                    style="color: #f44336;">lieu est obligatoire </small>
-                              
-                                <label for="lieu">Lieu</label>
-                            </span>
-
-                        </div>
-                    </div>
+                
+            
 
 
-                </div>
+           
                 
                 
-                    <div class="col">
-                        <div class="p-field p-col-6 p-md-4">
-                    <span class="p-float-label">
-                        <p-dropdown id="idCertificat" name="certificat" datakey="idCertificat" [options]="ListCertificat" formControlName="idCertificat"
-                            [(ngModel)]="certificat1" optionLabel="idCertificat"></p-dropdown>
-                        <label for="idCertificat">N°Certificat</label>
-                    </span>
-                </div>
-            </div>
             
             <div class="row g-3">
                 <div class="col">
@@ -371,6 +365,15 @@
             </div>
         </div>
 
+        <div class="col">
+            <div class="p-field p-col-6 p-md-4">
+        <span class="p-float-label">
+            <p-dropdown id="idCertificat" name="certificat" datakey="idCertificat" [options]="ListCertificat" formControlName="idCertificat"
+                [(ngModel)]="certificat1" optionLabel="idCertificat"></p-dropdown>
+            <label for="idCertificat">N°Certificat</label>
+        </span>
+    </div>
+</div>
             </div>
             
             
@@ -384,11 +387,11 @@
             </div>
         </div>
 
-            <button pButton type="button" id="center" icon="pi pi-plus" class="p-button-outlined p-button-rounded " (click)="saveConsultation(consultation)"
-                label="Partager" ></button>
-
+          
 
 </div>
+<button pButton type="button" id="center" icon="pi pi-plus" class="p-button-outlined p-button-rounded p-button-help" (click)="saveConsultation(consultation)"
+label="Partager" ></button>
 
         </form>
 
@@ -398,14 +401,14 @@
     <p-splitButton label="Ajouter" [model]="this.items" styleClass="p-button-raised p-button-rounded p-button-text  p-button-help mr-2 mb-2" id="rightFiche">
     </p-splitButton>
 
-    <div class="card" style=" width: 1500px;left: 30px;  ">
+    
         <br />
         <br />
         <br />
         <p class="text-center" class="font">Mes_Consultations</p>
 
         <!-- Content here -->
-
+        <div class="card" style=" width: 1500px;left: 30px;  ">
 
         <br />
         <hr />

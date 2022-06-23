@@ -141,8 +141,10 @@ idOdrenanceonsultation:string
       this.serviceCon.addConsultation(this.consultationForm.value, this.fiche.idFiche, this.ordonance1.idOrdonance, this.certificat1.idCertificat).subscribe({
         next: (res: any) => {
           this.showSuccess();
+        },
+        error: () => {
+          this.showErrorConsultation();
         }
-      
       })
     }
     if (this.consultationForm.invalid) {
@@ -150,7 +152,21 @@ idOdrenanceonsultation:string
     }
   }
   saveOrdonance(o: Ordonance) {
-
+    console.log(o);
+    // console.log(this.consultationForm.value);
+    if (this.ordonanceForm.valid) {
+      this.serviceOrdo.addOrdonance(this.ordonanceForm.value).subscribe({
+        next: (res: any) => {
+          this.showSuccessOrdonance();
+        },
+        error: () => {
+          this.showErrorFunctionOrdon();
+        }
+      })
+    }
+    if (this.ordonanceForm.invalid) {
+      this.showErrorOrdonance();
+    }
   }
   saveCertificat(c: certificat) {
     if (this.certificatForm.valid) {
@@ -178,14 +194,24 @@ idOdrenanceonsultation:string
     this.messageService.add({ severity: 'error', summary: 'Error', detail: 'failure dans le partage de consultation' });
   }
   showSuccessCertificat() {
-    this.messageService.add({ severity: 'success', summary: 'Message de succé', detail: 'Certificat est partagée avec succé' });
+    this.messageService.add({ severity: 'success', summary: 'Message de succé', detail: 'Certificat est ajouté avec succé' });
   }
   showErrorCertificat() {
     this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Attention! il faut remplir tous les champs' });
   }
   showErrorFunctionCertif() {
 
-    this.messageService.add({ severity: 'error', summary: 'Error', detail: 'failure dans le partage de certificat' });
+    this.messageService.add({ severity: 'error', summary: 'Error', detail: 'failure dans l ajout de certificat' });
+  }
+  showSuccessOrdonance() {
+    this.messageService.add({ severity: 'success', summary: 'Message de succé', detail: 'Ordonance est ajoutée avec succé' });
+  }
+  showErrorOrdonance() {
+    this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Attention! il faut remplir tous les champs' });
+  }
+  showErrorFunctionOrdon() {
+
+    this.messageService.add({ severity: 'error', summary: 'Error', detail: 'failure dans l ajout d ordonance' });
   }
 }
 

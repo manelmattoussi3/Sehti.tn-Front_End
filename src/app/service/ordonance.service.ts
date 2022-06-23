@@ -16,4 +16,9 @@ export class OrdonanceService {
   getAllOrdonances():any{
     return this.http.get<any>(this.url+'findAllOrdonances');
   }
+  addOrdonance(o:Ordonance ):any{
+    return this.http.post<Ordonance>( `${this.url}saveOrdonance`,o);
+  
+  
+  }
 }

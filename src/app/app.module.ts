@@ -68,6 +68,8 @@ import {ToastModule} from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { ProfilMedecinComponent } from './profil-medecin/profil-medecin.component';
+import {InputSwitchModule} from 'primeng/inputswitch';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -143,7 +145,8 @@ import { ProfilMedecinComponent } from './profil-medecin/profil-medecin.componen
     ReactiveFormsModule,
     RippleModule,
     ToastModule,
-    SplitButtonModule
+    SplitButtonModule,
+    InputSwitchModule
 
     
     
