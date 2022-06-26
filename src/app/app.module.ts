@@ -72,6 +72,9 @@ import {InputSwitchModule} from 'primeng/inputswitch';
 import {ToolbarModule} from 'primeng/toolbar';
 import {PasswordModule} from 'primeng/password';
 import { DividerModule } from "primeng/divider";
+import {TreeSelectModule} from 'primeng/treeselect';
+import {FileUploadModule} from 'primeng/fileupload';
+import { StepsModule } from 'primeng/steps';
 @NgModule({
   declarations: [
     AppComponent,
@@ -151,7 +154,10 @@ import { DividerModule } from "primeng/divider";
     InputSwitchModule,
     ToolbarModule,
     PasswordModule,
-    DividerModule
+    DividerModule,
+    TreeSelectModule,
+    FileUploadModule,
+    StepsModule
 
 
     

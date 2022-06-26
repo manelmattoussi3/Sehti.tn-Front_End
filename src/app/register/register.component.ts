@@ -1,30 +1,70 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MenuItem, MessageService } from 'primeng/api';
 import { AuthService } from '../service/auth.service';
 import { MustMatch } from '../validators/confirmPassword';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+  providers: [MessageService],
 })
 export class RegisterComponent implements OnInit {
 
-  
+  items: MenuItem[];
+    
+    activeIndex: number = 1;
   signUpForm: FormGroup;
   selected = true;
   hidden = true;
  
+  listrole = [
 
+    { label: 'PROFESSIONNEL           ', value: 'PROFESSIONNEL' },
+
+    { label: 'PATIENT          ', value: 'PATIENT' }
+
+
+  ]
   constructor(
     private _authService: AuthService,
     private _formBuilder: FormBuilder,
-    private _router: Router
+    private _router: Router,
+    private messageService: MessageService
   ) { }
 
   ngOnInit(): void {
-
+ this.items = [{
+                label: 'Sinscrire',
+                command: (event: any) => {
+                    this.activeIndex = 0;
+                    this.messageService.add({severity:'info', summary:'First Step', detail: event.item.label});
+                }
+            },
+            {
+                label: 'Informations',
+                command: (event: any) => {
+                    this.activeIndex = 1;
+                    this.messageService.add({severity:'info', summary:'Seat Selection', detail: event.item.label});
+                }
+            },
+            {
+                label: 'Dossier_Médical',
+                command: (event: any) => {
+                    this.activeIndex = 2;
+                    this.messageService.add({severity:'info', summary:'Pay with CC', detail: event.item.label});
+                }
+            },
+            {
+                label: 'Confirmation',
+                command: (event: any) => {
+                    this.activeIndex = 3;
+                    this.messageService.add({severity:'info', summary:'Last Step', detail: event.item.label});
+                }
+            }
+        ];
     this.signUpForm = this._formBuilder.group({
       username      : ['', [Validators.required, Validators.pattern('[a-z  A-Z ]+$')]],
       password  : ['', [Validators.required,Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$")]],
@@ -39,6 +79,7 @@ export class RegisterComponent implements OnInit {
 
     }
     );
+    
 
   }
 
