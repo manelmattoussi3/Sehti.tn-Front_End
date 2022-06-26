@@ -40,11 +40,20 @@ text-decoration: #1b74e4 underline;
 
   position: relative;
 
-  left: 95%;
-  top: 1em;
+  left: 90%;
+  bottom: 0em;
 
 
   }
+  #rightEdit {
+
+    position: relative;
+  
+    left: 94%;
+    bottom: 1.3em;
+  
+  
+    }
   #center {
 
     position: relative;

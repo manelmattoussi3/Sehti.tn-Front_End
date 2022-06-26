@@ -136,6 +136,7 @@ idOdrenanceonsultation:string
   }
   saveConsultation(c: Consultation) {
     console.log(c);
+    
     console.log(this.consultationForm.value);
     if (this.consultationForm.valid) {
       this.serviceCon.addConsultation(this.consultationForm.value, this.fiche.idFiche, this.ordonance1.idOrdonance, this.certificat1.idCertificat).subscribe({

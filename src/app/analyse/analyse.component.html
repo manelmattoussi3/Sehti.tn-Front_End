@@ -51,9 +51,7 @@
 <br />
 <div class="container">
     <div class="card" style="left: 90px;width: 1450px; ">
-        <br />
-        <br />
-        <br />
+      
         <p-toast position="top-right" ></p-toast>
         <p-dialog [(visible)]="showAnalyse" [modal]="true" [baseZIndex]="10000"
             [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '40vw'}" [draggable]="false"
@@ -65,7 +63,8 @@
             <form [formGroup]="registerForm">
                 <div class="p-fluid grid">
 
-
+                 
+                  
 
 
                     <div class="row g-3">
@@ -202,23 +201,34 @@
 
 
         </p-dialog>
-        <button pButton pRipple class="purple" type="button" icon="pi pi-plus" class="p-button-rounded " id="right"
-            (click)="modelAnalyse()" ></button>
+       
 
-        <p class="text-center" class="font">Liste des analyses</p>
+        
 
         <!-- Content here -->
 
 
-        <br />
-        <hr />
-
+        <p-toolbar styleClass="mb-4">
+            <ng-template pTemplate="left">
+                <button pButton pRipple class="purple" type="button" icon="pi pi-plus" class="p-button-rounded " id="right"
+                (click)="modelAnalyse()" ></button>
+                
+            </ng-template>
+    
+          
+        </p-toolbar>
         <p-table #analyseTable [scrollable]="true" [value]="ListAnalyses" dataKey="id" [rows]="5"
             [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,25,50]" [paginator]="true"
             currentPageReportTemplate="Affichage de {first} à {last} sur {totalRecords} éléments"
             [globalFilterFields]="['id','codeAnalyse','observation','dateAnalyse','motif','resultat','etablissement','type','etat']">
             <ng-template pTemplate="caption">
-
+                <div class="flex align-items-center justify-content-between">
+                    <p class="text-center" class="font">Liste des analyses</p>
+                    <span class="p-input-icon-left">
+                        <i class="pi pi-search"></i>
+                        <input pInputText type="text" (input)="analyseTable.filterGlobal(getEventValue($event), 'contains')" placeholder="Search..." [style]="{height: '2.5vw'}" />
+                    </span>
+                </div>
                 <div class="flex">
 
                     <button pButton label="Effacer" class="p-button-outlined" icon="pi pi-filter-slash"
@@ -226,9 +236,6 @@
 
 
 
-                    <input pInputText type="text" class="pi pi-search"
-                        (input)="analyseTable.filterGlobal(getEventValue($event), 'contains')" placeholder="Rechercher"
-                        class="p-input-icon-left p-ml-auto" />
 
 
 

@@ -8,6 +8,7 @@ export class appUser {
     adresse: string;
     email: string;
     password: string;
+    confirmPassword:string;
     genre: string;
     image: string;
     tel: string;

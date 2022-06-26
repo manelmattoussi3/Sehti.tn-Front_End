@@ -32,7 +32,10 @@ AccederLettreByDossier(idDossier: number): Observable<any> {
 getDossierWithoutDemandes(){
   return this.http.get<dossierMedical[]>(this.url+'findAllDossierWithoutDemandes');
 }
-AccederDossierByDemande(idDemande: string): Observable<any> {
+AccederDossierByDemande(idDemande: string): any {
   return this.http.get(this.url+'findByDemande/'+idDemande);
+}
+PutDossier(dossier:dossierMedical){
+return this.http.put(this.url+'ModifierDossier',dossier);
 }
 }

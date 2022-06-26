@@ -17,3 +17,7 @@ pre{
    span.p-input-icon-left input[type="text"]{
        padding: 0px 25px;
    }
+   .lefto {
+    float: right;
+    margin: 0 30px 15 20px;
+  }

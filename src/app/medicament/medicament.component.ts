@@ -84,7 +84,7 @@ export class MedicamentComponent implements OnInit {
       nbrFois: ['', [Validators.required, Validators.pattern('[0-9]+$')]],
       unite: ['', [Validators.required,  Validators.pattern('[a-zA-Z]+$')]],
       etat: ['', Validators.required],
-      idMedicament: ['', Validators.required],
+      name: ['', Validators.required],
       idOrdonance: ['', Validators.required]
 
      
@@ -118,7 +118,8 @@ getAllMedicaments(){
 minDatee(event:any){
   
 this.minDate=event;
-//this.minDate.setDate( this.minDate.getDate() - 1 );
+//
+this.minDate.setDate( this.minDate.getDate() - 1 );
 console.log(this.minDate);
   
 }
@@ -140,7 +141,7 @@ saveMedicament(m: Medicament) {
 }
 savePrescription(p:Prescription) {
   if (this.prescriptionForm.valid) {
-    this.service.addPrescription(this.prescriptionForm.value,this.medicament1.idMedicament,this.ordonance.idOrdonance).subscribe({
+    this.service.addPrescription(this.prescriptionForm.value,this.medicament1.name,this.ordonance.idOrdonance).subscribe({
       next: (res: any) => {
         this.showSuccessPrescription();
       },

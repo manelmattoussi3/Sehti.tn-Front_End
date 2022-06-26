@@ -117,7 +117,7 @@
                                 <div class="p-field p-col-6 p-md-4">
 
                                     <span class="p-float-label">
-                                        <label for="idMedicament">N°_Medicament</label>
+                                       
                                         <input id="idMedicament" name="idMedicament" pInputText
                                             formControlName="idMedicament" [(ngModel)]="medicament.idMedicament"
                                             [ngClass]="!registerForm.controls['idMedicament'].valid && registerForm.controls['idMedicament']?.touched?'ng-invalid ng-dirty':''"
@@ -128,7 +128,7 @@
                                         <small class="text-red-500"
                                             *ngIf="registerForm.controls['idMedicament'].hasError('pattern') && registerForm.controls['idMedicament']?.touched"
                                             style="color: #f44336;"> N°_Medicament doit étre un nombre </small>
-                                        
+                                            <label for="idMedicament">N°_Medicament</label>
                                     </span>
 
                                 </div>
@@ -194,7 +194,7 @@
                         </div>
 
                         <button pButton type="button" id="center" icon="pi pi-plus"
-                            class="p-button-outlined p-button-rounded p-button-help " label="Partager"
+                            class="p-button-outlined p-button-rounded p-button-help " label="Ajouter"
                             (click)="saveMedicament(medicament)"></button>
 
 
@@ -207,7 +207,7 @@
                 </p-dialog>
                 <p-toast position="top-right"></p-toast>
                 <p-dialog [(visible)]="showPrescription" [modal]="true" [baseZIndex]="10000"
-                     [style]="{width: '60vw'}" [draggable]="false"
+                     [style]="{width: '40vw'}" [draggable]="false"
                     [resizable]="false">
                     <h1 class="text-center" class="font">
                         Ajouter_Prescriptions
@@ -217,7 +217,29 @@
                         <div class="p-fluid grid">
 
 
-
+                            <div class="row g-3">
+                                <div class="col">
+                                    <div class="p-field p-col-6 p-md-4">
+                                        <span class="p-float-label">
+                                            <p-dropdown id="name" name="medicament1" datakey="name"
+                                                [options]="Listmedicaments" formControlName="name"
+                                                [(ngModel)]="medicament1" optionLabel="name"></p-dropdown>
+                                            <label for="name">Nom_Medicament</label>
+                                        </span>
+                                    </div>
+                                </div>
+    
+                                <div class="col">
+                                    <div class="p-field p-col-6 p-md-4">
+                                        <span class="p-float-label">
+                                            <p-dropdown id="idOrdonance" name="ordonance" datakey="idOrdonance"
+                                                [options]="ListOrdonances" formControlName="idOrdonance"
+                                                [(ngModel)]="ordonance" optionLabel="idOrdonance"></p-dropdown>
+                                            <label for="idOrdonance">N°_Ordonance</label>
+                                        </span>
+                                    </div>
+                                </div>
+                                </div>
 
                             <div class="row g-3">
                                 <div class="col">
@@ -293,29 +315,7 @@
                                 </div>
                                 </div>
                             </div>
-                            <div class="row g-3">
-                            <div class="col">
-                                <div class="p-field p-col-6 p-md-4">
-                                    <span class="p-float-label">
-                                        <p-dropdown id="idMedicament" name="medicament1" datakey="idMedicament"
-                                            [options]="Listmedicaments" formControlName="idMedicament"
-                                            [(ngModel)]="medicament1" optionLabel="idMedicament"></p-dropdown>
-                                        <label for="idMedicament">N°_Medicament</label>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div class="col">
-                                <div class="p-field p-col-6 p-md-4">
-                                    <span class="p-float-label">
-                                        <p-dropdown id="idOrdonance" name="ordonance" datakey="idOrdonance"
-                                            [options]="ListOrdonances" formControlName="idOrdonance"
-                                            [(ngModel)]="ordonance" optionLabel="idOrdonance"></p-dropdown>
-                                        <label for="idOrdonance">N°_Ordonance</label>
-                                    </span>
-                                </div>
-                            </div>
-                            </div>
+                           
                             <div class="row g-3">
                             <div class="col">
                                 <div class="p-field p-col-6 p-md-4">
@@ -364,7 +364,7 @@
 
                         <button pButton type="button" id="center" icon="pi pi-plus"
                         class="p-button-outlined p-button-rounded p-button-help"
-                        (click)="savePrescription(prescription)" label="Partager"></button>
+                        (click)="savePrescription(prescription)" label="Ajouter"></button>
                     </form>
 
 

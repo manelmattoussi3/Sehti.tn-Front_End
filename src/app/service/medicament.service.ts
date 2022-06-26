@@ -18,8 +18,8 @@ url=environment.API_URL;
   
   
   }
-  addPrescription(p:Prescription,idMedicament:string,idOrdonance:string ):any{
-    return this.http.post<Prescription>(`${this.url}prescrireMedicamentEtLePartagerAUneOrdonance/medicament/${idMedicament}/ordonance/${idOrdonance}`,p);
+  addPrescription(p:Prescription,nomMedicament:string,idOrdonance:string ):any{
+    return this.http.post<Prescription>(`${this.url}prescrireMedicamentEtLePartagerAUneOrdonance/medicament/${nomMedicament}/ordonance/${idOrdonance}`,p);
   
   
   }

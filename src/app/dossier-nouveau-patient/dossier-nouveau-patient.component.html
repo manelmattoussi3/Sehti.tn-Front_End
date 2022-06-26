@@ -59,86 +59,52 @@
 
     </div>
 </div>
-<main class="main-content">
-    <div class="py-4 px-4 px-md-5">
-        <!--  -->
-        <div class="row mb-5 px-2-5 gap-4">
-            <div
-                class="col-lg col-md-12 rounded-5 bg-danger py-2-5 px-4 d-flex justify-content-between align-items-center">
-                <img src="assets/img/total-patient.svg" alt="" />
-                <span class="text-end">
-                    <span class="text-inf">Total Patient</span>
-                    <h3 class="fw-bold mt-1">2,650</h3>
-                </span>
-            </div>
 
-            <div
-                class="col-lg col-md-12 rounded-5 bg-green py-2-5 px-4 d-flex justify-content-between align-items-center">
-                <img src="assets/img/total-doctors.svg" alt="" />
-                <span class="text-end">
-                    <span class="text-inf">Total Doctors</span>
-                    <h3 class="fw-bold mt-1">2,650</h3>
-                </span>
-            </div>
-
-            <div class="col-lg col-md-12 rounded-5 bg-gray py-2-5 px-4 d-flex justify-content-between align-items-center">
-                <a routerLink="/medecinFamille">
-                <img src="assets/img/imageonline-co-transparentimage.jpg" width="90px" height="90px" />
-                <span class="text-end">
-                    <h3 class="text-inf">Médecin de famille</h3>                                            
-                    
-                </span>
-            </a>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-</main>
 <div class="container">
+   <br>
+   <br>
+   
     <div class="card" style=" width: 1500px;left: 30px;  ">
-        <br />
-        <br />
-        <br />
-        <p class="text-center" class="font">Liste des dossiers médicaux de nouveaux patients</p>
-
-        <!-- Content here -->
-
-
-        <br />
-        <hr />
+        
+     
        
           
-                        
+        <p-toolbar styleClass="mb-4">
+            <button pButton label="Effacer" class="p-button-outlined" icon="pi pi-filter-slash"
+            (click)="clear(dossierTable)"></button>
+          
+            <ng-template pTemplate="left">
+                
+                <img class="lefto" src="assets/img/imageonline-co-transparentimage.jpg" width="90" height="90"
+            alt="" title="" />
+                <button pButton type="button" icon="pi pi-users" class=" p-button-rounded  p-button-outlined p-button-help"
+                label="Médecin de famille" 
+                routerLink="/medecinFamille"></button>
+            </ng-template>
+    
+          
+        </p-toolbar>             
                       
-        <p-table #dossierTable [value]="listDossier"  dataKey="numDossier" [rows]="5"
+        <p-table #dossierTable [value]="listDossier"  dataKey="idDossier" [rows]="5"
             [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,25,50]" [paginator]="true"
             currentPageReportTemplate="Affichage de {first} à {last} sur {totalRecords} éléments"
-            [globalFilterFields]="['numDossier','dateCreation','patient.cnss','patient.assurance']">
+            [globalFilterFields]="['idDossier','dateCreation','patient?.cnss','patient?.assurance']">
             <ng-template pTemplate="caption">
 
-                <div class="flex">
-
-                    <button pButton label="Effacer" class="p-button-outlined" icon="pi pi-filter-slash"
-                        (click)="clear(dossierTable)"></button>
-
-
+                <div class="flex" [style]="{ height: '5vw' }">
 
                    
 
-                        
 
-                        <input pInputText type="text" (input)="dossierTable.filterGlobal(getEventValue($event), 'contains')" placeholder="Search keyword" class="p-input-icon-left p-ml-auto" />
+
+                    <pre class="text-center" class="font">Liste des dossiers médicaux de nouveaux patients</pre>
+
+                        
+                        <span class="p-input-icon-left">
+                            <i class="pi pi-search"></i>
+                            <input pInputText type="text" (input)="dossierTable.filterGlobal(getEventValue($event), 'contains')" placeholder="Search..." [style]="{height: '2.5vw'}" />
+                        </span>
+                       
 
                     
 
@@ -147,13 +113,13 @@
             </ng-template>
             <ng-template pTemplate="header">
                 <tr>
-                    <th pSortableColumn="numDossier">Num_Dossier <p-sortIcon field="numDossier"></p-sortIcon>
+                    <th pSortableColumn="idDossier">Num_Dossier <p-sortIcon field="idDossier"></p-sortIcon>
                     </th>
                     <th pSortableColumn="dateCreation">Date_Creation <p-sortIcon field="dateCreation"></p-sortIcon>
                     </th>
-                    <th pSortableColumn="patient.cnss">Nom_Patient <p-sortIcon field="patient.cnss"></p-sortIcon>
+                    <th pSortableColumn="patient?.cnss">Nom_Patient <p-sortIcon field="patient?.cnss"></p-sortIcon>
                     </th>
-                    <th pSortableColumn="patient.assurance">Prenom_Patient <p-sortIcon field="patient.assurance">
+                    <th pSortableColumn="patient?.assurance">Prenom_Patient <p-sortIcon field="patient?.assurance">
                         </p-sortIcon>
                     </th>
                     
@@ -165,16 +131,16 @@
                 </tr>
                 <tr>
                     <th>
-                        <p-columnFilter  type="text" field="numDossier" matchMode="contains"  [matchModeOptions]="matchModeOptions" ></p-columnFilter>
+                        <p-columnFilter  type="text" field="idDossier" matchMode="contains"  [matchModeOptions]="matchModeOptions" ></p-columnFilter>
                     </th>
                     <th>
                         <p-columnFilter type="text" field="dateCreation" matchMode="contains"  [matchModeOptions]="matchModeOptions" ></p-columnFilter>
                     </th>
                     <th>
-                      <p-columnFilter type="text" field="patient.cnss" matchMode="contains"  [matchModeOptions]="matchModeOptions" ></p-columnFilter>
+                      <p-columnFilter type="text" field="patient?.cnss" matchMode="contains"  [matchModeOptions]="matchModeOptions" ></p-columnFilter>
                   </th>
                   <th>
-                    <p-columnFilter type="text" field="patient.assurance"  matchMode="contains" [matchModeOptions]="matchModeOptions" ></p-columnFilter>
+                    <p-columnFilter type="text" field="patient?.assurance"  matchMode="contains" [matchModeOptions]="matchModeOptions" ></p-columnFilter>
                 </th>
               
                 <th>
@@ -188,10 +154,10 @@
             <ng-template pTemplate="body" let-dossier let-rowIndex="rowIndex">
 
                 <tr [pSelectableRow]="dossier" [pSelectableRowIndex]="rowIndex">
-                    <td>{{dossier.numDossier}}</td>
-                    <td>{{dossier.dateCreation | date: "longDate"}}</td>
-                    <td>{{dossier.patient.cnss}}</td>
-                    <td>{{dossier.patient.assurance}}</td>
+                    <td>{{dossier?.idDossier}}</td>
+                    <td>{{dossier?.dateCreation | date: "longDate"}}</td>
+                    <td>{{dossier?.patient?.cnss}}</td>
+                    <td>{{dossier?.patient?.assurance}}</td>
                     <td><button pButton type="button" class="p-button-raised p-button-outlined p-button-rounded p-button-warning" icon="fa fa-share-square-o"    label="Envoyer"></button></td>
 
                     

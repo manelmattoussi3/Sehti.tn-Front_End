@@ -9,7 +9,7 @@ pre{
 font-size: 28px;
 text-align: center;
 color: #1150C6;
-text-decoration: #1b74e4 underline;
+
 }
 .p-input-icon-left,
  .p-input-icon-right {
@@ -40,8 +40,8 @@ text-decoration: #1b74e4 underline;
 
   position: relative;
 
-  left: 95%;
-  top: 1em;
+  left: 10%;
+  bottom: 0em;
 
 
   }

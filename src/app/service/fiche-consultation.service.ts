@@ -21,4 +21,7 @@ export class FicheConsultationService {
   
   
   }
+  PutFiche(fiche:FicheConsultation){
+    return this.http.put(this.url+'UpdateFiche',fiche);
+    }
 }

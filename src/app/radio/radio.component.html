@@ -201,15 +201,20 @@
 
 
         </p-dialog>
-        <button pButton pRipple class="purple" type="button" icon="pi pi-plus" class="p-button-rounded " id="right"
-            (click)="modelRadio()" ></button>
-        <p class="text-center" class="font">Liste des radios</p>
+       
 
         <!-- Content here -->
 
-
-        <br />
-        <hr />
+        <p-toolbar styleClass="mb-4">
+            <ng-template pTemplate="left">
+                <button pButton pRipple class="purple" type="button" icon="pi pi-plus" class="p-button-rounded " id="right"
+                (click)="modelRadio()" ></button>
+            <pre class="text-center" class="font">                                        Liste des radios</pre>
+                
+            </ng-template>
+    
+          
+        </p-toolbar>
       
         <p-table #radioTable [scrollable]="true" [value]="ListRadios" dataKey="id" [rows]="5"
             [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,25,50]" [paginator]="true"
@@ -226,11 +231,12 @@
 
 
 
+                        <span class="p-input-icon-left">
+                            <i class="pi pi-search"></i>
+                            <input pInputText type="text" (input)="radioTable.filterGlobal(getEventValue($event), 'contains')" placeholder="Search..." [style]="{height: '2.5vw'}" />
+                        </span>
 
-
-                    <input pInputText type="text" class="pi pi-search"
-                        (input)="radioTable.filterGlobal(getEventValue($event), 'contains')" placeholder="Rechercher"
-                        class="p-input-icon-left p-ml-auto" />
+              
 
 
 

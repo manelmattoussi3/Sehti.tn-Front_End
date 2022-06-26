@@ -193,11 +193,21 @@ a:hover {
 
 }
 
-#rightFiche {
+#rightbtn {
 
   position: relative;
 
   left: 94%;
+  bottom: 3em;
+
+
+}
+
+#rightFiche {
+
+  position: relative;
+
+  left: 101%;
   bottom: 0.5em;
 
 
@@ -224,7 +234,7 @@ a:hover {
 
 .lefto {
   float: left;
-  margin: 0 30px 15 20px;
+  margin: 0 35px 15 20px;
 }
 
 .colonne {

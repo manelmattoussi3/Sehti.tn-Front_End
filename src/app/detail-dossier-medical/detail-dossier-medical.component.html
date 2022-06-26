@@ -25,8 +25,8 @@
                 </li>
                 <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
                     <a routerLink="/profilMedecin">
-                    <img src="assets/img/my-profile.svg" alt="" class="" />
-                    <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Mon Profile</span>
+                        <img src="assets/img/my-profile.svg" alt="" class="" />
+                        <span class="ms-2 fs-6 d-inline-block text-inf mt-1">Mon Profile</span>
                     </a>
                 </li>
                 <!-- <li class="px-4 py-2-5 rounded-3 cursor-pointer hover-bg-danger">
@@ -113,6 +113,7 @@
     <br />
 
     <div class="container">
+
         <p-toast position="top-right"></p-toast>
         <p-dialog [(visible)]="showFiche" [modal]="true" [baseZIndex]="10000"
             [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '40vw'}" [draggable]="false"
@@ -284,8 +285,8 @@
 
                 </div>
 
-                <button pButton type="button" id="center" icon="pi pi-plus" class="p-button-outlined p-button-rounded " (click)="saveLettre(lettre,dossier.idDossier)"
-                    label="Partager" ></button>
+                <button pButton type="button" id="center" icon="pi pi-plus" class="p-button-outlined p-button-rounded "
+                    (click)="saveLettre(lettre,dossier.idDossier)" label="Partager"></button>
 
 
 
@@ -300,12 +301,154 @@
             class="p-button-outlined p-button-rounded p-button-help" id="rightFiche" (click)="modelFiche()"></button>
         <button pButton type="button" icon="pi pi-plus" label="Ajouter Lettre_Confidentielle"
             class="p-button-outlined p-button-rounded p-button-danger" id="rightLettre" (click)="modelFiche()"></button> -->
-        <p-splitButton label="Ajouter" [model]="this.items" styleClass="p-button-raised p-button-rounded p-button-text  p-button-help mr-2 mb-2" id="rightFiche">
+        <p-splitButton label="Ajouter" [model]="this.items"
+            styleClass="p-button-raised p-button-rounded p-button-text  p-button-success mr-2 mb-2" id="rightFiche">
         </p-splitButton>
         <div class="card" style=" top: 10px; left: 200px ">
             <br />
+
             <h2 class="text-center"> Dossier médical </h2>
             <div class="card-body">
+                <button pButton pRipple class="purple" type="button" icon="pi pi-pencil"
+                    class="p-button-rounded p-button-success" id="rightbtn" (click)="modelDossier()"></button>
+                <p-dialog [(visible)]="showDossier" [modal]="true" [baseZIndex]="10000"
+                    [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '40vw'}" [draggable]="false"
+                    [resizable]="false">
+                    <h1 class="text-center" class="font">
+                        Modifier_Dossier
+                    </h1>
+
+                    <form [formGroup]="dossierForm">
+                        <div class="p-fluid grid">
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="row g-3">
+                                <div class="p-field p-col-12 p-md-4">
+                                    <label for="sang">sang</label>
+                                    <p-dropdown [options]="optionsSang" [(ngModel)]="dossier.sang" optionLabel="label"
+                                        formControlName="sang" optionValue="value" placeholder="sang"
+                                        >
+                                    </p-dropdown>
+    
+                                    <small class="text-red-500"
+                                        *ngIf="dossierForm.controls['sang'].hasError('required') && dossierForm.controls['sang']?.touched"
+                                        style="color: #f44336;">sang est obligatoire </small>
+    
+    
+                                </div>
+
+                                <div class="col">
+                                    <div class="p-field p-col-6 p-md-4">
+
+                                        <span class="p-float-label">
+                                            <input type="codeAcce" id="codeAcce" name="codeAcce" pInputText
+                                                formControlName="codeAcce" [(ngModel)]="dossier.codeAcce"
+                                                [ngClass]="!dossierForm.controls['codeAcce'].valid && dossierForm.controls['codeAcce']?.touched?'ng-invalid ng-dirty':''"
+                                                required>
+                                            <small class="text-red-500"
+                                                *ngIf="dossierForm.controls['codeAcce'].hasError('required') && dossierForm.controls['codeAcce']?.touched"
+                                                style="color: #f44336;">codeAcce est obligatoire </small>
+                                           
+                                            <label for="numDossier">codeAcce</label>
+                                        </span>
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-field p-col-6 p-md-4">
+    
+                                        <span class="p-float-label">
+                                            <input type="perimetreCarnien" id="perimetreCarnien" name="perimetreCarnien"
+                                                pInputText formControlName="perimetreCarnien"
+                                                [(ngModel)]="dossier.perimetreCarnien"
+                                                [ngClass]="!dossierForm.controls['perimetreCarnien'].valid && dossierForm.controls['perimetreCarnien']?.touched?'ng-invalid ng-dirty':''"
+                                                required>
+                                            <small class="text-red-500"
+                                                *ngIf="dossierForm.controls['perimetreCarnien'].hasError('required') && dossierForm.controls['perimetreCarnien']?.touched"
+                                                style="color: #f44336;">perimetreCarnien est obligatoire </small>
+                                            <small class="text-red-500"
+                                                *ngIf="dossierForm.controls['perimetreCarnien'].hasError('pattern') && dossierForm.controls['perimetreCarnien']?.touched"
+                                                style="color: #f44336;"> perimetreCarnien doit étre un nombre </small>
+                                            <label for="perimetreCarnien">perimetreCarnien</label>
+                                        </span>
+    
+                                    </div>
+                                </div>
+                                
+                           
+                            </div>
+                            <div class="row g-3">
+                                <div class="col">
+                                    <div class="p-field p-col-6 p-md-4">
+
+                                        <span class="p-float-label">
+                                            <input type="poids" id="poids" name="poids" pInputText
+                                                formControlName="poids" [(ngModel)]="dossier.poids"
+                                                [ngClass]="!dossierForm.controls['poids'].valid && dossierForm.controls['poids']?.touched?'ng-invalid ng-dirty':''"
+                                                required>
+                                            <small class="text-red-500"
+                                                *ngIf="dossierForm.controls['poids'].hasError('required') && dossierForm.controls['poids']?.touched"
+                                                style="color: #f44336;">poids est obligatoire </small>
+                                            <small class="text-red-500"
+                                                *ngIf="dossierForm.controls['poids'].hasError('pattern') && dossierForm.controls['poids']?.touched"
+                                                style="color: #f44336;"> poids doit étre un nombre </small>
+                                            <label for="poids">poids</label>
+                                        </span>
+
+                                    </div>
+                                </div>
+                            
+                            <div class="col">
+                                <div class="p-field p-col-6 p-md-4">
+
+                                    <span class="p-float-label">
+                                        <input type="taille" id="taille" name="taille" pInputText
+                                            formControlName="taille" [(ngModel)]="dossier.taille"
+                                            [ngClass]="!dossierForm.controls['taille'].valid && dossierForm.controls['taille']?.touched?'ng-invalid ng-dirty':''"
+                                            required>
+                                        <small class="text-red-500"
+                                            *ngIf="dossierForm.controls['taille'].hasError('required') && dossierForm.controls['taille']?.touched"
+                                            style="color: #f44336;">taille est obligatoire </small>
+                                        <small class="text-red-500"
+                                            *ngIf="dossierForm.controls['taille'].hasError('pattern') && dossierForm.controls['taille']?.touched"
+                                            style="color: #f44336;"> taille doit étre un nombre </small>
+                                        <label for="taille">taille</label>
+                                    </span>
+
+                                </div>
+                            </div>
+
+                       </div>
+                          
+                        
+                       
+                         
+
+                        </div>
+
+                        <button pButton type="button" id="center" icon="pi pi-pencil"
+                            class="p-button-outlined p-button-rounded p-button-success" (click)="putDossier(dossier)"
+                            label="Modifier"></button>
+
+
+
+
+                    </form>
+
+
+
+                </p-dialog>
                 <!-- Content here -->
 
 
@@ -397,7 +540,98 @@
                                     [modal]="true" [style]="{width: '60vw'}" [draggable]="false" [resizable]="false">
 
                                     <p class="text-center">Fiche_Consultation de dossier N° {{dossier.idDossier}}</p>
-                                    <p-table [value]="listFiches" [autoLayout]="true">
+                                    <p-dialog [(visible)]="modifefiche" [modal]="true" [baseZIndex]="10000"
+                                    [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '40vw'}" [draggable]="false"
+                                    [resizable]="false">
+                                    <h1 class="text-center" class="font">
+                                        Modifier_Fiche_Consultation
+                                    </h1>
+                        
+                                    <form [formGroup]="registerForm">
+                                        <div class="p-fluid grid">
+                        
+                        
+                        
+                        
+                                            <div class="row g-3">
+                                                <div class="col">
+                                                    <div class="p-field p-col-6 p-md-4">
+                        
+                                                        <span class="p-float-label">
+                                                            <input type="idFiche" id="idFiche" name="idFiche" pInputText
+                                                                formControlName="idFiche" [(ngModel)]="fiche.idFiche"
+                                                                [ngClass]="!registerForm.controls['idFiche'].valid && registerForm.controls['idFiche']?.touched?'ng-invalid ng-dirty':''"
+                                                                required>
+                                                            <small class="text-red-500"
+                                                                *ngIf="registerForm.controls['idFiche'].hasError('required') && registerForm.controls['idFiche']?.touched"
+                                                                style="color: #f44336;">N°_Fiche est obligatoire </small>
+                                                            <small class="text-red-500"
+                                                                *ngIf="registerForm.controls['idFiche'].hasError('pattern') && registerForm.controls['idFiche']?.touched"
+                                                                style="color: #f44336;"> N°_Fiche doit étre un nombre </small>
+                                                            <label for="idFiche">N°_Fiche</label>
+                                                        </span>
+                        
+                                                    </div>
+                                                </div>
+                        
+                        
+                                            </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                                            <div class="row g-3">
+                        
+                                                <div class="p-field p-col-12 p-md-4">
+                                                    <span class="p-float-label">
+                                                        <textarea inputId="textarea" rows="3" style="resize: none;" cols="30"
+                                                            style="min-height: 30px;overflow:auto;" id="observation" name="observation"
+                                                            formControlName="observation" type="textarea" [(ngModel)]="fiche.observation"
+                                                            pInputTextarea
+                                                            [ngClass]="!registerForm.controls['observation'].valid && registerForm.controls['observation']?.touched?'ng-invalid ng-dirty':''"
+                                                            required></textarea>
+                                                        <small class="text-red-500"
+                                                            *ngIf="registerForm.controls['observation'].hasError('required') && registerForm.controls['observation']?.touched"
+                                                            style="color: #f44336;">Observation est obligatoire </small>
+                                                        <small class="text-red-500"
+                                                            *ngIf="registerForm.controls['observation'].hasError('minlength') && registerForm.controls['observation']?.touched"
+                                                            style="color: #f44336;"> min 3 lettres </small>
+                                                        <small class="text-red-500"
+                                                            *ngIf="registerForm.controls['observation'].hasError('pattern') && registerForm.controls['observation']?.touched"
+                                                            style="color: #f44336;">L'observation ne doit pas contenir des caractéres
+                                                            spéciaux</small>
+                                                        <label for="observation">observation</label>
+                                                    </span>
+                                                </div>
+                        
+                                            </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                                        </div>
+                        
+                                        <button pButton type="button" id="center" icon="pi pi-plus" class="p-button-outlined p-button-rounded "
+                                            label="Partager" (click)="saveFiche(fiche,dossier.idDossier)"></button>
+                        
+                        
+                        
+                        
+                                    </form>
+                        
+                        
+                        
+                                </p-dialog>
+                                    <p-table [value]="listFiches" [autoLayout]="true" selectionMode="single" dataKey="idFiche" [(selection)]="selectedFiche"
+                                    (onRowSelect)="onRowSelect(selectedFiche)" [metaKeySelection]="false">
 
                                         <ng-template pTemplate="header">
 
