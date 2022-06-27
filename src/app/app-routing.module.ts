@@ -33,6 +33,7 @@ import { PatientRadioComponent } from './patient-radio/patient-radio.component';
 import { HistoriqueRadioComponent } from './historique-radio/historique-radio.component';
 import { FormanalyseComponent } from './formanalyse/formanalyse.component';
 import { ProfilMedecinComponent } from './profil-medecin/profil-medecin.component';
+import { FormDossierComponent } from './form-dossier/form-dossier.component';
 
 const ROUTES: Routes = [
   { path: '', redirectTo: '/about', pathMatch: 'full' },
@@ -40,6 +41,7 @@ const ROUTES: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'professional', component: DashboardComponent },
+  { path: 'formDossier', component: FormDossierComponent },
   { path: 'about', component: AccueilComponent },
   { path: 'dossier', component: DossierMedicalComponent },
   { path: 'dossier/detail/:idDossier', component: DetailDossierMedicalComponent},

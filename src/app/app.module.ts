@@ -75,6 +75,7 @@ import { DividerModule } from "primeng/divider";
 import {TreeSelectModule} from 'primeng/treeselect';
 import {FileUploadModule} from 'primeng/fileupload';
 import { StepsModule } from 'primeng/steps';
+import { FormDossierComponent } from './form-dossier/form-dossier.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -114,6 +115,7 @@ import { StepsModule } from 'primeng/steps';
     HistoriqueRadioComponent,
     FormanalyseComponent,
     ProfilMedecinComponent,
+    FormDossierComponent,
    
     
   ],

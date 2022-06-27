@@ -89,7 +89,9 @@ export class RegisterComponent implements OnInit {
       // Do nothing if the form is invalid
       if ( this.signUpForm.invalid )
       {
-          return;
+        
+       // this._router.navigateByUrl('/register');
+        this.showError();
       }
 
       var formData = new FormData();
@@ -126,9 +128,10 @@ export class RegisterComponent implements OnInit {
                 this.signUpForm.enable();
                 if(this.signUpForm.get("role")!.value !== "PATIENT"){ 
                 this._router.navigateByUrl('/login');
+               
                 }
                 else{
-                  this._router.navigateByUrl('/professional');
+                  this._router.navigateByUrl('/formDossier');
                 }
               }
 
@@ -188,5 +191,7 @@ affiliationChange(event: any){
         console.log(" FORM VALUES : ", this.signUpForm.value);
     }
 }
-
+showError() {
+  this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Attention! il faut remplir tous les champs' });
+}
 }

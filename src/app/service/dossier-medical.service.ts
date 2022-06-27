@@ -38,4 +38,9 @@ AccederDossierByDemande(idDemande: string): any {
 PutDossier(dossier:dossierMedical){
 return this.http.put(this.url+'ModifierDossier',dossier);
 }
+addDossier(dossier:dossierMedical,nomPatient:string):any{
+  return this.http.post<dossierMedical>( `${this.url}save/Patient/${nomPatient}`,dossier);
+
+
+}
 }
