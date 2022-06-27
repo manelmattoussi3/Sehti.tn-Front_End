@@ -1,3 +1,4 @@
+import { Photo } from "./Photo";
 import { profil } from "./Profil";
 
 export class appUser {
@@ -12,6 +13,7 @@ export class appUser {
     genre: string;
     image: string;
     tel: string;
-
+    diplome:Photo;
+    ordreMed:Photo;
     profil: profil;
 }

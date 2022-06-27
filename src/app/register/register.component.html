@@ -22,16 +22,20 @@
       <div class="col-md-6 mx-auto text-center h-full d-lg-flex align-items-center">
         
         <div class="card">
-          
-          
+         
             <p-toast></p-toast>
-            <div class="my-5">
+            <div *ngIf="!show" >
+            <div class="my-5" >
             <h3 class="text-primary">Étapes d'inscriptions</h3>
             <br>
             <br>
-            <p-steps class="text-primary" [model]="items"></p-steps>
+            <p-steps  class="text-primary" [model]="items"></p-steps>
             </div>
-            
+          </div>
+    
+          <br/>
+          <br/>
+          
             <h1>Inscrivez-vous à
               <br>
               
@@ -110,7 +114,7 @@
 
               </div>
           
-           
+             
               <!-- <div class="mb-3 px-lg-5 mx-lg-5">
                 <label class="py-2-5 px-3">S'inscrire en tant que</label>
               </div> -->
@@ -119,11 +123,11 @@
                
                
               <select style="color: #6c757d;" [style]="{height: '3vw',width: '19vw'}" class="form-control py-2-5 px-3"  name="role" id="role" [formControlName]="'role'" 
-                (change)="onChange($event)"  >
+                (change)="onChange($event);openstep($event)"  >
              
                 <option  class="text-option"  selected={{selected}}  > S'inscrire en tant que </option>
                 <option class="text-option" value="PROFESSIONNEL" > Professionnel de santé </option>
-                <option class="text-option" value="PATIENT" > Patient </option>
+                <option  class="text-option" value="PATIENT" > Patient </option>
               </select>
               
               </div>
@@ -132,20 +136,33 @@
             
               <div *ngIf="!hidden" >
                 <div class="mb-3 px-lg-5 ">
-                <label for="diplome">Diplome </label>
-                <p-fileUpload name="myfile[]" url="./upload.php" [multiple]="true"
+                <pre class="text-center">Diplome </pre>
+                <!-- <p-fileUpload name="myfile[]" url="./upload.php" [multiple]="true"
                 accept="image/*" [maxFileSize]="1000000" (change)="diplomeChange($event)" >
             
-        </p-fileUpload>
+        </p-fileUpload> -->
+        <input  class="form-control" type="file" id="diplome" name="diplome" accept="image/*" pInputText
+
+                  (change)="diplomeChange($event)" /> <br>
+                  <!-- <p-fileUpload name="diplome" type="file" id="diplome" (uploadHandler)="diplomeChange($event)"
+                  accept="image/*" [customUpload]="true" ></p-fileUpload> -->
+
+                 
+
+                <pre class="text-center">Affiliation </pre>
+
+                <input  class="form-control form-control-sm" type="file" id="affiliation" name="affiliation" accept="image/*" pInputText
+
+                  (change)="affiliationChange($event)" />
 
 </div>
-<div class="mb-3 px-lg-5 ">
+<!-- <div class="mb-3 px-lg-5 ">
                 <label for="affiliation">Affiliation </label>
                 <p-fileUpload name="myfile[]" id="affiliation" name="affiliation" url="./upload.php" [multiple]="true"
                 accept="image/*" [maxFileSize]="1000000" (change)="affiliationChange($event)" >
             
         </p-fileUpload>
-              </div>
+              </div> -->
             
              </div>
               <div class="mb-3 px-lg-5 mx-lg-5">

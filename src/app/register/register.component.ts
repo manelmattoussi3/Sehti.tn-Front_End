@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   signUpForm: FormGroup;
   selected = true;
   hidden = true;
- 
+ show=true;
   listrole = [
 
     { label: 'PROFESSIONNEL           ', value: 'PROFESSIONNEL' },
@@ -124,7 +124,12 @@ export class RegisterComponent implements OnInit {
               (response) => {
                 console.log("should be working ... ! ", response.status);
                 this.signUpForm.enable();
+                if(this.signUpForm.get("role")!.value !== "PATIENT"){ 
                 this._router.navigateByUrl('/login');
+                }
+                else{
+                  this._router.navigateByUrl('/professional');
+                }
               }
 
               )
@@ -149,6 +154,17 @@ export class RegisterComponent implements OnInit {
     }  
   }
 
+  openstep(roleEvent: any){
+    
+    this.signUpForm.get("role")!.setValue(roleEvent.target.value);
+
+    if(this.signUpForm.get("role")!.value =="PATIENT"){
+
+        this.show= false;}
+      else{
+        this.show= true;
+      }
+      }
   diplomeChange(event: any) {
     if (event.target.files && event.target.files.length > 0) {
         console.log(" file : ", event.target.files[0] as File);
